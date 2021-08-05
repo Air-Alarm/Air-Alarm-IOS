@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Air-Alarm
 //
-//  Created by gibeom on 2021/08/06.
+//  Created by byungwoo on 2021/08/06.
 //
 
 import SwiftUI
