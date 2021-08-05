@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F426BC424B009C1D21 /* MainTabView.swift */; };
+		2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F626BC42AB009C1D21 /* AList.swift */; };
+		2AEAB2F926BC42CB009C1D21 /* BList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F826BC42CB009C1D21 /* BList.swift */; };
+		2AEAB2FB26BC42E2009C1D21 /* CList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2FA26BC42E2009C1D21 /* CList.swift */; };
 		F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */; };
 		F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBAB26BC3D050061A4A2 /* ContentView.swift */; };
 		F987CBAE26BC3D050061A4A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F987CBAD26BC3D050061A4A2 /* Assets.xcassets */; };
@@ -33,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2AEAB2F426BC424B009C1D21 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		2AEAB2F626BC42AB009C1D21 /* AList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AList.swift; sourceTree = "<group>"; };
+		2AEAB2F826BC42CB009C1D21 /* BList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BList.swift; sourceTree = "<group>"; };
+		2AEAB2FA26BC42E2009C1D21 /* CList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CList.swift; sourceTree = "<group>"; };
 		F987CBA626BC3D050061A4A2 /* Air-Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air-Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air_AlarmApp.swift; sourceTree = "<group>"; };
 		F987CBAB26BC3D050061A4A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,7 +106,11 @@
 				F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */,
 				F987CBAB26BC3D050061A4A2 /* ContentView.swift */,
 				F987CBAD26BC3D050061A4A2 /* Assets.xcassets */,
+				2AEAB2F426BC424B009C1D21 /* MainTabView.swift */,
 				F987CBB226BC3D050061A4A2 /* Info.plist */,
+				2AEAB2F626BC42AB009C1D21 /* AList.swift */,
+				2AEAB2F826BC42CB009C1D21 /* BList.swift */,
+				2AEAB2FA26BC42E2009C1D21 /* CList.swift */,
 				F987CBAF26BC3D050061A4A2 /* Preview Content */,
 			);
 			path = "Air-Alarm";
@@ -260,7 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */,
+				2AEAB2FB26BC42E2009C1D21 /* CList.swift in Sources */,
+				2AEAB2F926BC42CB009C1D21 /* BList.swift in Sources */,
 				F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */,
+				2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */,
+				2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
