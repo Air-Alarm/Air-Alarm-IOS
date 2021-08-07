@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     
     @State var TitleOfTab = AppMenu.AList.rawValue
@@ -46,24 +47,21 @@ private extension ContentView {
 }
 
 private extension ContentView {
+    
     func ChangeleadingItem(_ TitleName:String ) -> AnyView {
         switch TitleName {
         case AppMenu.AList.rawValue: do {
-            return AnyView(HStack{
-                Button(action: {print("Button 2")}) {
-                    Image(systemName: "square.and.arrow.up")
+                return AnyView(HStack{
+                    Button(action: {print("Button 1")}) {
+                        Image(systemName: "bell")
                     }
                 })
             }
         case AppMenu.BList.rawValue: do {
                 return AnyView(HStack{
-                    Button(action: { print("Button 2")}) {
-                        Image(systemName: "square.and.arrow.up")
-                        }
-                    Button(action: { print("Button 3")}){
-                        Image(systemName: "gear")
+                    Button(action: { print("Button 1")}) {
+                        Image(systemName: "bell")
                     }
-                    .imageScale(.large)
                 })
             }
         case AppMenu.CList.rawValue: do {
@@ -86,6 +84,7 @@ private extension ContentView {
 
 private extension ContentView {
     func ChangetrailingItem(_ TitleName:String ) -> AnyView {
+        
         switch TitleName {
         case AppMenu.AList.rawValue: do {
             return AnyView(HStack{

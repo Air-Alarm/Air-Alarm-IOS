@@ -23,17 +23,20 @@ struct MainTabView: View {
     @Binding var TitleOfNavi: String
     
     var body: some View {
-        ZStack {
-            TabView(selection: $selectedTab) {
-                Group{
-                    AListUI
-                    BListUI
-                    CListUI
+        return NavigationView{
+            ZStack {
+                TabView(selection: $selectedTab) {
+                    Group{
+                        AListUI
+                        BListUI
+                        CListUI
+                    }
                 }
+                .statusBar(hidden: selectedTab == .AList)
+                .statusBar(hidden: selectedTab == .BList)
+                .statusBar(hidden: selectedTab == .CList)
             }
-            .statusBar(hidden: selectedTab == .AList)
-            .statusBar(hidden: selectedTab == .BList)
-            .statusBar(hidden: selectedTab == .CList)
+
         }
     }
 }
@@ -50,7 +53,7 @@ private extension MainTabView {
     }
     var BListUI: some View {
         BListList() // Tab 2의 화면
-        .tag(2)
+        .tag(1)
         .tabItem {Label("Tab 3", systemImage: "2.square")}
         .navigationBarHidden(false)
         .onAppear {
@@ -59,7 +62,7 @@ private extension MainTabView {
     }
     var CListUI: some View {
         CList() // Tab 3의 화면
-        .tag(3)
+        .tag(1)
         .tabItem {Label("Tab 3", systemImage: "3.square")}
         .navigationBarHidden(false)
         .onAppear {
