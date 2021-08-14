@@ -2,7 +2,7 @@
 //  MainTabView.swift
 //  Air-Alarm
 //
-//  Created by Jinhee on 2021/08/14.
+//  Created by 김하은 on 2021/08/06.
 //
 
 import SwiftUI
@@ -20,6 +20,7 @@ struct MainTabView: View {
     }
     
     @State private var selectedTab: Tabs = .AList
+
     @Binding var TitleOfNavi: String
     
     var body: some View {
@@ -52,9 +53,9 @@ private extension MainTabView {
         }
     }
     var BListUI: some View {
-        BList() // Tab 2의 화면
+        BListList() // Tab 2의 화면
         .tag(1)
-        .tabItem {Label("Tab 3", systemImage: "2.square")}
+        .tabItem {Label("Tab 2", systemImage: "2.square")}
         .navigationBarHidden(false)
         .onAppear {
             self.TitleOfNavi = AppMenu.BList.rawValue

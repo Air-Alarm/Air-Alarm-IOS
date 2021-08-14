@@ -2,7 +2,7 @@
 //  CList.swift
 //  Air-Alarm
 //
-//  Created by Jinhee on 2021/08/14.
+//  Created by 김하은 on 2021/08/06.
 //
 
 import SwiftUI

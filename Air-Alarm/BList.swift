@@ -2,12 +2,12 @@
 //  BList.swift
 //  Air-Alarm
 //
-//  Created by Jinhee on 2021/08/14.
+//  Created by 김하은 on 2021/08/06.
 //
 
 import SwiftUI
 
-struct BList: View {
+struct BListList: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
@@ -15,6 +15,6 @@ struct BList: View {
 
 struct BList_Previews: PreviewProvider {
     static var previews: some View {
-        BList()
+        BListList()
     }
 }

@@ -2,14 +2,13 @@
 //  ContentView.swift
 //  Air-Alarm
 //
-//  Created by gibeom on 2021/08/06.
+//  Created by byungwoo on 2021/08/06.
 //
 
 import SwiftUI
 
 
 struct ContentView: View {
-    
     @State var TitleOfTab = AppMenu.AList.rawValue
     
     var body: some View {
@@ -29,17 +28,31 @@ struct ContentView: View {
     }
 }
 
+//private extension ContentView {
+//    var LoginViewer: some View {
+//        HStack{
+//            Spacer()
+//            NavigationLink(
+//                destination: LoginView,
+//                label: {
+//                })
+//        }
+//    }
+//}
+
 private extension ContentView {
+    
     var LoginAction: some View {
         HStack{
             Spacer()
             NavigationLink( destination: MainTabView(TitleOfNavi: $TitleOfTab)
-                    .navigationBarHidden(false)
-                    .navigationBarBackButtonHidden(true)
-                    .navigationBarTitle(Text(TitleOfTab), displayMode: .inline)
-                    .navigationBarItems(leading: ChangeleadingItem(TitleOfTab), trailing: ChangetrailingItem(TitleOfTab))
-){
+                                .navigationBarHidden(false)
+                                .navigationBarBackButtonHidden(true)
+                                .navigationBarTitle(Text(TitleOfTab), displayMode: .inline)
+                                .navigationBarItems(leading: ChangeleadingItem(TitleOfTab), trailing: ChangetrailingItem(TitleOfTab))
+            ){
                 Text("App Main Login View")
+                
             }
             Spacer()
         }.padding()
@@ -90,34 +103,34 @@ private extension ContentView {
             return AnyView(HStack{
                 Button(action: {print("Button 2")}) {
                     Image(systemName: "square.and.arrow.up")
-                    }
-                })
-            }
+                }
+            })
+        }
         case AppMenu.BList.rawValue: do {
-                return AnyView(HStack{
-                    Button(action: { print("Button 2")}) {
-                        Image(systemName: "square.and.arrow.up")
-                        }
-                    Button(action: { print("Button 3")}){
-                        Image(systemName: "gear")
-                    }
-                    .imageScale(.large)
-                })
-            }
+            return AnyView(HStack{
+                Button(action: { print("Button 2")}) {
+                    Image(systemName: "square.and.arrow.up")
+                }
+                Button(action: { print("Button 3")}){
+                    Image(systemName: "gear")
+                }
+                .imageScale(.large)
+            })
+        }
         case AppMenu.CList.rawValue: do {
-                return AnyView(HStack{
-                    Button(action: { print("Button 1")}) {
-                        Image(systemName: "bell")
-                    }
-                })
-            }
+            return AnyView(HStack{
+                Button(action: { print("Button 1")}) {
+                    Image(systemName: "bell")
+                }
+            })
+        }
         default:do {
-                return AnyView(HStack{
-                    Button(action: { print("Button 1")}) {
-                        Image(systemName: "bell")
-                    }
-                })
-            }
+            return AnyView(HStack{
+                Button(action: { print("Button 1")}) {
+                    Image(systemName: "bell")
+                }
+            })
+        }
         }
     }
 }
