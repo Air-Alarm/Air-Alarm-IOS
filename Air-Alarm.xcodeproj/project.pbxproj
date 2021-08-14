@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A996A5426C7ED4C0088BAB6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5326C7ED4C0088BAB6 /* LoginView.swift */; };
 		2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F426BC424B009C1D21 /* MainTabView.swift */; };
 		2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F626BC42AB009C1D21 /* AList.swift */; };
 		2AEAB2F926BC42CB009C1D21 /* BList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F826BC42CB009C1D21 /* BList.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A996A5326C7ED4C0088BAB6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2AEAB2F426BC424B009C1D21 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2AEAB2F626BC42AB009C1D21 /* AList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AList.swift; sourceTree = "<group>"; };
 		2AEAB2F826BC42CB009C1D21 /* BList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BList.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A996A4C26C781990088BAB6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2A996A5326C7ED4C0088BAB6 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		F987CB9D26BC3D050061A4A2 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 				F987CBAB26BC3D050061A4A2 /* ContentView.swift */,
 				F987CBAD26BC3D050061A4A2 /* Assets.xcassets */,
 				2AEAB2F426BC424B009C1D21 /* MainTabView.swift */,
+				2A996A4C26C781990088BAB6 /* Login */,
 				F987CBB226BC3D050061A4A2 /* Info.plist */,
 				2AEAB2F626BC42AB009C1D21 /* AList.swift */,
 				2AEAB2F826BC42CB009C1D21 /* BList.swift */,
@@ -272,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */,
+				2A996A5426C7ED4C0088BAB6 /* LoginView.swift in Sources */,
 				2AEAB2FB26BC42E2009C1D21 /* CList.swift in Sources */,
 				2AEAB2F926BC42CB009C1D21 /* BList.swift in Sources */,
 				F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */,

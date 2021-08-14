@@ -20,6 +20,7 @@ struct MainTabView: View {
     }
     
     @State private var selectedTab: Tabs = .AList
+
     @Binding var TitleOfNavi: String
     
     var body: some View {
@@ -54,7 +55,7 @@ private extension MainTabView {
     var BListUI: some View {
         BListList() // Tab 2의 화면
         .tag(1)
-        .tabItem {Label("Tab 3", systemImage: "2.square")}
+        .tabItem {Label("Tab 2", systemImage: "2.square")}
         .navigationBarHidden(false)
         .onAppear {
             self.TitleOfNavi = AppMenu.BList.rawValue

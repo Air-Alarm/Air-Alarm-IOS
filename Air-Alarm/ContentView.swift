@@ -29,7 +29,20 @@ struct ContentView: View {
     }
 }
 
+//private extension ContentView {
+//    var LoginViewer: some View {
+//        HStack{
+//            Spacer()
+//            NavigationLink(
+//                destination: LoginView,
+//                label: {
+//                })
+//        }
+//    }
+//}
+
 private extension ContentView {
+
     var LoginAction: some View {
         HStack{
             Spacer()
@@ -39,7 +52,8 @@ private extension ContentView {
                     .navigationBarTitle(Text(TitleOfTab), displayMode: .inline)
                     .navigationBarItems(leading: ChangeleadingItem(TitleOfTab), trailing: ChangetrailingItem(TitleOfTab))
 ){
-                Text("App Main Login View")
+                    Text("App Main Login View")
+                
             }
             Spacer()
         }.padding()
