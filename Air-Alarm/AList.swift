@@ -8,40 +8,60 @@
 import SwiftUI
 
 struct AListView: View {
-    var body: some View {
-        Home()
+    struct Database: Codable {
+        var CO2: Double = 0.0
+        var dust: Double = 0.0
+        var humidity: Double = 0.0
+        var id: Int = 0
+        var temperature: Double = 0.0
+        var time: String = ""
     }
-}
-
-struct AList_Previews: PreviewProvider {
-    static var previews: some View {
-        AListView()
-    }
-}
-
-struct Home: View {
+    @State var db = Database()
+    @State var refresh = Refresh(started: false, released: false)
     @State var json :  String = "아래로 당겨서 새로고침"
     
-    
-    func callREST() {
-        do {
-            let url = URL(string: "http://mirsv.com:5000/get")
-            let response = try String(contentsOf: url!)
-            
-            self.json = response
-        } catch let error as NSError {
-            print(error.localizedDescription)
+    // 객체에 데이터 저장하기
+    func GET(){
+        if let url = URL(string: "http://mirsv.com:5000/get") {
+            var request = URLRequest.init(url: url)
+
+            request.httpMethod = "GET"
+
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
+
+                // data
+                let decoder = JSONDecoder()
+                if let json = try? decoder.decode(Database.self, from: data) {
+                    self.db = json
+                }
+            }.resume()
         }
     }
-
     
+    // 변수에 데이터 직접 저장하긴
+//    func GET1(){
+//        if let url = URL(string: "http://mirsv.com:5000/get") {
+//            var request = URLRequest.init(url: url)
+//
+//            request.httpMethod = "GET"
+//
+//            URLSession.shared.dataTask(with: request) { (data, response, error) in
+//                guard let data = data else { return }
+//
+//                // data
+//                if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] {
+//                    print("json에 데이터 들어감")
+//                    print(json["CO2"]!)
+//                    self.textView = json["CO2"]! as! Int
+//                }
+//            }.resume()
+//        }
+//    }
     
-    @State var arrayData = ["20210724", "9:58", "0.0", "0.0", "0"]
-    @State var refresh = Refresh(started: false, released: false)
-    
-    var body: some View{
-        VStack{
-            HStack{
+    var body: some View {
+        VStack {
+            HStack{ // air alarm 글씨
                 Text("Air Alarm")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
@@ -51,7 +71,6 @@ struct Home: View {
             }
             .padding()
             .background(Color.white.ignoresSafeArea(.all, edges: .top))
-            
             Divider()
             
             ScrollView(.vertical, showsIndicators: false, content: {
@@ -104,22 +123,18 @@ struct Home: View {
                     }
                     
                     VStack {
-                        ForEach(arrayData,id: \.self){value in
-                            HStack{
-                                Text(value)
-                                Spacer()
-                                //Image(systemName: "chevron.right")
-                                    .foregroundColor(.black)
-                            }
-                            .padding()
+                        Button(action: GET){
+                            Text("버튼")
                         }
-                        
+                        Text("CO2: " + String(db.CO2))
+                        Text("Dust: " + String(db.dust))
+                        Text("Humidity: " + String(db.humidity))
+                        Text("ID: " + String(db.id))
+                        Text("Temperature: " + String(db.temperature))
+                        Text("Time: " + db.time)
                         
                         Text("\(json)")//웹에서 받아온 내용이 여기 저장됨
                             .padding()
-                        
-                        
-                        
                         
                     }
                     .background(Color.white)
@@ -139,7 +154,7 @@ struct Home: View {
             withAnimation(Animation.linear){
                 
                 if refresh.startOffset == refresh.offset{
-                    callREST()
+                    GET()
                     refresh.released = false
                     refresh.started = false
                 }
@@ -151,12 +166,17 @@ struct Home: View {
     }
 }
 
-// 새로고침
-
+//새로고침
 struct Refresh {
     var startOffset : CGFloat = 0
     var offset : CGFloat = 0
     var started : Bool
     var released: Bool
     var invalid : Bool = false
+}
+
+struct AList_Previews: PreviewProvider {
+    static var previews: some View {
+        AListView()
+    }
 }
