@@ -10,57 +10,43 @@ import SwiftUI
 
 struct ContentView: View {
     @State var TitleOfTab = AppMenu.AList.rawValue
+    @EnvironmentObject var authenticator: Authenticator
     
     var body: some View {
+        
         return NavigationView {
             ZStack {
+
                 Color.white.edgesIgnoringSafeArea(.all)
                 //전체화면 색상
-                
                 VStack{
                     LoginAction
                 }
-            }
-            // navigation option
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
+           }
         }
+        //navigation option
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
-//private extension ContentView {
-//    var LoginViewer: some View {
-//        HStack{
-//            Spacer()
-//            NavigationLink(
-//                destination: LoginView,
-//                label: {
-//                })
-//        }
-//    }
-//}
-
 private extension ContentView {
-    
+
     var LoginAction: some View {
         HStack{
             Spacer()
-            NavigationLink( destination: MainTabView(TitleOfNavi: $TitleOfTab)
-                                .navigationBarHidden(false)
-                                .navigationBarBackButtonHidden(true)
-                                .navigationBarTitle(Text(TitleOfTab), displayMode: .inline)
-                                .navigationBarItems(leading: ChangeleadingItem(TitleOfTab), trailing: ChangetrailingItem(TitleOfTab))
+            NavigationLink( destination: LoginView()
             ){
                 Text("App Main Login View")
-                
             }
             Spacer()
         }.padding()
     }
 }
 
-private extension ContentView {
-    
+
+
+
     func ChangeleadingItem(_ TitleName:String ) -> AnyView {
         switch TitleName {
         case AppMenu.AList.rawValue: do {
@@ -93,11 +79,11 @@ private extension ContentView {
             }
         }
     }
-}
 
-private extension ContentView {
+
+
     func ChangetrailingItem(_ TitleName:String ) -> AnyView {
-        
+
         switch TitleName {
         case AppMenu.AList.rawValue: do {
             return AnyView(HStack{
@@ -133,10 +119,11 @@ private extension ContentView {
         }
         }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Authenticator())
     }
 }
