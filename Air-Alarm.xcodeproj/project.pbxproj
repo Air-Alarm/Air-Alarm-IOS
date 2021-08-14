@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F7052AB026C1FD0100FEAAB7 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7052AAF26C1FD0100FEAAB7 /* MainTabView.swift */; };
-		F7052AB526C1FD0D00FEAAB7 /* AList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7052AB426C1FD0D00FEAAB7 /* AList.swift */; };
-		F7052ABA26C1FD1600FEAAB7 /* BList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7052AB926C1FD1600FEAAB7 /* BList.swift */; };
-		F7052ABF26C1FD2200FEAAB7 /* CList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7052ABE26C1FD2200FEAAB7 /* CList.swift */; };
+		F77833C026C7B077003FF18E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77833BF26C7B077003FF18E /* MainTabView.swift */; };
+		F77833C526C7B08D003FF18E /* AList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77833C426C7B08D003FF18E /* AList.swift */; };
+		F77833CA26C7B0A1003FF18E /* BList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77833C926C7B0A1003FF18E /* BList.swift */; };
+		F77833CF26C7B0AC003FF18E /* CList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77833CE26C7B0AC003FF18E /* CList.swift */; };
 		F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */; };
 		F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBAB26BC3D050061A4A2 /* ContentView.swift */; };
 		F987CBAE26BC3D050061A4A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F987CBAD26BC3D050061A4A2 /* Assets.xcassets */; };
@@ -37,10 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F7052AAF26C1FD0100FEAAB7 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		F7052AB426C1FD0D00FEAAB7 /* AList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AList.swift; sourceTree = "<group>"; };
-		F7052AB926C1FD1600FEAAB7 /* BList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BList.swift; sourceTree = "<group>"; };
-		F7052ABE26C1FD2200FEAAB7 /* CList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CList.swift; sourceTree = "<group>"; };
+		F77833BF26C7B077003FF18E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		F77833C426C7B08D003FF18E /* AList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AList.swift; sourceTree = "<group>"; };
+		F77833C926C7B0A1003FF18E /* BList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BList.swift; sourceTree = "<group>"; };
+		F77833CE26C7B0AC003FF18E /* CList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CList.swift; sourceTree = "<group>"; };
 		F987CBA626BC3D050061A4A2 /* Air-Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air-Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air_AlarmApp.swift; sourceTree = "<group>"; };
 		F987CBAB26BC3D050061A4A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,10 +108,10 @@
 				F987CBAD26BC3D050061A4A2 /* Assets.xcassets */,
 				F987CBB226BC3D050061A4A2 /* Info.plist */,
 				F987CBAF26BC3D050061A4A2 /* Preview Content */,
-				F7052AAF26C1FD0100FEAAB7 /* MainTabView.swift */,
-				F7052AB426C1FD0D00FEAAB7 /* AList.swift */,
-				F7052AB926C1FD1600FEAAB7 /* BList.swift */,
-				F7052ABE26C1FD2200FEAAB7 /* CList.swift */,
+				F77833BF26C7B077003FF18E /* MainTabView.swift */,
+				F77833C426C7B08D003FF18E /* AList.swift */,
+				F77833C926C7B0A1003FF18E /* BList.swift */,
+				F77833CE26C7B0AC003FF18E /* CList.swift */,
 			);
 			path = "Air-Alarm";
 			sourceTree = "<group>";
@@ -272,11 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */,
-				F7052ABF26C1FD2200FEAAB7 /* CList.swift in Sources */,
-				F7052ABA26C1FD1600FEAAB7 /* BList.swift in Sources */,
+				F77833CF26C7B0AC003FF18E /* CList.swift in Sources */,
+				F77833CA26C7B0A1003FF18E /* BList.swift in Sources */,
 				F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */,
-				F7052AB026C1FD0100FEAAB7 /* MainTabView.swift in Sources */,
-				F7052AB526C1FD0D00FEAAB7 /* AList.swift in Sources */,
+				F77833C026C7B077003FF18E /* MainTabView.swift in Sources */,
+				F77833C526C7B08D003FF18E /* AList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

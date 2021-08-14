@@ -2,7 +2,7 @@
 //  AList.swift
 //  Air-Alarm
 //
-//  Created by Jinhee on 2021/08/10.
+//  Created by Jinhee on 2021/08/14.
 //
 
 import SwiftUI
