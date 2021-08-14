@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct AListView: View {
+    let restAPI = RestAPI()
+    @State var db = RestAPI.Database()
+    
+    func update() {
+        self.db = restAPI.GET()
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button(action: update){
+                Text("버튼")
+            }
+            Text("CO2: " + String(db.CO2))
+            Text("Dust: " + String(db.dust))
+            Text("Humidity: " + String(db.humidity))
+            Text("ID: " + String(db.id))
+            Text("Temperature: " + String(db.temperature))
+            Text("Time: " + db.time)
+        }
     }
 }
 
