@@ -12,46 +12,58 @@ struct LoginView: View {
 
   @State private var userName: String = ""
   @State private var password: String = ""
-    @State private var action: Int? = 0
 
   var body: some View {
-    ZStack {
-      Color.white
-        .ignoresSafeArea(.all)
-      VStack {
-        TextField("아이디", text: $userName)
-          .textFieldStyle(RoundedBorderTextFieldStyle())
-          .autocapitalization(.none)
-          .disableAutocorrection(true)
-        SecureField("비밀번호", text: $password)
-          .textFieldStyle(RoundedBorderTextFieldStyle())
-        
-        NavigationView { // 수정필요
-            NavigationLink(
-                destination: Signup(), tag: 1, selection: $action
-            ){
-                Text("회원가입")
+    return NavigationView {
+        ZStack {
+
+            Color.white.edgesIgnoringSafeArea(.all) //전체화면 색상
+            
+            VStack{
+                TextField("아이디", text: $userName)
+                  .textFieldStyle(RoundedBorderTextFieldStyle())
+                  .autocapitalization(.none)
+                  .disableAutocorrection(true)
+                SecureField("비밀번호", text: $password)
+                  .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                //로그인 버튼
+                Button(authenticator.isAuthenticating ? "Please wait" : "로그인"
+        ) {
+                  authenticator.login(username: userName, password: password)
+
+                }
+                .disabled(isLoginDisabled)
+                ProgressView() // 시간 표시 돌아가는 것
+                  .progressViewStyle(CircularProgressViewStyle())
+                  .opacity(authenticator.isAuthenticating ? 1.0 : 0.0)
+                
+                SignUpView //회원가입 창
             }
+            .frame(maxWidth: 320)
+            .padding(.horizontal)
         }
-        Button(authenticator.isAuthenticating ? "Please wait" : "로그인"
-) {
-          authenticator.login(username: userName, password: password)
-
-        }
-        .disabled(isLoginDisabled)
-        ProgressView() // 시간 표시 돌아가는 것
-          .progressViewStyle(CircularProgressViewStyle())
-          .opacity(authenticator.isAuthenticating ? 1.0 : 0.0)
-      }
-      .frame(maxWidth: 320)
-      .padding(.horizontal)
-
     }
-  }
+}
 
   private var isLoginDisabled: Bool {
     authenticator.isAuthenticating || userName.isEmpty || password.isEmpty
   }
+}
+
+private extension LoginView {
+    
+    var SignUpView: some View {
+        HStack{
+            Spacer()
+            NavigationLink(
+                destination: Signup()
+            ){
+                Text("회원가입")
+            }
+            Spacer()
+        }.padding()
+    }
 }
 
 struct LoginView_Previews: PreviewProvider {
