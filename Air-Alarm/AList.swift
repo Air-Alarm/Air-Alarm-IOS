@@ -28,6 +28,7 @@ struct AListView: View {
             Text("Time: " + db.time)
         }
     }
+    
 }
 
 struct AList_Previews: PreviewProvider {

@@ -39,6 +39,8 @@ struct MainTabView: View {
             }
 
         }
+        .navigationBarHidden(false)
+        .navigationBarBackButtonHidden(false)
     }
 }
 

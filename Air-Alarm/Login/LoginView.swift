@@ -44,6 +44,8 @@ struct LoginView: View {
             .padding(.horizontal)
         }
     }
+    .navigationBarHidden(true)
+    .navigationBarBackButtonHidden(true)
 }
 
   private var isLoginDisabled: Bool {
