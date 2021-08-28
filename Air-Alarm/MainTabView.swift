@@ -43,42 +43,13 @@ struct MainTabView: View {
 }
 // 왼쪽 상단 Tab
     func ChangeleadingItem(_ TitleName:String ) -> AnyView {
-        switch TitleName {
-        case AppMenu.AList.rawValue: do {
-                return AnyView(
-                    HStack{
-                    Button(action: {print("Button 1")}
-                    ) {
-                        Image(systemName: "bell")
-                    }
-                })
+        AnyView(
+            HStack{
+            Button(action: {print("Button 1")}
+            ) {
+                Image(systemName: "bell")
             }
-        case AppMenu.BList.rawValue: do {
-                return AnyView(
-                    HStack{
-                    Button(action: { print("Button 1")}
-                    ) {
-                        Image(systemName: "bell")
-                    }
-                })
-            }
-        case AppMenu.CList.rawValue: do {
-                return AnyView(
-                    HStack{
-                    Button(action: { print("Button 1")}
-                    ) {
-                        Image(systemName: "bell")
-                    }
-                })
-            }
-        default:do {
-                return AnyView(HStack{
-                    Button(action: { print("Button 1")}) {
-                        Image(systemName: "bell")
-                    }
-                })
-            }
-        }
+        })
     }
 
 
@@ -156,4 +127,8 @@ private extension MainTabView {
     }
 }
 
-
+//struct MainTabView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainTabView()
+//    }
+//}

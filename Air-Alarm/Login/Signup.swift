@@ -15,76 +15,108 @@ struct Signup: View {
         @State private var password2: String = ""
         @State private var email: String = ""
         @State private var sN: String = ""
-        @State var TitleOfTab = AppMenu.AList.rawValue
         
         var body: some View {
             return NavigationView {
                 VStack {
-                    Text("회원가입")
                     
-                    TextField("아이디", text: $userName)
-                      .textFieldStyle(PlainTextFieldStyle())
-                      .autocapitalization(.none)
-                      .disableAutocorrection(true)
+                    UnderlineTextFieldView(text: $userName, textField: textView, placeholder: "")
+                        .padding(.top, 50)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                                        
+                    UnderlineTextFieldView(text: $password, textField: passwordView, placeholder: "")
+                        .padding(.top, 10)
+                    UnderlineTextFieldView(text: $password2, textField: password2View, placeholder: "")
+                        .padding(.top, 10)
+                    UnderlineTextFieldView(text: $email, textField: emailView, placeholder: "")
+                        .padding(.top, 10)
+                    UnderlineTextFieldView(text: $sN, textField: snView, placeholder: "")
+                        .padding(.top, 10)
                     
-                    SecureField("비밀번호", text: $password)
-                      .textFieldStyle(PlainTextFieldStyle())
-                    
-                    SecureField("비밀번호확인", text: $password2)
-                      .textFieldStyle(PlainTextFieldStyle())
-                    
-                    TextField("이메일", text: $email)
-                      .textFieldStyle(PlainTextFieldStyle())
-                    
-                    TextField("기기S/N", text: $sN)
-                      .textFieldStyle(PlainTextFieldStyle())
-                    
-                    back
-                    login
-
+                    HStack{
+                        back
+                        login
+                    }
             }
-        }
+                // navigationBar 
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                         HStack {
+                             Text("회원가입")
+                                .foregroundColor(.blue)
+                         }
+                     }
+                 }
+            }
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
     }
 }
 
 private extension Signup {
+    // TextField 정보
+     var textView: some View {
+          TextField("아이디", text: $userName)
+            .foregroundColor(.black)
+     }
+
+     var passwordView: some View {
+          SecureField("비밀번호", text: $password)
+            .foregroundColor(.black)
+     }
     
+    var password2View: some View {
+         SecureField("비밀번호확인", text: $password2)
+            .foregroundColor(.black)
+    }
+    var emailView: some View {
+         TextField("Email", text: $email)
+            .foregroundColor(.black)
+            .keyboardType(.emailAddress)
+            .autocapitalization(.none)
+    }
+    var snView: some View {
+         TextField("기기 S/N", text: $sN)
+            .foregroundColor(.black)
+    }
+    // 뒤로가기 버튼
     var back: some View {
-        HStack{
+        VStack{
             Spacer()
             NavigationLink(
-                destination: LoginView()
+                destination: ContentView()
             ){
                 Text("뒤로가기")
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                    .padding()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 30)
+                            .stroke(Color.blue, lineWidth: 1)
+                            .frame(width: 90, height: 50)
+                    )
             }
             Spacer()
         }.padding()
     }
-    
+    // 가입하기 버튼
     var login: some View {
-        HStack{
+        VStack{
             Spacer()
-            NavigationLink( destination: MainTabView(TitleOfNavi: $TitleOfTab)
-                                .navigationBarHidden(false)
-                                .navigationBarBackButtonHidden(true)
-                                .navigationBarTitle(Text(TitleOfTab), displayMode: .inline)
-                                .navigationBarItems(leading: ChangeleadingItem(TitleOfTab), trailing: ChangetrailingItem(TitleOfTab))
+            NavigationLink( destination: ContentView()
             ){
                 Text("가입하기")
+                    .font(.headline)
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(40)
             }
             Spacer()
         }.padding()
     }
-}
-
-extension UINavigationController {
-
-  open override func viewWillLayoutSubviews() {
-    navigationBar.topItem?.backButtonDisplayMode = .minimal
-  }
-
 }
 
 struct Signup_Previews: PreviewProvider {

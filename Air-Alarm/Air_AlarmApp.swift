@@ -14,7 +14,6 @@ struct Air_AlarmApp: App {
         WindowGroup {
             ContentView()
               .environmentObject(Authenticator())
-//            ContentView()
         }
     }
 }

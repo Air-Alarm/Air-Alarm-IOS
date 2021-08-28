@@ -13,7 +13,7 @@ struct RootView: View {
   var body: some View {
     ContentView()
       .fullScreenCover(isPresented: $authenticator.needsAuthentication) {
-        LoginView()
+        ContentView()
           .environmentObject(authenticator) // see note
       }
   }
