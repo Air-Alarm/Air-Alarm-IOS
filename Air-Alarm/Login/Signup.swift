@@ -12,8 +12,10 @@ struct Signup: View {
         @State private var action: Int? = 0
         @State private var userName: String = ""
         @State private var password: String = ""
+        @State private var password2: String = ""
         @State private var email: String = ""
         @State private var sN: String = ""
+        @State var TitleOfTab = AppMenu.AList.rawValue
         
         var body: some View {
             return NavigationView {
@@ -28,7 +30,7 @@ struct Signup: View {
                     SecureField("비밀번호", text: $password)
                       .textFieldStyle(PlainTextFieldStyle())
                     
-                    SecureField("비밀번호확인", text: $password)
+                    SecureField("비밀번호확인", text: $password2)
                       .textFieldStyle(PlainTextFieldStyle())
                     
                     TextField("이메일", text: $email)
@@ -64,8 +66,11 @@ private extension Signup {
     var login: some View {
         HStack{
             Spacer()
-            NavigationLink(
-                destination: AListView()
+            NavigationLink( destination: MainTabView(TitleOfNavi: $TitleOfTab)
+                                .navigationBarHidden(false)
+                                .navigationBarBackButtonHidden(true)
+                                .navigationBarTitle(Text(TitleOfTab), displayMode: .inline)
+                                .navigationBarItems(leading: ChangeleadingItem(TitleOfTab), trailing: ChangetrailingItem(TitleOfTab))
             ){
                 Text("가입하기")
             }

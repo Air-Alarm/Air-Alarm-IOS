@@ -20,7 +20,6 @@ struct MainTabView: View {
     }
     
     @State private var selectedTab: Tabs = .AList
-
     @Binding var TitleOfNavi: String
     
     var body: some View {
@@ -34,8 +33,7 @@ struct MainTabView: View {
                     }
                 }
                 .statusBar(hidden: selectedTab == .AList)
-                .statusBar(hidden: selectedTab == .BList)
-                .statusBar(hidden: selectedTab == .CList)
+
             }
 
         }
@@ -43,11 +41,95 @@ struct MainTabView: View {
         .navigationBarBackButtonHidden(false)
     }
 }
+// 왼쪽 상단 Tab
+    func ChangeleadingItem(_ TitleName:String ) -> AnyView {
+        switch TitleName {
+        case AppMenu.AList.rawValue: do {
+                return AnyView(
+                    HStack{
+                    Button(action: {print("Button 1")}
+                    ) {
+                        Image(systemName: "bell")
+                    }
+                })
+            }
+        case AppMenu.BList.rawValue: do {
+                return AnyView(
+                    HStack{
+                    Button(action: { print("Button 1")}
+                    ) {
+                        Image(systemName: "bell")
+                    }
+                })
+            }
+        case AppMenu.CList.rawValue: do {
+                return AnyView(
+                    HStack{
+                    Button(action: { print("Button 1")}
+                    ) {
+                        Image(systemName: "bell")
+                    }
+                })
+            }
+        default:do {
+                return AnyView(HStack{
+                    Button(action: { print("Button 1")}) {
+                        Image(systemName: "bell")
+                    }
+                })
+            }
+        }
+    }
+
+
+// 오른쪽 상단 Tab
+    func ChangetrailingItem(_ TitleName:String ) -> AnyView {
+
+        switch TitleName {
+        case AppMenu.AList.rawValue: do {
+            return AnyView(
+                HStack{
+                Button(action: { print("Button 3")}
+                ){
+                    Image(systemName: "gear")
+                }
+            })
+        }
+        case AppMenu.BList.rawValue: do {
+            return AnyView(
+                HStack{
+                Button(action: { print("Button 3")}
+                ){
+                    Image(systemName: "gear")
+                }
+            })
+        }
+        case AppMenu.CList.rawValue: do {
+            return AnyView(
+                HStack{
+                Button(action: { print("Button 3")}
+                ){
+                    Image(systemName: "gear")
+                }
+            })
+        }
+        default:do {
+            return AnyView(
+                HStack{
+                Button(action: { print("Button 3")}
+                ){
+                    Image(systemName: "gear")
+                }
+            })
+        }
+        }
+    }
 
 private extension MainTabView {
+    
     var AListUI: some View {
-        AListView() // Tab 1의 화면
-        .tag(1)
+        AList() // Tab 1의 화면
+        .tag(Tabs.AList)
         .tabItem {Label("Tab 1", systemImage: "1.square")}
         .navigationBarHidden(false)
         .onAppear {
@@ -55,8 +137,8 @@ private extension MainTabView {
         }
     }
     var BListUI: some View {
-        BListList() // Tab 2의 화면
-        .tag(1)
+        BList() // Tab 2의 화면
+        .tag(Tabs.BList)
         .tabItem {Label("Tab 2", systemImage: "2.square")}
         .navigationBarHidden(false)
         .onAppear {
@@ -65,7 +147,7 @@ private extension MainTabView {
     }
     var CListUI: some View {
         CList() // Tab 3의 화면
-        .tag(1)
+        .tag(Tabs.CList)
         .tabItem {Label("Tab 3", systemImage: "3.square")}
         .navigationBarHidden(false)
         .onAppear {
@@ -74,8 +156,4 @@ private extension MainTabView {
     }
 }
 
-//struct MainTabView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MainTabView()
-//    }
-//}
+

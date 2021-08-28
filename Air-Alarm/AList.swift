@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AListView: View {
+struct AList: View {
     let restAPI = RestAPI()
     @State var db = RestAPI.Database()
     
@@ -26,6 +26,7 @@ struct AListView: View {
             Text("ID: " + String(db.id))
             Text("Temperature: " + String(db.temperature))
             Text("Time: " + db.time)
+            
         }
     }
     
@@ -33,6 +34,6 @@ struct AListView: View {
 
 struct AList_Previews: PreviewProvider {
     static var previews: some View {
-        AListView()
+        AList()
     }
 }
