@@ -46,9 +46,11 @@ struct Signup: View {
                          HStack {
                              Text("회원가입")
                                 .foregroundColor(.blue)
+                                .bold()
                          }
                      }
                  }
+                .navigationBarColor(.white)
             }
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
