@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A26A4B026DA68BF00670DFB /* UnderLineTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A26A4AF26DA68BF00670DFB /* UnderLineTextFieldView.swift */; };
+		2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */; };
 		2A996A5626C80F9A0088BAB6 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5526C80F9A0088BAB6 /* RootView.swift */; };
 		2A996A5826C812460088BAB6 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5726C812460088BAB6 /* Authenticator.swift */; };
 		2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5926C8285D0088BAB6 /* Signup.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		2A26A4AF26DA68BF00670DFB /* UnderLineTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextFieldView.swift; sourceTree = "<group>"; };
+		2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarColor.swift; sourceTree = "<group>"; };
 		2A996A5526C80F9A0088BAB6 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		2A996A5726C812460088BAB6 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
 		2A996A5926C8285D0088BAB6 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
@@ -90,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A26A4B326DB5EBD00670DFB /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				2AEAB2F426BC424B009C1D21 /* MainTabView.swift */,
+				2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
 		2A996A4C26C781990088BAB6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,10 +135,10 @@
 		F987CBA826BC3D050061A4A2 /* Air-Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				2A26A4B326DB5EBD00670DFB /* Tab */,
 				F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */,
 				F987CBAB26BC3D050061A4A2 /* ContentView.swift */,
 				F987CBAD26BC3D050061A4A2 /* Assets.xcassets */,
-				2AEAB2F426BC424B009C1D21 /* MainTabView.swift */,
 				2A996A4C26C781990088BAB6 /* Login */,
 				F987CBB226BC3D050061A4A2 /* Info.plist */,
 				2AEAB2F626BC42AB009C1D21 /* AList.swift */,
@@ -301,6 +312,7 @@
 				2A996A5826C812460088BAB6 /* Authenticator.swift in Sources */,
 				2A996A5626C80F9A0088BAB6 /* RootView.swift in Sources */,
 				F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */,
+				2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */,
 				2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */,
 				2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */,
 				2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */,

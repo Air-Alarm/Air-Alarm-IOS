@@ -20,6 +20,7 @@ struct MainTabView: View {
     }
     
     @State private var selectedTab: Tabs = .AList
+    
     @Binding var TitleOfNavi: String
     
     var body: some View {
@@ -41,16 +42,48 @@ struct MainTabView: View {
         .navigationBarBackButtonHidden(false)
     }
 }
+
 // 왼쪽 상단 Tab
-    func ChangeleadingItem(_ TitleName:String ) -> AnyView {
-        AnyView(
+func ChangeleadingItem(_ TitleName: String ) -> AnyView {
+    switch TitleName {
+    case AppMenu.AList.rawValue: do {
+        return AnyView(
             HStack{
-            Button(action: {print("Button 1")}
-            ) {
-                Image(systemName: "bell")
-            }
+                Image("icon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         })
     }
+    case AppMenu.BList.rawValue: do {
+        return AnyView(
+            HStack{
+                Image("icon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        })
+    }
+    case AppMenu.BList.rawValue: do {
+        return AnyView(
+            HStack{
+                Image("icon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        })
+    }
+    default:do {
+        return AnyView(
+            HStack{
+                Image("icon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        })
+    }
+    }
+}
 
 
 // 오른쪽 상단 Tab
@@ -60,37 +93,53 @@ struct MainTabView: View {
         case AppMenu.AList.rawValue: do {
             return AnyView(
                 HStack{
-                Button(action: { print("Button 3")}
-                ){
-                    Image(systemName: "gear")
-                }
+                    Button(action: { print("Button 2")}
+                    ){
+                        Image(systemName: "bell")
+                    }
+                    Button(action: { print("Button 3")}
+                    ){
+                        Image(systemName: "gear")
+                    }
             })
         }
         case AppMenu.BList.rawValue: do {
             return AnyView(
                 HStack{
-                Button(action: { print("Button 3")}
-                ){
-                    Image(systemName: "gear")
-                }
+                    Button(action: { print("Button 2")}
+                    ){
+                        Image(systemName: "bell")
+                    }
+                    Button(action: { print("Button 3")}
+                    ){
+                        Image(systemName: "gear")
+                    }
             })
         }
         case AppMenu.CList.rawValue: do {
             return AnyView(
                 HStack{
-                Button(action: { print("Button 3")}
-                ){
-                    Image(systemName: "gear")
-                }
+                    Button(action: { print("Button 2")}
+                    ){
+                        Image(systemName: "bell")
+                    }
+                    Button(action: { print("Button 3")}
+                    ){
+                        Image(systemName: "gear")
+                    }
             })
         }
         default:do {
             return AnyView(
                 HStack{
-                Button(action: { print("Button 3")}
-                ){
-                    Image(systemName: "gear")
-                }
+                    Button(action: { print("Button 2")}
+                    ){
+                        Image(systemName: "bell")
+                    }
+                    Button(action: { print("Button 3")}
+                    ){
+                        Image(systemName: "gear")
+                    }
             })
         }
         }

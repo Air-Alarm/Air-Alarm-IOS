@@ -23,10 +23,13 @@ struct ContentView: View {
     
       return NavigationView {
           ZStack {
-
               Color.white.edgesIgnoringSafeArea(.all) //전체화면 색상
-            
-              VStack{
+              
+            VStack{
+                Image("icon")
+                    .resizable()
+                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .padding()
                   TextField("아이디", text: $userName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocapitalization(.none)
@@ -34,8 +37,10 @@ struct ContentView: View {
                   SecureField("비밀번호", text: $password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                  login //로그인 버튼
-                  SignUpView //회원가입 창
+                HStack{
+                    login //로그인 버튼
+                    SignUpView //회원가입 창
+                }
               }
               .frame(maxWidth: 320)
               .padding(.horizontal)
@@ -53,15 +58,26 @@ struct ContentView: View {
 private extension ContentView {
     
     var login: some View {
-        HStack{
+        VStack{
             Spacer()
-            NavigationLink( destination: MainTabView(TitleOfNavi: $TitleOfTab)
-                                .navigationBarHidden(false)
-                                .navigationBarBackButtonHidden(true)
-                                .navigationBarTitle(Text(TitleOfTab), displayMode: .inline)
-                                .navigationBarItems(leading: ChangeleadingItem(TitleOfTab), trailing: ChangetrailingItem(TitleOfTab))
+            NavigationLink(
+                destination: MainTabView(TitleOfNavi: $TitleOfTab)
+                    .navigationBarHidden(false)
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarTitle(Text(TitleOfTab), displayMode: .inline)
+                    .navigationBarItems(leading: ChangeleadingItem(TitleOfTab), trailing: ChangetrailingItem(TitleOfTab))
+                    .navigationBarColor(.white)
+                    
             ){
                 Text("로그인")
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                    .padding()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 30)
+                            .stroke(Color.blue, lineWidth: 1)
+                            .frame(width: 90, height: 50)
+                    )
                 
 //  아이디 비밀번호 확인하는 버튼 + 시간 표시 돌아가는 효과
 //                Button(
@@ -80,17 +96,23 @@ private extension ContentView {
     }
     
     var SignUpView: some View {
-        HStack{
+        VStack{
             Spacer()
             NavigationLink(
                 destination: Signup()
             ){
                 Text("회원가입")
+                    .font(.headline)
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(40)
             }
             Spacer()
         }.padding()
     }
 }
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
