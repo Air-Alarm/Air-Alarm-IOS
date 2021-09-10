@@ -20,11 +20,11 @@ struct ContentView: View {
     @State var TitleOfTab = AppMenu.AList.rawValue
 
     var body: some View {
-    
+        
       return NavigationView {
           ZStack {
               Color.white.edgesIgnoringSafeArea(.all) //전체화면 색상
-              
+            
             VStack{
                 Image("icon")
                     .resizable()
@@ -50,9 +50,9 @@ struct ContentView: View {
       .navigationBarBackButtonHidden(true)
 }
 
-//  private var isLoginDisabled: Bool {
-//    authenticator.isAuthenticating || userName.isEmpty || password.isEmpty
-//  }
+  private var isLoginDisabled: Bool {
+    authenticator.isAuthenticating || userName.isEmpty || password.isEmpty
+  }
 }
 
 private extension ContentView {
@@ -60,36 +60,34 @@ private extension ContentView {
     var login: some View {
         VStack{
             Spacer()
+            
             NavigationLink(
-                destination: MainTabView(TitleOfNavi: $TitleOfTab)
+                destination: MainTabView()
                     .navigationBarHidden(false)
                     .navigationBarBackButtonHidden(true)
                     .navigationBarTitle(Text(TitleOfTab), displayMode: .inline)
-                    .navigationBarItems(leading: ChangeleadingItem(TitleOfTab), trailing: ChangetrailingItem(TitleOfTab))
+                    .navigationBarItems(leading: ChangeleadingItem(), trailing: ChangetrailingItem())
                     .navigationBarColor(.white)
                     
             ){
-                Text("로그인")
-                    .font(.headline)
-                    .foregroundColor(.blue)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(Color.blue, lineWidth: 1)
-                            .frame(width: 90, height: 50)
-                    )
-                
-//  아이디 비밀번호 확인하는 버튼 + 시간 표시 돌아가는 효과
-//                Button(
-//                    authenticator.isAuthenticating ? "Please wait" : "로그인"
-//                ) {
-//                  authenticator.login(username: userName, password: password)
-//
-//                }
-//                .disabled(isLoginDisabled)
-//                ProgressView() // 시간 표시 돌아가는 것
-//                  .progressViewStyle(CircularProgressViewStyle())
-//                  .opacity(authenticator.isAuthenticating ? 1.0 : 0.0)
+//             아이디 비밀번호 확인하는 버튼 + 시간 표시 돌아가는 효과
+                Button(
+                    authenticator.isAuthenticating ? "Please wait" : "로그인"
+                ) {
+                    authenticator.login(username: userName, password: password)
+                    }
+                .disabled(isLoginDisabled)
+                .font(.headline)
+                .foregroundColor(.blue)
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 30)
+                        .stroke(Color.blue, lineWidth: 1)
+                        .frame(width: 90, height: 50)
+                )
+    //            ProgressView() // 시간 표시 돌아가는 것
+    //                .progressViewStyle(CircularProgressViewStyle())
+    //                .opacity(authenticator.isAuthenticating ? 1.0 : 0.0)
             }
             Spacer()
         }.padding()
