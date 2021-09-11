@@ -10,35 +10,45 @@ import Foundation
 
 class Api {
     struct User: Codable {
-        var userId: String = ""
-        var password: String = ""
+        var user: String = ""
+        var pwd: String = ""
         var email: String = ""
-        var snKey: String = ""
+        var SN: String = ""
+        var signup: String = ""
     }
     
-    var signDB = User()
+    struct signDB: Codable {
+        var signup: String = ""
+        var user: String = ""
+    }
     
     // 객체에 데이터 저장하기
-    func GET(signUp: User) -> User {
-        if let url = URL(string: "http://mirsv.com:4999/signup_confirm?user=%22" + signUp.userId +
-                            "%22&pwd=%22" + signUp.password +
-                            "%22&email=%22" + signUp.email +
-                            "%22&SN=%22" + signUp.snKey + "%22") {
+    func GET(signUp: User) -> signDB {
+        var signDBB = signDB()
+        if let url = URL(string: "http://mirsv.com:4999/signup_confirm?user=" + signUp.user +
+                            "&pwd=" + signUp.pwd +
+                            "&email=" + signUp.email +
+                            "SN=" + signUp.SN ) {
             var request = URLRequest.init(url: url)
 
             request.httpMethod = "GET"
 
-//            URLSession.shared.dataTask(with: request) { (data, response, error) in
-//                guard let data = data else { return }
-//
-//                // data
-//                let decoder = JSONDecoder()
-//                if let json = try? decoder.decode(User.self, from: data) {
-//                    self.signDB = json
-//                }
-//            }.resume()
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
+
+                // data
+                let decoder = JSONDecoder()
+                
+                if let json = try? decoder.decode(Api.signDB.self, from: data) {
+                    signDBB = json
+                    print("json")
+                    print(json)
+                }
+            }.resume()
         }
-        return self.signDB
+        print(signDBB)
+        print("aaaaaa")
+        return signDBB
     }
 }
 
