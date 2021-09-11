@@ -6,13 +6,20 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct BList: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            ScrollView(.vertical, showsIndicators: false, content: {
+                HStack {
+                    LineView(data: Data.data0, title: Data.title, legend: Data.legend, style: Style.metoring, valueSpecifier: Data.valueSpecifier).padding()
+                    LineView(data: Data.data0, title: Data.title, legend: Data.legend, style: Style.metoring, valueSpecifier: Data.valueSpecifier).padding()
+                }
+            })
+        }
     }
 }
-
 struct BList_Previews: PreviewProvider {
     static var previews: some View {
         BList()

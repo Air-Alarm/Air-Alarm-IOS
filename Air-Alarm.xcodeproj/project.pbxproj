@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F626BC42AB009C1D21 /* AList.swift */; };
 		2AEAB2F926BC42CB009C1D21 /* BList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F826BC42CB009C1D21 /* BList.swift */; };
 		2AEAB2FB26BC42E2009C1D21 /* CList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2FA26BC42E2009C1D21 /* CList.swift */; };
+		F7C43CC426EB00CB00DD3229 /* ChartsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C43CC326EB00CB00DD3229 /* ChartsStyle.swift */; };
+		F7C43CC626EB00DC00DD3229 /* ChartsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C43CC526EB00DC00DD3229 /* ChartsData.swift */; };
+		F7C43CC926EB012800DD3229 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = F7C43CC826EB012800DD3229 /* SwiftUICharts */; };
 		F95CD7A326C7E9FB00CDDFA5 /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95CD7A226C7E9FB00CDDFA5 /* RestAPI.swift */; };
 		F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */; };
 		F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBAB26BC3D050061A4A2 /* ContentView.swift */; };
@@ -52,6 +55,8 @@
 		2AEAB2F626BC42AB009C1D21 /* AList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AList.swift; sourceTree = "<group>"; };
 		2AEAB2F826BC42CB009C1D21 /* BList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BList.swift; sourceTree = "<group>"; };
 		2AEAB2FA26BC42E2009C1D21 /* CList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CList.swift; sourceTree = "<group>"; };
+		F7C43CC326EB00CB00DD3229 /* ChartsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsStyle.swift; sourceTree = "<group>"; };
+		F7C43CC526EB00DC00DD3229 /* ChartsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsData.swift; sourceTree = "<group>"; };
 		F95CD7A226C7E9FB00CDDFA5 /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 		F987CBA626BC3D050061A4A2 /* Air-Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air-Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air_AlarmApp.swift; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C43CC926EB012800DD3229 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +118,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		F7C43CC226EB00A700DD3229 /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				F7C43CC326EB00CB00DD3229 /* ChartsStyle.swift */,
+				F7C43CC526EB00DC00DD3229 /* ChartsData.swift */,
+			);
+			path = ChartView;
+			sourceTree = "<group>";
+		};
 		F987CB9D26BC3D050061A4A2 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +150,7 @@
 		F987CBA826BC3D050061A4A2 /* Air-Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				F7C43CC226EB00A700DD3229 /* ChartView */,
 				2A26A4B326DB5EBD00670DFB /* Tab */,
 				F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */,
 				F987CBAB26BC3D050061A4A2 /* ContentView.swift */,
@@ -192,6 +208,9 @@
 			dependencies = (
 			);
 			name = "Air-Alarm";
+			packageProductDependencies = (
+				F7C43CC826EB012800DD3229 /* SwiftUICharts */,
+			);
 			productName = "Air-Alarm";
 			productReference = F987CBA626BC3D050061A4A2 /* Air-Alarm.app */;
 			productType = "com.apple.product-type.application";
@@ -263,6 +282,9 @@
 				Base,
 			);
 			mainGroup = F987CB9D26BC3D050061A4A2;
+			packageReferences = (
+				F7C43CC726EB012800DD3229 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = F987CBA726BC3D050061A4A2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -311,8 +333,10 @@
 				2AEAB2F926BC42CB009C1D21 /* BList.swift in Sources */,
 				2A996A5826C812460088BAB6 /* Authenticator.swift in Sources */,
 				2A996A5626C80F9A0088BAB6 /* RootView.swift in Sources */,
+				F7C43CC626EB00DC00DD3229 /* ChartsData.swift in Sources */,
 				F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */,
 				2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */,
+				F7C43CC426EB00CB00DD3229 /* ChartsStyle.swift in Sources */,
 				2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */,
 				2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */,
 				2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */,
@@ -636,6 +660,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F7C43CC726EB012800DD3229 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F7C43CC826EB012800DD3229 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C43CC726EB012800DD3229 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F987CB9E26BC3D050061A4A2 /* Project object */;
 }

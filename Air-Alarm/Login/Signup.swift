@@ -7,31 +7,33 @@
 
 import SwiftUI
 
+
 struct Signup: View {
-    
+        let signAPI = Api()
         @State private var action: Int? = 0
-        @State private var userName: String = ""
-        @State private var password: String = ""
-        @State private var password2: String = ""
-        @State private var email: String = ""
-        @State private var sN: String = ""
+        @State var signUp = Api.User()
+        @State var actionn: Int? = nil
         
+    func signUpup() {
+        signAPI.GET(signUp: self.signUp)
+            print("ffff")
+        }
+    
         var body: some View {
+
             return NavigationView {
                 VStack {
                     
-                    UnderlineTextFieldView(text: $userName, textField: textView, placeholder: "")
+                    UnderlineTextFieldView(text: $signUp.userId, textField: textView, placeholder: "")
                         .padding(.top, 50)
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
                                         
-                    UnderlineTextFieldView(text: $password, textField: passwordView, placeholder: "")
+                    UnderlineTextFieldView(text: $signUp.password, textField: passwordView, placeholder: "")
                         .padding(.top, 10)
-                    UnderlineTextFieldView(text: $password2, textField: password2View, placeholder: "")
+                    UnderlineTextFieldView(text: $signUp.email, textField: emailView, placeholder: "")
                         .padding(.top, 10)
-                    UnderlineTextFieldView(text: $email, textField: emailView, placeholder: "")
-                        .padding(.top, 10)
-                    UnderlineTextFieldView(text: $sN, textField: snView, placeholder: "")
+                    UnderlineTextFieldView(text: $signUp.snKey, textField: snView, placeholder: "")
                         .padding(.top, 10)
                     
                     HStack{
@@ -58,29 +60,25 @@ struct Signup: View {
 }
 
 private extension Signup {
+    
     // TextField 정보
      var textView: some View {
-          TextField("아이디", text: $userName)
+          TextField("아이디", text: $signUp.userId)
             .foregroundColor(.black)
      }
 
      var passwordView: some View {
-          SecureField("비밀번호", text: $password)
+          SecureField("비밀번호", text: $signUp.password)
             .foregroundColor(.black)
      }
-    
-    var password2View: some View {
-         SecureField("비밀번호확인", text: $password2)
-            .foregroundColor(.black)
-    }
     var emailView: some View {
-         TextField("Email", text: $email)
+        TextField("Email", text: $signUp.email)
             .foregroundColor(.black)
             .keyboardType(.emailAddress)
             .autocapitalization(.none)
     }
     var snView: some View {
-         TextField("기기 S/N", text: $sN)
+        TextField("기기 S/N", text: $signUp.snKey)
             .foregroundColor(.black)
     }
     // 뒤로가기 버튼
@@ -107,7 +105,15 @@ private extension Signup {
     var login: some View {
         VStack{
             Spacer()
-            NavigationLink( destination: ContentView()
+            
+            NavigationLink(destination: ContentView(), tag: 10, selection: $actionn) {
+                EmptyView()
+            }
+
+            Button ( action: {
+                signUpup()
+                self.actionn = 10
+            }
             ){
                 Text("가입하기")
                     .font(.headline)
@@ -119,6 +125,8 @@ private extension Signup {
             Spacer()
         }.padding()
     }
+    
+    
 }
 
 struct Signup_Previews: PreviewProvider {
