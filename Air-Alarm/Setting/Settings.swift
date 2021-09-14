@@ -52,12 +52,11 @@ struct Settings: View {
                             .cornerRadius(40)
                     }
             }
-            .navigationBarHidden(false)
-            .navigationBarTitle(Text("Setting"), displayMode: .inline)
-            .navigationBarColor(.white)
         }
-            
-                
+        .navigationBarHidden(false)
+        .navigationBarBackButtonHidden(false)
+        .navigationBarTitle(Text("Setting"), displayMode: .inline)
+        .navigationBarColor(.white)
     }
 }
 
