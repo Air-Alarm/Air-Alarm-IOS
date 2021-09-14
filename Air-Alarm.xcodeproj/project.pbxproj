@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A996A5426C7ED4C0088BAB6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5326C7ED4C0088BAB6 /* LoginView.swift */; };
+		2A26A4B026DA68BF00670DFB /* UnderLineTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A26A4AF26DA68BF00670DFB /* UnderLineTextFieldView.swift */; };
+		2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */; };
+		2A996A5626C80F9A0088BAB6 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5526C80F9A0088BAB6 /* RootView.swift */; };
+		2A996A5826C812460088BAB6 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5726C812460088BAB6 /* Authenticator.swift */; };
+		2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5926C8285D0088BAB6 /* Signup.swift */; };
+		2AE97BC226EFA6D900A48108 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE97BC126EFA6D900A48108 /* Settings.swift */; };
+		2AE97BC526EFAB7400A48108 /* myInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE97BC426EFAB7400A48108 /* myInfo.swift */; };
 		2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F426BC424B009C1D21 /* MainTabView.swift */; };
 		2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F626BC42AB009C1D21 /* AList.swift */; };
 		2AEAB2F926BC42CB009C1D21 /* BList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F826BC42CB009C1D21 /* BList.swift */; };
@@ -39,7 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A996A5326C7ED4C0088BAB6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2A26A4AF26DA68BF00670DFB /* UnderLineTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextFieldView.swift; sourceTree = "<group>"; };
+		2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarColor.swift; sourceTree = "<group>"; };
+		2A996A5526C80F9A0088BAB6 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		2A996A5726C812460088BAB6 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
+		2A996A5926C8285D0088BAB6 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
+		2AE97BC126EFA6D900A48108 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		2AE97BC426EFAB7400A48108 /* myInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myInfo.swift; sourceTree = "<group>"; };
 		2AEAB2F426BC424B009C1D21 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2AEAB2F626BC42AB009C1D21 /* AList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AList.swift; sourceTree = "<group>"; };
 		2AEAB2F826BC42CB009C1D21 /* BList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BList.swift; sourceTree = "<group>"; };
@@ -84,12 +96,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A26A4B326DB5EBD00670DFB /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				2AEAB2F426BC424B009C1D21 /* MainTabView.swift */,
+				2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
 		2A996A4C26C781990088BAB6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				2A996A5326C7ED4C0088BAB6 /* LoginView.swift */,
+				2A996A5526C80F9A0088BAB6 /* RootView.swift */,
+				2A996A5726C812460088BAB6 /* Authenticator.swift */,
+				2A996A5926C8285D0088BAB6 /* Signup.swift */,
+				2A26A4AF26DA68BF00670DFB /* UnderLineTextFieldView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		2AE97BC326EFAB5400A48108 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2AE97BC126EFA6D900A48108 /* Settings.swift */,
+				2AE97BC426EFAB7400A48108 /* myInfo.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		F987CB9D26BC3D050061A4A2 = {
@@ -115,12 +148,13 @@
 		F987CBA826BC3D050061A4A2 /* Air-Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				2A26A4B326DB5EBD00670DFB /* Tab */,
 				F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */,
 				F987CBAB26BC3D050061A4A2 /* ContentView.swift */,
 				F987CBAD26BC3D050061A4A2 /* Assets.xcassets */,
-				2AEAB2F426BC424B009C1D21 /* MainTabView.swift */,
 				2A996A4C26C781990088BAB6 /* Login */,
 				F987CBB226BC3D050061A4A2 /* Info.plist */,
+				2AE97BC326EFAB5400A48108 /* Setting */,
 				2AEAB2F626BC42AB009C1D21 /* AList.swift */,
 				2AEAB2F826BC42CB009C1D21 /* BList.swift */,
 				2AEAB2FA26BC42E2009C1D21 /* CList.swift */,
@@ -287,12 +321,18 @@
 			files = (
 				F95CD7A326C7E9FB00CDDFA5 /* RestAPI.swift in Sources */,
 				F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */,
-				2A996A5426C7ED4C0088BAB6 /* LoginView.swift in Sources */,
+				2AE97BC226EFA6D900A48108 /* Settings.swift in Sources */,
 				2AEAB2FB26BC42E2009C1D21 /* CList.swift in Sources */,
 				2AEAB2F926BC42CB009C1D21 /* BList.swift in Sources */,
+				2A996A5826C812460088BAB6 /* Authenticator.swift in Sources */,
+				2A996A5626C80F9A0088BAB6 /* RootView.swift in Sources */,
+				2AE97BC526EFAB7400A48108 /* myInfo.swift in Sources */,
 				F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */,
+				2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */,
+				2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */,
 				2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */,
 				2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */,
+				2A26A4B026DA68BF00670DFB /* UnderLineTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

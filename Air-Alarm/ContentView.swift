@@ -7,136 +7,111 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
-    @State var TitleOfTab = AppMenu.AList.rawValue
     
-    var body: some View {
-        return NavigationView {
-            ZStack {
-                Color.white.edgesIgnoringSafeArea(.all)
-                //전체화면 색상
-                
-                VStack{
-                    LoginAction
-                }
-            }
-            // navigation option
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
-        }
+    private enum Tabs {
+        case AList, BList, CList
     }
+    
+    @EnvironmentObject var authenticator: Authenticator
+    @State private var userName: String = ""
+    @State private var password: String = ""
+
+    var body: some View {
+        
+      return NavigationView {
+          ZStack {
+              Color.white.edgesIgnoringSafeArea(.all) //전체화면 색상
+            
+            VStack{
+                Image("icon")
+                    .resizable()
+                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .padding()
+                  TextField("아이디", text: $userName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                  SecureField("비밀번호", text: $password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                HStack{
+                    login //로그인 버튼
+                    SignUpView //회원가입 창
+                }
+              }
+              .frame(maxWidth: 320)
+              .padding(.horizontal)
+          }
+      }
+      .navigationBarHidden(true)
+      .navigationBarBackButtonHidden(true)
 }
 
-//private extension ContentView {
-//    var LoginViewer: some View {
-//        HStack{
-//            Spacer()
-//            NavigationLink(
-//                destination: LoginView,
-//                label: {
-//                })
-//        }
-//    }
-//}
+  private var isLoginDisabled: Bool {
+    authenticator.isAuthenticating || userName.isEmpty || password.isEmpty
+  }
+}
 
 private extension ContentView {
     
-    var LoginAction: some View {
-        HStack{
+    var login: some View {
+        VStack{
             Spacer()
-            NavigationLink( destination: MainTabView(TitleOfNavi: $TitleOfTab)
-                                .navigationBarHidden(false)
-                                .navigationBarBackButtonHidden(true)
-                                .navigationBarTitle(Text(TitleOfTab), displayMode: .inline)
-                                .navigationBarItems(leading: ChangeleadingItem(TitleOfTab), trailing: ChangetrailingItem(TitleOfTab))
+            
+            NavigationLink(
+                destination: MainTabView()
+                    .navigationBarHidden(false)
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarTitle(Text("Air Alarm"), displayMode: .inline)    // tab 이름
+                    .navigationBarItems(leading: ChangeleadingItem(), trailing: ChangetrailingItem())
+                    .navigationBarColor(.white)
+                    
             ){
-                Text("App Main Login View")
-                
+//             아이디 비밀번호 확인하는 버튼 + 시간 표시 돌아가는 효과
+                Button(
+                    authenticator.isAuthenticating ? "Please wait" : "로그인"
+                ) {
+                    authenticator.login(username: userName, password: password)
+                    }
+                .disabled(isLoginDisabled)
+                .font(.headline)
+                .foregroundColor(.blue)
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 30)
+                        .stroke(Color.blue, lineWidth: 1)
+                        .frame(width: 90, height: 50)
+                )
+    //            ProgressView() // 시간 표시 돌아가는 것
+    //                .progressViewStyle(CircularProgressViewStyle())
+    //                .opacity(authenticator.isAuthenticating ? 1.0 : 0.0)
+            }
+            Spacer()
+        }.padding()
+    }
+    
+    var SignUpView: some View {
+        VStack{
+            Spacer()
+            NavigationLink(
+                destination: Signup()
+            ){
+                Text("회원가입")
+                    .font(.headline)
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(40)
             }
             Spacer()
         }.padding()
     }
 }
 
-private extension ContentView {
-    
-    func ChangeleadingItem(_ TitleName:String ) -> AnyView {
-        switch TitleName {
-        case AppMenu.AList.rawValue: do {
-                return AnyView(HStack{
-                    Button(action: {print("Button 1")}) {
-                        Image(systemName: "bell")
-                    }
-                })
-            }
-        case AppMenu.BList.rawValue: do {
-                return AnyView(HStack{
-                    Button(action: { print("Button 1")}) {
-                        Image(systemName: "bell")
-                    }
-                })
-            }
-        case AppMenu.CList.rawValue: do {
-                return AnyView(HStack{
-                    Button(action: { print("Button 1")}) {
-                        Image(systemName: "bell")
-                    }
-                })
-            }
-        default:do {
-                return AnyView(HStack{
-                    Button(action: { print("Button 1")}) {
-                        Image(systemName: "bell")
-                    }
-                })
-            }
-        }
-    }
-}
-
-private extension ContentView {
-    func ChangetrailingItem(_ TitleName:String ) -> AnyView {
-        
-        switch TitleName {
-        case AppMenu.AList.rawValue: do {
-            return AnyView(HStack{
-                Button(action: {print("Button 2")}) {
-                    Image(systemName: "square.and.arrow.up")
-                }
-            })
-        }
-        case AppMenu.BList.rawValue: do {
-            return AnyView(HStack{
-                Button(action: { print("Button 2")}) {
-                    Image(systemName: "square.and.arrow.up")
-                }
-                Button(action: { print("Button 3")}){
-                    Image(systemName: "gear")
-                }
-                .imageScale(.large)
-            })
-        }
-        case AppMenu.CList.rawValue: do {
-            return AnyView(HStack{
-                Button(action: { print("Button 1")}) {
-                    Image(systemName: "bell")
-                }
-            })
-        }
-        default:do {
-            return AnyView(HStack{
-                Button(action: { print("Button 1")}) {
-                    Image(systemName: "bell")
-                }
-            })
-        }
-        }
-    }
-}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Authenticator())
     }
 }
