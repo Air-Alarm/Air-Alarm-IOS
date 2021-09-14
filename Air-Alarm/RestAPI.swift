@@ -20,7 +20,7 @@ class RestAPI {
     
     // 객체에 데이터 저장하기
     func GET() -> Database {
-        if let url = URL(string: "http://mirsv.com:5000/get") {
+        if let url = URL(string: "http://mirsv.com:4999/signup_confirm?user=%22qweasd%22&pwd=%22qweasd%22&pwd_c=%22qweasd%22&email=%22qweasd@gmail.com%22&SN=%22qweasd%22") {
             var request = URLRequest.init(url: url)
 
             request.httpMethod = "GET"
