@@ -19,17 +19,17 @@ struct AListView: View {
     
     var body: some View {
         VStack {
-            HStack{ // air alarm 글씨
-                Text("Air Alarm")
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                
-                Spacer()
-            }
-            .padding()
-            .background(Color.white.ignoresSafeArea(.all, edges: .top))
-            Divider()
+//            HStack{ // air alarm 글씨
+//                Text("Air Alarm")
+//                    .font(.largeTitle)
+//                    .fontWeight(.heavy)
+//                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+//
+//                Spacer()
+//            }
+//            .padding()
+//            .background(Color.white.ignoresSafeArea(.all, edges: .top))
+//            Divider()
             
             ScrollView(.vertical, showsIndicators: false, content: {
                 
@@ -64,44 +64,74 @@ struct AListView: View {
                 }
                 .frame(width: 0, height: 0)
                 
-                ZStack(alignment: Alignment(horizontal: .center, vertical:
-                    .top)) {
+                ZStack (alignment: Alignment(horizontal: .center, vertical:
+                    .top)){
                     
                     if refresh.started && refresh.released{
                         ProgressView()
                             .offset(y: -35)
                     }
-                    else{
-                        Image(systemName: "arrow.down")
-                            .font(.system(size: 16, weight: .heavy))
-                            .foregroundColor(.gray)
-                            .rotationEffect(.init(degrees: refresh.started ? 180 : 0))
-                            .offset(y: -25)
-                            .animation(.easeIn)
-                    }
+//                    else{
+//                        Image(systemName: "arrow.down")
+//                            .font(.system(size: 16, weight: .heavy))
+//                            .foregroundColor(.gray)
+//                            .rotationEffect(.init(degrees: refresh.started ? 180 : 0))
+//                            .offset(y: -25)
+//                            .animation(.easeIn)
+//                    }
                     
                     VStack {
                        // Button(action: GET){
                        //     Text("버튼")
                        // }
-                        Text("CO2: " + String(db.CO2))
-                        Text("Dust: " + String(db.dust))
-                        Text("Humidity: " + String(db.humidity))
-                        Text("ID: " + String(db.id))
-                        Text("Temperature: " + String(db.temperature))
-                        Text("Time: " + db.time)
+//                        Text("CO2: " + String(db.CO2))
+//                        Text("Dust: " + String(db.dust))
+//                        Text("Humidity: " + String(db.humidity))
+//                        Text("ID: " + String(db.id))
+//                        Text("Temperature: " + String(db.temperature))
+//                        Text("Time: " + db.time)
+                        
+                        HStack {
+                            Text("온도 :  " + String(db.temperature))
+                                .padding()
+                            Spacer()
+                        }
+                        HStack {
+                            Text("습도 :  " + String(db.humidity))
+                                .padding()
+                            Spacer()
+                        }
+                        HStack {
+                            Text("CO2 :  " + String(db.CO2))
+                                .padding()
+                            Spacer()
+                        }
+                        HStack {
+                            Text("PM2.5 :  " + String(db.dust))
+                                .padding()
+                            Spacer()
+                        }
+                        HStack {
+                            Text("ID: " + String(db.id))
+                                .padding()
+                            Spacer()
+                        }
+                        HStack {
+                            Text("Time: " + db.time)
+                                .padding()
+                            Spacer()
+                        }
                         
                         Text("\(json)")//웹에서 받아온 내용이 여기 저장됨
                             .padding()
                         
                     }
                     .background(Color.white)
-                    
                 }
                 .offset(y: refresh.released ? 40 : -10)
             })
         }
-        .background(Color.black.opacity(0.06).ignoresSafeArea())
+        //.background(Color.black.opacity(0.06).ignoresSafeArea())
     }
     func updateData(){
         
@@ -123,6 +153,7 @@ struct AListView: View {
         }
     }
 }
+
 
 //새로고침
 struct Refresh {
