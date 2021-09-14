@@ -16,8 +16,6 @@ struct ContentView: View {
     @EnvironmentObject var authenticator: Authenticator
     @State private var userName: String = ""
     @State private var password: String = ""
-    @State private var selectedTab: Tabs = .AList
-    @State var TitleOfTab = AppMenu.AList.rawValue
 
     var body: some View {
         
@@ -65,7 +63,7 @@ private extension ContentView {
                 destination: MainTabView()
                     .navigationBarHidden(false)
                     .navigationBarBackButtonHidden(true)
-                    .navigationBarTitle(Text(TitleOfTab), displayMode: .inline)
+                    .navigationBarTitle(Text("Air Alarm"), displayMode: .inline)    // tab 이름
                     .navigationBarItems(leading: ChangeleadingItem(), trailing: ChangetrailingItem())
                     .navigationBarColor(.white)
                     

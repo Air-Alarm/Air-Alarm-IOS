@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class Api {
     struct User: Codable {
         var user: String = ""

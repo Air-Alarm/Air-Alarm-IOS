@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-enum AppMenu : String {
-    case AList = "Tab 1"
-    case BList = "Tab 2"
-    case CList = "Tab 3"
-}
 // 하단 Tab
 //struct MainTabView: View {
 //    private enum Tabs {
@@ -22,7 +17,7 @@ enum AppMenu : String {
 //    @Binding var TitleOfNavi: String
 //
 //    var body: some View {
-//            ZStack {
+//            ZStack
 ////                TabView(selection: $selectedTab) {
 ////                    Group{
 ////                        AListUI
@@ -83,16 +78,28 @@ func ChangeleadingItem() -> AnyView {
 // 오른쪽 상단 Tab
     func ChangetrailingItem() -> AnyView {
             return AnyView(
-                HStack{
-                    Button(action: { print("Button 2")}
-                    ){
-                        Image(systemName: "bell")
-                    }
-                    Button(action: { print("Button 3")}
-                    ){
-                        Image(systemName: "gearshape")
-                    }
-            })
+                VStack{
+                    NavigationLink(
+                        destination: Settings(),
+                        label: {
+                            Image(systemName: "gearshape")
+                        }
+                    )
+//                        Button(action: { print("Button 3")}
+//                        ){
+//                            Image(systemName: "gearshape")
+//                        }
+//                    NavigationLink(
+//                        destination: alarmView()
+//                    ){
+//                    Button(action: { print("Button 2")}
+//                    ){
+//                        Image(systemName: "bell")
+//                    }
+//                  }
+                }
+
+            )
         }
 
 
