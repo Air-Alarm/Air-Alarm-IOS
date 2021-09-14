@@ -154,6 +154,7 @@ struct AListView: View {
     }
 }
 
+
 //새로고침
 struct Refresh {
     var startOffset : CGFloat = 0
