@@ -7,158 +7,111 @@
 
 import SwiftUI
 
-
-
 struct ContentView: View {
+    
+    private enum Tabs {
+        case AList, BList, CList
+    }
+    
+    @EnvironmentObject var authenticator: Authenticator
+    @State private var userName: String = ""
+    @State private var password: String = ""
+
     var body: some View {
-       Home()
+        
+      return NavigationView {
+          ZStack {
+              Color.white.edgesIgnoringSafeArea(.all) //전체화면 색상
+            
+            VStack{
+                Image("icon")
+                    .resizable()
+                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .padding()
+                  TextField("아이디", text: $userName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                  SecureField("비밀번호", text: $password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                HStack{
+                    login //로그인 버튼
+                    SignUpView //회원가입 창
+                }
+              }
+              .frame(maxWidth: 320)
+              .padding(.horizontal)
+          }
+      }
+      .navigationBarHidden(true)
+      .navigationBarBackButtonHidden(true)
+}
+
+  private var isLoginDisabled: Bool {
+    authenticator.isAuthenticating || userName.isEmpty || password.isEmpty
+  }
+}
+
+private extension ContentView {
+    
+    var login: some View {
+        VStack{
+            Spacer()
+            
+            NavigationLink(
+                destination: MainTabView()
+                    .navigationBarHidden(false)
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarTitle(Text("Air Alarm"), displayMode: .inline)    // tab 이름
+                    .navigationBarItems(leading: ChangeleadingItem(), trailing: ChangetrailingItem())
+                    .navigationBarColor(.white)
+                    
+            ){
+//             아이디 비밀번호 확인하는 버튼 + 시간 표시 돌아가는 효과
+                Button(
+                    authenticator.isAuthenticating ? "Please wait" : "로그인"
+                ) {
+                    authenticator.login(username: userName, password: password)
+                    }
+                .disabled(isLoginDisabled)
+                .font(.headline)
+                .foregroundColor(.blue)
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 30)
+                        .stroke(Color.blue, lineWidth: 1)
+                        .frame(width: 90, height: 50)
+                )
+    //            ProgressView() // 시간 표시 돌아가는 것
+    //                .progressViewStyle(CircularProgressViewStyle())
+    //                .opacity(authenticator.isAuthenticating ? 1.0 : 0.0)
+            }
+            Spacer()
+        }.padding()
+    }
+    
+    var SignUpView: some View {
+        VStack{
+            Spacer()
+            NavigationLink(
+                destination: Signup()
+            ){
+                Text("회원가입")
+                    .font(.headline)
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(40)
+            }
+            Spacer()
+        }.padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Authenticator())
     }
-}
-
-struct Home: View {
-    @State var json :  String = "아래로 당겨서 새로고침"
-    
-    
-    func callREST() {
-        do {
-            let url = URL(string: "http://mirsv.com:5000/get")
-            let response = try String(contentsOf: url!)
-            
-            self.json = response
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-    }
-
-    
-    
-    @State var arrayData = ["20210724", "9:58", "0.0", "0.0", "0"]
-    @State var refresh = Refresh(started: false, released: false)
-    
-    var body: some View{
-        VStack{
-            HStack{
-                Text("Air Alarm")
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                
-                Spacer()
-            }
-            .padding()
-            .background(Color.white.ignoresSafeArea(.all, edges: .top))
-            
-            Divider()
-            
-            ScrollView(.vertical, showsIndicators: false, content: {
-                
-                GeometryReader{reader -> AnyView in
-                    
-                    DispatchQueue.main.async{
-                        
-                        if refresh.startOffset == 0{
-                            refresh.startOffset = reader.frame(in: .global).minY
-                        }
-                        refresh.offset = reader.frame(in: .global).minY
-                        
-                        if refresh.offset - refresh.startOffset > 80 && !refresh.started{
-                            
-                            refresh.started = true
-                        }
-                        
-                        if refresh.startOffset == refresh.offset && refresh.started && !refresh.released{
-                            
-                            withAnimation(Animation.linear){refresh.released = true}
-                            updateData()
-                        }
-                        // 유효하지 않은지 확인
-                        if refresh.startOffset == refresh.offset && refresh.started && refresh.released && refresh.invalid{
-                            
-                            refresh.invalid = false
-                            updateData()
-                        }
-                    }
-                    
-                    return AnyView(Color.black.frame(width: 0, height: 0))
-                }
-                .frame(width: 0, height: 0)
-                
-                ZStack(alignment: Alignment(horizontal: .center, vertical:
-                    .top)) {
-                    
-                    if refresh.started && refresh.released{
-                        ProgressView()
-                            .offset(y: -35)
-                    }
-                    else{
-                        Image(systemName: "arrow.down")
-                            .font(.system(size: 16, weight: .heavy))
-                            .foregroundColor(.gray)
-                            .rotationEffect(.init(degrees: refresh.started ? 180 : 0))
-                            .offset(y: -25)
-                            .animation(.easeIn)
-                    }
-                    
-                    VStack {
-                        ForEach(arrayData,id: \.self){value in
-                            HStack{
-                                Text(value)
-                                Spacer()
-                                //Image(systemName: "chevron.right")
-                                    .foregroundColor(.black)
-                            }
-                            .padding()
-                        }
-                        
-                        
-                        Text("\(json)")//웹에서 받아온 내용이 여기 저장됨
-                            .padding()
-                        
-                        
-                        
-                        
-                    }
-                    .background(Color.white)
-                    
-                }
-                .offset(y: refresh.released ? 40 : -10)
-            })
-        }
-        .background(Color.black.opacity(0.06).ignoresSafeArea())
-    }
-    func updateData(){
-        
-        print("update Data")
-        
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            withAnimation(Animation.linear){
-                
-                if refresh.startOffset == refresh.offset{
-                    callREST()
-                    refresh.released = false
-                    refresh.started = false
-                }
-                else{
-                    refresh.invalid = true
-                }
-            }
-        }
-    }
-}
-
-// 새로고침
-
-struct Refresh {
-    var startOffset : CGFloat = 0
-    var offset : CGFloat = 0
-    var started : Bool
-    var released: Bool
-    var invalid : Bool = false
 }
