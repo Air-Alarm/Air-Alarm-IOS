@@ -54,18 +54,31 @@ struct ContentView: View {
 
 private extension ContentView {
     
+    func verity(userName: String, pwd: String) -> AnyView {
+        struct signDB: Codable {
+            var signup: String = ""
+            var user: String = ""
+        }
+        
+        var pass = false
+        
+        if pass {
+            return MainTabView()
+                .navigationBarHidden(false)
+                .navigationBarBackButtonHidden(true)
+                .navigationBarTitle(Text("Air Alarm"), displayMode: .inline)    // tab 이름
+                .navigationBarItems(leading: ChangeleadingItem(), trailing: ChangetrailingItem()) as! AnyView
+        }else{
+            return AnyView(ContentView())
+        }
+    }
+    
     var login: some View {
         VStack{
             Spacer()
             
             NavigationLink(
-                destination: MainTabView()
-                    .navigationBarHidden(false)
-                    .navigationBarBackButtonHidden(true)
-                    .navigationBarTitle(Text("Air Alarm"), displayMode: .inline)    // tab 이름
-                    .navigationBarItems(leading: ChangeleadingItem(), trailing: ChangetrailingItem())
-                    .navigationBarColor(.white)
-                    
+                destination: verity(userName: self.userName, pwd: self.password)
             ){
 //             아이디 비밀번호 확인하는 버튼 + 시간 표시 돌아가는 효과
                 Button(
