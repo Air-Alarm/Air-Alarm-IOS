@@ -92,28 +92,28 @@ struct AListView: View {
 //                        Text("Time: " + db.time)
                         
                         HStack {
-                            Text("온도 :  " + String(db.temperature) + " °C")
-                                .padding()
+
+                            Text("온도 :  " + String(db.temperature) + " °C").padding()
                             Spacer()
                         }
                         HStack {
-                            Text("습도 :  " + String(db.humidity) + " %")
-                                .padding()
+
+                            Text("습도 :  " + String(db.humidity) + " %").padding()
                             Spacer()
                         }
                         HStack {
-                            Text("CO₂ :  " + String(db.CO2) + " ppm")
-                                .padding()
+
+                            Text("CO₂ :  " + String(db.CO2) + " ppm").padding()
                             Spacer()
                         }
                         HStack {
-                            Text("PM2.5 :  " + String(db.dust) + " ㎍/m³")
-                                .padding()
+
+                            Text("PM2.5 :  " + String(db.dust) + " ㎍/m³").padding()
                             Spacer()
                         }
                         HStack {
-                            Text("측정시간: " + db.time)
-                                .padding()
+
+                            Text("측정시간: " + db.time).padding()
                             Spacer()
                         }
                         
