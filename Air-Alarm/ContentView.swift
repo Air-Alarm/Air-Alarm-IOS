@@ -53,6 +53,10 @@ struct ContentView: View {
 }
 
 private extension ContentView {
+    struct signDB: Codable {
+        var signup: String = ""
+        var user: String = ""
+    }
     
     func verity(userName: String, pwd: String) -> AnyView {
         struct signDB: Codable {
@@ -72,6 +76,33 @@ private extension ContentView {
             return AnyView(ContentView())
         }
     }
+    
+    // 객체에 데이터 저장하기
+    func GET(id: String, pwd: String) -> signDB {
+        var signDBB = signDB()
+        if let url = URL(string: "http://mirsv.com:4999/") {
+            var request = URLRequest.init(url: url)
+
+            request.httpMethod = "GET"
+
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
+
+                // data
+                let decoder = JSONDecoder()
+                
+                if let json = try? decoder.decode(Api.signDB.self, from: data) {
+                    signDBB = json
+                    print("json")
+                    print(json)
+                }
+            }.resume()
+        }
+        print(signDBB)
+        print("aaaaaa")
+        return signDBB
+    }
+
     
     var login: some View {
         VStack{
