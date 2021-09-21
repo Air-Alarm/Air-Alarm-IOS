@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct Login { // 로그인 성공 여부 판단
+struct Login {
     /*
      id: 아이디
-     success: 로그인 성공 여부
+     pwd: 패스워드
      */
     
-    init(id: String, success: Bool) {
+    init(id: String, pwd: String) {
         self.id = id
-        self.success = success
+        self.pwd = pwd
     }
     
     var id: String
-    var success: Bool
+    var pwd: String
 }
