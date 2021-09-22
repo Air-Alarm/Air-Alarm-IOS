@@ -8,54 +8,108 @@
 import Foundation
 
 class RestAPI {
-    struct Database: Codable {
-        var CO2: Double = 0.0
-        var dust: Double = 0.0
-        var humidity: Double = 0.0
-        var id: Int = 0
-        var temperature: Double = 0.0
-        var time: String = ""
-    }
-    var db = Database()
-    
-    // 객체에 데이터 저장하기
-    func GET() -> Database {
-        if let url = URL(string: "http://mirsv.com:4999/signup_confirm?user=%22qweasd%22&pwd=%22qweasd%22&pwd_c=%22qweasd%22&email=%22qweasd@gmail.com%22&SN=%22qweasd%22") {
+    // 실시간 센서 정보 가져오기
+    func GET_Dust() -> DustInfo {
+        var db = DustInfo.init()
+        
+        if let url = URL(string: "http://mirsv.com:5000/get") {
             var request = URLRequest.init(url: url)
 
             request.httpMethod = "GET"
 
-            URLSession.shared.dataTask(with: request) { (data, response, error) in
-                guard let data = data else { return }
+            DispatchQueue.global().sync {
+                URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    guard let data = data else { return }
 
-                // data
-                let decoder = JSONDecoder()
-                if let json = try? decoder.decode(Database.self, from: data) {
-                    self.db = json
-                }
-            }.resume()
+                    // get
+                    let decoder = JSONDecoder()
+                    if let json = try? decoder.decode(DustInfo.self, from: data) {
+                        db = json
+                    }
+                }.resume()
+            }
         }
         
-        return self.db
+        return db
     }
     
-    // 변수에 데이터 직접 저장하긴
-//    func GET1(){
-//        if let url = URL(string: "http://mirsv.com:5000/get") {
-//            var request = URLRequest.init(url: url)
-//
-//            request.httpMethod = "GET"
-//
-//            URLSession.shared.dataTask(with: request) { (data, response, error) in
-//                guard let data = data else { return }
-//
-//                // data
-//                if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] {
-//                    print("json에 데이터 들어감")
-//                    print(json["CO2"]!)
-//                    self.textView = json["CO2"]! as! Int
-//                }
-//            }.resume()
-//        }
-//    }
+    // 회원가입 정보 보내고 성공 여부 리턴하기
+    func GET_Signup(member: SignUpMember) -> SignUpSuccess {
+        var db = SignUpSuccess.init()
+        
+        if let url = URL(string: "http://mirsv.com:4999/signup_confirm?" +
+                        "id=" + member.id +
+                        "&pwd=" + member.pwd +
+                        "&SN=" + member.SN) {
+            var request = URLRequest.init(url: url)
+
+            request.httpMethod = "GET"
+
+            DispatchQueue.global().sync {
+                URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    guard let data = data else { return }
+
+                    // get
+                    let decoder = JSONDecoder()
+                    if let json = try? decoder.decode(SignUpSuccess.self, from: data) {
+                        db = json
+                    }
+                }.resume()
+            }
+        }
+        
+        return db
+    }
+    
+    // 로그인 성공 여부 리턴
+    func GET_Login(member: Login) -> LoginSuccess {
+        var db = LoginSuccess.init()
+        print("user info >>", member)
+        if let url = URL(string: "http://mirsv.com:4999/login_confirm?" +
+                            "id=" + member.id +
+                            "&pwd=" + member.pwd){
+            var request = URLRequest.init(url: url)
+
+            request.httpMethod = "GET"
+
+            DispatchQueue.global().sync {
+                URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    guard let data = data else { return }
+
+                    // get
+                    let decoder = JSONDecoder()
+                    if let json = try? decoder.decode(LoginSuccess.self, from: data) {
+                        db = json
+                    }
+                }.resume()
+            }
+        }
+        
+        return db
+    }
+    
+    // 하루 기준 시간당 평균 센서 정보 가져오기
+    func GET_HourAll() -> [DustInfo] {
+        var db = [DustInfo]()
+        
+        if let url = URL(string: "http://mirsv.com:5000/hourall"){
+            var request = URLRequest.init(url: url)
+
+            request.httpMethod = "GET"
+
+            DispatchQueue.global().sync {
+                URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    guard let data = data else { return }
+
+                    // get
+                    let decoder = JSONDecoder()
+                    if let json = try? decoder.decode([DustInfo].self, from: data) {
+                        db = json
+                    }
+                }.resume()
+            }
+        }
+        
+        return db
+    }
 }

@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let restApi = RestAPI()
+
 struct ContentView: View {
     private enum Tabs {
         case AList, BList, CList
@@ -53,56 +55,21 @@ struct ContentView: View {
 }
 
 private extension ContentView {
-    struct signDB: Codable {
-        var signup: String = ""
-        var user: String = ""
-    }
-    
+    // 로그인 성공 여부에 따라 화면 전환
     func verity(userName: String, pwd: String) -> AnyView {
-        struct signDB: Codable {
-            var signup: String = ""
-            var user: String = ""
-        }
-        
-        var pass = false
-        
-        if pass {
-            return MainTabView()
+        let db: LoginSuccess = restApi.GET_Login(member: Login.init(id: userName, pwd: pwd))
+        print(db)
+        // 로그인 성공 시 메인 뷰로 넘어가기
+        if (!db.success) {
+            return AnyView(MainTabView()
                 .navigationBarHidden(false)
                 .navigationBarBackButtonHidden(true)
-                .navigationBarTitle(Text("Air Alarm"), displayMode: .inline)    // tab 이름
-                .navigationBarItems(leading: ChangeleadingItem(), trailing: ChangetrailingItem()) as! AnyView
-        }else{
+                .navigationBarTitle(Text("Air Alarm"), displayMode: .inline) // tab 이름
+                .navigationBarItems(leading: ChangeleadingItem(), trailing: ChangetrailingItem()))
+        }else{ // 로그인 성공 실패 시 다시 로그인 뷰
             return AnyView(ContentView())
         }
     }
-    
-    // 객체에 데이터 저장하기
-    func GET(id: String, pwd: String) -> signDB {
-        var signDBB = signDB()
-        if let url = URL(string: "http://mirsv.com:4999/") {
-            var request = URLRequest.init(url: url)
-
-            request.httpMethod = "GET"
-
-            URLSession.shared.dataTask(with: request) { (data, response, error) in
-                guard let data = data else { return }
-
-                // data
-                let decoder = JSONDecoder()
-                
-                if let json = try? decoder.decode(Api.signDB.self, from: data) {
-                    signDBB = json
-                    print("json")
-                    print(json)
-                }
-            }.resume()
-        }
-        print(signDBB)
-        print("aaaaaa")
-        return signDBB
-    }
-
     
     var login: some View {
         VStack{
@@ -113,11 +80,10 @@ private extension ContentView {
             ){
 //             아이디 비밀번호 확인하는 버튼 + 시간 표시 돌아가는 효과
                 Button(
-                    authenticator.isAuthenticating ? "Please wait" : "로그인"
+                    action: {}
                 ) {
-                    authenticator.login(username: userName, password: password)
+                    Text("로그인")
                     }
-                .disabled(isLoginDisabled)
                 .font(.headline)
                 .foregroundColor(.blue)
                 .padding()
