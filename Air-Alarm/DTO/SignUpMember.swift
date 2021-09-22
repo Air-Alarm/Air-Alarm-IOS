@@ -20,7 +20,7 @@ struct SignUpMember: Codable {
         self.SN = SN
     }
     
-    private var id: String
-    private var pwd: String
-    private var SN: String
+    var id: String
+    var pwd: String
+    var SN: String
 }
