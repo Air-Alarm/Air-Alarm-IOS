@@ -85,18 +85,19 @@ func ChangeleadingItem() -> AnyView {
                             Image(systemName: "gearshape")
                         }
                     )
-//                        Button(action: { print("Button 3")}
-//                        ){
-//                            Image(systemName: "gearshape")
-//                        }
-//                    NavigationLink(
-//                        destination: alarmView()
+                    NavigationLink(
+                        
+                        destination: Alarm(),
+                        label: {
+                            Image(systemName: "bell")
+                        }
+                    )
+                    .navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true)
+//                    Button(action: { Settings() }
 //                    ){
-//                    Button(action: { print("Button 2")}
-//                    ){
-//                        Image(systemName: "bell")
+//                        Image(systemName: "gearshape")
 //                    }
-//                  }
                 }
 
             )

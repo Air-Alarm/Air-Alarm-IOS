@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A20D1F326FA44EA001F13D3 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20D1F226FA44EA001F13D3 /* Alarm.swift */; };
 		2A26A4B026DA68BF00670DFB /* UnderLineTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A26A4AF26DA68BF00670DFB /* UnderLineTextFieldView.swift */; };
 		2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */; };
+		2A739D2526F085280086A41E /* changeSN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A739D2426F085280086A41E /* changeSN.swift */; };
+		2A739D2726F085810086A41E /* sensorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A739D2626F085810086A41E /* sensorInfo.swift */; };
+		2A739D2926F085BA0086A41E /* weatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A739D2826F085BA0086A41E /* weatherAPI.swift */; };
+		2A739D2B26F085E40086A41E /* programmerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A739D2A26F085E40086A41E /* programmerInfo.swift */; };
 		2A996A5626C80F9A0088BAB6 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5526C80F9A0088BAB6 /* RootView.swift */; };
 		2A996A5826C812460088BAB6 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5726C812460088BAB6 /* Authenticator.swift */; };
 		2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5926C8285D0088BAB6 /* Signup.swift */; };
@@ -45,8 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A20D1F226FA44EA001F13D3 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		2A26A4AF26DA68BF00670DFB /* UnderLineTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextFieldView.swift; sourceTree = "<group>"; };
 		2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarColor.swift; sourceTree = "<group>"; };
+		2A739D2426F085280086A41E /* changeSN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeSN.swift; sourceTree = "<group>"; };
+		2A739D2626F085810086A41E /* sensorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sensorInfo.swift; sourceTree = "<group>"; };
+		2A739D2826F085BA0086A41E /* weatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherAPI.swift; sourceTree = "<group>"; };
+		2A739D2A26F085E40086A41E /* programmerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = programmerInfo.swift; sourceTree = "<group>"; };
 		2A996A5526C80F9A0088BAB6 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		2A996A5726C812460088BAB6 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
 		2A996A5926C8285D0088BAB6 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
@@ -96,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A20D1F126FA44CF001F13D3 /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				2A20D1F226FA44EA001F13D3 /* Alarm.swift */,
+			);
+			path = Alarm;
+			sourceTree = "<group>";
+		};
 		2A26A4B326DB5EBD00670DFB /* Tab */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,7 +138,11 @@
 			isa = PBXGroup;
 			children = (
 				2AE97BC126EFA6D900A48108 /* Settings.swift */,
+				2A739D2426F085280086A41E /* changeSN.swift */,
 				2AE97BC426EFAB7400A48108 /* myInfo.swift */,
+				2A739D2626F085810086A41E /* sensorInfo.swift */,
+				2A739D2826F085BA0086A41E /* weatherAPI.swift */,
+				2A739D2A26F085E40086A41E /* programmerInfo.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -154,6 +176,7 @@
 				F987CBAD26BC3D050061A4A2 /* Assets.xcassets */,
 				2A996A4C26C781990088BAB6 /* Login */,
 				F987CBB226BC3D050061A4A2 /* Info.plist */,
+				2A20D1F126FA44CF001F13D3 /* Alarm */,
 				2AE97BC326EFAB5400A48108 /* Setting */,
 				2AEAB2F626BC42AB009C1D21 /* AList.swift */,
 				2AEAB2F826BC42CB009C1D21 /* BList.swift */,
@@ -320,13 +343,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F95CD7A326C7E9FB00CDDFA5 /* RestAPI.swift in Sources */,
+				2A739D2B26F085E40086A41E /* programmerInfo.swift in Sources */,
+				2A739D2926F085BA0086A41E /* weatherAPI.swift in Sources */,
+				2A739D2726F085810086A41E /* sensorInfo.swift in Sources */,
 				F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */,
 				2AE97BC226EFA6D900A48108 /* Settings.swift in Sources */,
 				2AEAB2FB26BC42E2009C1D21 /* CList.swift in Sources */,
+				2A739D2526F085280086A41E /* changeSN.swift in Sources */,
 				2AEAB2F926BC42CB009C1D21 /* BList.swift in Sources */,
 				2A996A5826C812460088BAB6 /* Authenticator.swift in Sources */,
 				2A996A5626C80F9A0088BAB6 /* RootView.swift in Sources */,
 				2AE97BC526EFAB7400A48108 /* myInfo.swift in Sources */,
+				2A20D1F326FA44EA001F13D3 /* Alarm.swift in Sources */,
 				F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */,
 				2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */,
 				2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */,
@@ -491,7 +519,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Air-Alarm/Preview Content\"";
-				DEVELOPMENT_TEAM = 486658WQ6M;
+				DEVELOPMENT_TEAM = ZEZ6ZRP5LG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Air-Alarm/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -499,7 +527,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.air-alarm.Air-Alarm";
+				PRODUCT_BUNDLE_IDENTIFIER = mirsv.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -513,7 +541,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Air-Alarm/Preview Content\"";
-				DEVELOPMENT_TEAM = 486658WQ6M;
+				DEVELOPMENT_TEAM = ZEZ6ZRP5LG;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Air-Alarm/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -521,7 +549,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.air-alarm.Air-Alarm";
+				PRODUCT_BUNDLE_IDENTIFIER = mirsv.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

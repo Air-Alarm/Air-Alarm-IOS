@@ -69,7 +69,7 @@ class Authenticator: ObservableObject {      // 로그인 판별
         }
     }
 
-    func logout() { //로그아웃일때 needsAuthentication 값을로 다시 뒤집어 true로그인을 다시 확인해야됨.
+    func logout(islogout: Bool) { //로그아웃일때 needsAuthentication 값을로 다시 뒤집어 true로그인을 다시 확인해야됨.
         self.needsAuthentication = true
     }
 }
