@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct SignUpSuccess {
+struct SignUpSuccess: Codable {
     /*
      id: 아이디
      success: 회원가입 성공 여부
      */
     
-    init(id: String, success: Bool) {
+    init(id: String = "", success: Bool = false) {
         self.id = id
         self.success = success
     }

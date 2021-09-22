@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct Login {
+struct Login: Codable {
     /*
      id: 아이디
      pwd: 패스워드
      */
     
-    init(id: String, pwd: String) {
+    init(id: String = "", pwd: String = "") {
         self.id = id
         self.pwd = pwd
     }

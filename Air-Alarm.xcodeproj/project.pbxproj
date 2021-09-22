@@ -22,7 +22,6 @@
 		F95D76BE26F3460800C0F9AB /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D76BD26F3460800C0F9AB /* Member.swift */; };
 		F95D76C026F3461400C0F9AB /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D76BF26F3461400C0F9AB /* Login.swift */; };
 		F967272B26FA09A100D7B2BC /* SignUpMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967272A26FA09A100D7B2BC /* SignUpMember.swift */; };
-		F967272D26FA09F500D7B2BC /* HourAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967272C26FA09F500D7B2BC /* HourAll.swift */; };
 		F967272F26FA0C9F00D7B2BC /* SignUpSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967272E26FA0C9F00D7B2BC /* SignUpSuccess.swift */; };
 		F967273126FA0CAC00D7B2BC /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967273026FA0CAC00D7B2BC /* LoginSuccess.swift */; };
 		F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */; };
@@ -31,6 +30,7 @@
 		F987CBB126BC3D050061A4A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F987CBB026BC3D050061A4A2 /* Preview Assets.xcassets */; };
 		F987CBBC26BC3D050061A4A2 /* Air_AlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBBB26BC3D050061A4A2 /* Air_AlarmTests.swift */; };
 		F987CBC726BC3D050061A4A2 /* Air_AlarmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBC626BC3D050061A4A2 /* Air_AlarmUITests.swift */; };
+		F9D0E20626FAE9C50048DB2F /* DustInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0E20526FAE9C50048DB2F /* DustInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +66,6 @@
 		F95D76BD26F3460800C0F9AB /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		F95D76BF26F3461400C0F9AB /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		F967272A26FA09A100D7B2BC /* SignUpMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMember.swift; sourceTree = "<group>"; };
-		F967272C26FA09F500D7B2BC /* HourAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourAll.swift; sourceTree = "<group>"; };
 		F967272E26FA0C9F00D7B2BC /* SignUpSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccess.swift; sourceTree = "<group>"; };
 		F967273026FA0CAC00D7B2BC /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		F987CBA626BC3D050061A4A2 /* Air-Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air-Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +80,7 @@
 		F987CBC226BC3D050061A4A2 /* Air-AlarmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Air-AlarmUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F987CBC626BC3D050061A4A2 /* Air_AlarmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air_AlarmUITests.swift; sourceTree = "<group>"; };
 		F987CBC826BC3D050061A4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9D0E20526FAE9C50048DB2F /* DustInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,9 +143,9 @@
 				F95D76BD26F3460800C0F9AB /* Member.swift */,
 				F95D76BF26F3461400C0F9AB /* Login.swift */,
 				F967272A26FA09A100D7B2BC /* SignUpMember.swift */,
-				F967272C26FA09F500D7B2BC /* HourAll.swift */,
 				F967272E26FA0C9F00D7B2BC /* SignUpSuccess.swift */,
 				F967273026FA0CAC00D7B2BC /* LoginSuccess.swift */,
+				F9D0E20526FAE9C50048DB2F /* DustInfo.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -350,7 +350,6 @@
 				F967272B26FA09A100D7B2BC /* SignUpMember.swift in Sources */,
 				2AE97BC226EFA6D900A48108 /* Settings.swift in Sources */,
 				2AEAB2FB26BC42E2009C1D21 /* CList.swift in Sources */,
-				F967272D26FA09F500D7B2BC /* HourAll.swift in Sources */,
 				F95D76BE26F3460800C0F9AB /* Member.swift in Sources */,
 				2AEAB2F926BC42CB009C1D21 /* BList.swift in Sources */,
 				2A996A5826C812460088BAB6 /* Authenticator.swift in Sources */,
@@ -360,6 +359,7 @@
 				F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */,
 				2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */,
 				2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */,
+				F9D0E20626FAE9C50048DB2F /* DustInfo.swift in Sources */,
 				2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */,
 				2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */,
 				2A26A4B026DA68BF00670DFB /* UnderLineTextFieldView.swift in Sources */,
