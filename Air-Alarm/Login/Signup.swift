@@ -13,9 +13,31 @@ struct Signup: View {
     @State private var action: Int? = 0
     @State var member = SignUpMember.init()
     @State var actionn: Int? = nil
+    @State var message: String = ""
     
     func signUp() {
-        let db: SignUpSuccess = restApi.GET_Signup(member: member)
+        var id_trigger: Bool = false
+        var pwd_trigger: Bool = false
+        var email = member.id.split(separator: "@")[1]
+        var emailList = ["naver.com", "gmail.com", "daum.net"]
+        
+        // 아이디 조건 확인
+        for i in emailList {
+            if email == i {
+                id_trigger = true
+            }
+        }
+        // 비밀번호 조건 확인
+        if member.pwd.count > 8 && member.pwd.count < 20 {
+            pwd_trigger = true
+        }
+        
+        
+        if (id_trigger && pwd_trigger) {
+            let db: SignUpSuccess = restApi.GET_Signup(member: member)
+        }else{
+            self.message = "회원가입에 실패했습니다."
+        }
     }
     
     var body: some View {
