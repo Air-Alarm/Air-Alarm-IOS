@@ -78,7 +78,7 @@ func ChangeleadingItem() -> AnyView {
 // 오른쪽 상단 Tab
     func ChangetrailingItem() -> AnyView {
             return AnyView(
-                VStack{
+                HStack{
                     NavigationLink(
                         destination: Settings(),
                         label: {

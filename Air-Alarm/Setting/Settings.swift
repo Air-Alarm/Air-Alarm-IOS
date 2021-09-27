@@ -10,6 +10,11 @@ import SwiftUI
 struct Settings: View {
 
     var body: some View {
+        TabView{
+            Settings()
+                .tabItem { Label("Setting", systemImage: "gearshape") }
+                .navigationBarHidden(/*@START_MENU_TOKEN@*/false/*@END_MENU_TOKEN@*/)
+        }
         NavigationView {
             VStack{
                 List {
@@ -19,17 +24,17 @@ struct Settings: View {
                     weatherAPII
                     programmerInfofo
                 }
-//                Button()
-//                {
+//                Button(action: ContentView
+//                ){
 //                        Text("로그아웃")
 //                            .font(.headline)
 //                            .padding()
 //                            .foregroundColor(.red)
 //                            .cornerRadius(40)
-//                    }
+//                }
             }
        }
-        .navigationBarHidden(false)
+        .navigationBarHidden(true)
         .navigationBarBackButtonHidden(false)
         .navigationBarTitle(Text("Setting"), displayMode: .inline)
         .navigationBarColor(.white)
@@ -41,8 +46,6 @@ private extension Settings {
     var myInfofo: some View {
         NavigationLink(
             destination: myInfo()
-                .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
         
         ) {
             Text("내 정보")

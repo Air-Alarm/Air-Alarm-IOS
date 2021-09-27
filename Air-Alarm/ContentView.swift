@@ -19,33 +19,33 @@ struct ContentView: View {
 
     var body: some View {
         
-      return NavigationView {
-          ZStack {
-              Color.white.edgesIgnoringSafeArea(.all) //전체화면 색상
-            
-            VStack{
-                Image("icon")
-                    .resizable()
-                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding()
-                  TextField("아이디", text: $userName)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-                  SecureField("비밀번호", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+        return NavigationView {
+            ZStack {
+                Color.white.edgesIgnoringSafeArea(.all) //전체화면 색상
                 
-                HStack{
-                    login //로그인 버튼
-                    SignUpView //회원가입 창
+                VStack{
+                    Image("icon")
+                        .resizable()
+                        .frame(width: 100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center)
+                        .padding()
+                    TextField("아이디/Email", text: $userName)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                    SecureField("비밀번호", text: $password)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    
+                    HStack{
+                        login //로그인 버튼
+                        SignUpView //회원가입 창
+                    }
                 }
-              }
-              .frame(maxWidth: 320)
-              .padding(.horizontal)
-          }
-      }
-      .navigationBarHidden(true)
-      .navigationBarBackButtonHidden(true)
+                .frame(maxWidth: 320)
+                .padding(.horizontal)
+            }
+        }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
 }
 
   private var isLoginDisabled: Bool {
@@ -68,6 +68,9 @@ private extension ContentView {
                     .navigationBarColor(.white)
                     
             ){
+//                Button (action:{}){
+//                    Text("로그인")
+//                }
 //             아이디 비밀번호 확인하는 버튼 + 시간 표시 돌아가는 효과
                 Button(
                     authenticator.isAuthenticating ? "Please wait" : "로그인"
