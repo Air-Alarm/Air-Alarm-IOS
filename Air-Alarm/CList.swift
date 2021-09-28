@@ -89,6 +89,12 @@ struct CList: View {
                         }
                         HStack {
                             Spacer()
+                            Text("humidity :  " + String(wwdb.humidity))
+                                .padding()
+                            Spacer()
+                        }
+                        HStack {
+                            Spacer()
                             Text("time :  " + String(wwdb.time))
                                 .padding()
                             Spacer()
