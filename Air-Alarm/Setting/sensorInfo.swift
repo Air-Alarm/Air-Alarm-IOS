@@ -7,38 +7,9 @@
 
 import SwiftUI
 
-class RestAPI_sensorInfo {
-    struct SensorInfo: Codable {
-        var SN: String = ""
-}
-
-    var sensor_db = SensorInfo()
-
-    // 객체에 데이터 저장하기
-    func GET() -> SensorInfo {
-        if let url = URL(string: "http://mirsv.com:4999/get") {
-            var request = URLRequest.init(url: url)
-
-            request.httpMethod = "GET"
-
-            URLSession.shared.dataTask(with: request) { (data, response, error) in
-                guard let data = data else { return }
-
-                // data
-                let decoder = JSONDecoder()
-                if let json = try? decoder.decode(SensorInfo.self, from: data) {
-                    self.sensor_db = json
-                }
-            }.resume()
-        }
-
-        return self.sensor_db
-    }
-}
-
 struct sensorInfo: View {
-    let restAPI = RestAPI_sensorInfo()
-    @State var sensor_db = RestAPI_sensorInfo.SensorInfo()
+    let restAPI = RestSignAPI()
+    @State var sensor_db = RestSignAPI.SignInfo()
     
     func update() {
         self.sensor_db = restAPI.GET()

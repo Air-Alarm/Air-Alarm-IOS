@@ -99,7 +99,6 @@ func ChangeleadingItem() -> AnyView {
 //                        Image(systemName: "gearshape")
 //                    }
                 }
-
             )
         }
 

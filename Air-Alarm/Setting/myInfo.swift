@@ -7,39 +7,9 @@
 
 import SwiftUI
 
-class RestAPI_myInfo {
-    struct UserInfo: Codable {
-        var email: String = ""
-        var SN: String = ""
-}
-    
-    var dbb = UserInfo()
-    
-    // 객체에 데이터 저장하기
-    func GET() -> UserInfo {
-        if let url = URL(string: "http://mirsv.com:4999/get") {
-            var request = URLRequest.init(url: url)
-
-            request.httpMethod = "GET"
-
-            URLSession.shared.dataTask(with: request) { (data, response, error) in
-                guard let data = data else { return }
-
-                // data
-                let decoder = JSONDecoder()
-                if let json = try? decoder.decode(UserInfo.self, from: data) {
-                    self.dbb = json
-                }
-            }.resume()
-        }
-        
-        return self.dbb
-    }
-}
-
 struct myInfo: View {
-    let restAPI = RestAPI_myInfo()
-    @State var dbb = RestAPI_myInfo.UserInfo()
+    let restAPI = RestSignAPI()
+    @State var dbb = RestSignAPI.SignInfo()
     
     func update() {
         self.dbb = restAPI.GET()
