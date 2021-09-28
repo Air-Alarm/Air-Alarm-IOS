@@ -11,8 +11,7 @@ class RestAPI_myInfo {
     struct UserInfo: Codable {
         var email: String = ""
         var SN: String = ""
-        var signup: String = ""
-    }
+}
     
     var dbb = UserInfo()
     
@@ -64,8 +63,8 @@ struct myInfo: View {
             }
             .background(Color.white)
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(false)
+        .navigationBarBackButtonHidden(false)
     }
 }
 
