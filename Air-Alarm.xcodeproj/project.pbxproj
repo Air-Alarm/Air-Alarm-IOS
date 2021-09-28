@@ -19,6 +19,9 @@
 		F7C43CC426EB00CB00DD3229 /* ChartsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C43CC326EB00CB00DD3229 /* ChartsStyle.swift */; };
 		F7C43CC626EB00DC00DD3229 /* ChartsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C43CC526EB00DC00DD3229 /* ChartsData.swift */; };
 		F7C43CC926EB012800DD3229 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = F7C43CC826EB012800DD3229 /* SwiftUICharts */; };
+		F7D1E15426FAF23F006FB401 /* Charts1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D1E15326FAF23F006FB401 /* Charts1.swift */; };
+		F7D1E15626FAF251006FB401 /* Charts2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D1E15526FAF251006FB401 /* Charts2.swift */; };
+		F7D1E15826FAF263006FB401 /* Charts3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D1E15726FAF263006FB401 /* Charts3.swift */; };
 		F95CD7A326C7E9FB00CDDFA5 /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95CD7A226C7E9FB00CDDFA5 /* RestAPI.swift */; };
 		F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */; };
 		F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBAB26BC3D050061A4A2 /* ContentView.swift */; };
@@ -57,6 +60,9 @@
 		2AEAB2FA26BC42E2009C1D21 /* CList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CList.swift; sourceTree = "<group>"; };
 		F7C43CC326EB00CB00DD3229 /* ChartsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsStyle.swift; sourceTree = "<group>"; };
 		F7C43CC526EB00DC00DD3229 /* ChartsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsData.swift; sourceTree = "<group>"; };
+		F7D1E15326FAF23F006FB401 /* Charts1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts1.swift; sourceTree = "<group>"; };
+		F7D1E15526FAF251006FB401 /* Charts2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts2.swift; sourceTree = "<group>"; };
+		F7D1E15726FAF263006FB401 /* Charts3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts3.swift; sourceTree = "<group>"; };
 		F95CD7A226C7E9FB00CDDFA5 /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 		F987CBA626BC3D050061A4A2 /* Air-Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air-Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air_AlarmApp.swift; sourceTree = "<group>"; };
@@ -123,6 +129,9 @@
 			children = (
 				F7C43CC326EB00CB00DD3229 /* ChartsStyle.swift */,
 				F7C43CC526EB00DC00DD3229 /* ChartsData.swift */,
+				F7D1E15326FAF23F006FB401 /* Charts1.swift */,
+				F7D1E15726FAF263006FB401 /* Charts3.swift */,
+				F7D1E15526FAF251006FB401 /* Charts2.swift */,
 			);
 			path = ChartView;
 			sourceTree = "<group>";
@@ -328,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F95CD7A326C7E9FB00CDDFA5 /* RestAPI.swift in Sources */,
+				F7D1E15826FAF263006FB401 /* Charts3.swift in Sources */,
 				F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */,
 				2AEAB2FB26BC42E2009C1D21 /* CList.swift in Sources */,
 				2AEAB2F926BC42CB009C1D21 /* BList.swift in Sources */,
@@ -336,11 +346,13 @@
 				F7C43CC626EB00DC00DD3229 /* ChartsData.swift in Sources */,
 				F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */,
 				2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */,
+				F7D1E15426FAF23F006FB401 /* Charts1.swift in Sources */,
 				F7C43CC426EB00CB00DD3229 /* ChartsStyle.swift in Sources */,
 				2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */,
 				2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */,
 				2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */,
 				2A26A4B026DA68BF00670DFB /* UnderLineTextFieldView.swift in Sources */,
+				F7D1E15626FAF251006FB401 /* Charts2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
