@@ -5,16 +5,19 @@
 //  Created by 김하은 on 2021/09/29.
 //
 
-import SwiftUI
+import Foundation
 
-struct Login: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct Login: Codable {
+    /*
+     id: 아이디
+     pwd: 패스워드
+     */
+    
+    init(id: String = "", pwd: String = "") {
+        self.id = id
+        self.pwd = pwd
     }
-}
-
-struct Login_Previews: PreviewProvider {
-    static var previews: some View {
-        Login()
-    }
+    
+    var id: String
+    var pwd: String
 }
