@@ -43,7 +43,7 @@ struct Signup: View {
                         login
                     }
             }
-                // navigationBar 
+                // navigationBar
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
