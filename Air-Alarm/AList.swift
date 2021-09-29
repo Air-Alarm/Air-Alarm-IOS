@@ -8,29 +8,17 @@
 import SwiftUI
 
 struct AListView: View {
-    let restApi = RestAPI()
-    @State var db = DustInfo.init()
+    let restAPI = RestAPI()
+    @State var db = RestAPI.Database()
     @State var refresh = Refresh(started: false, released: false)
     @State var json :  String = "아래로 당겨서 새로고침"
     
     func update() {
-        self.db = restApi.GET_Dust()
+        self.db = restAPI.GET()
     }
     
     var body: some View {
         VStack {
-//            HStack{ // air alarm 글씨
-//                Text("Air Alarm")
-//                    .font(.largeTitle)
-//                    .fontWeight(.heavy)
-//                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-//
-//                Spacer()
-//            }
-//            .padding()
-//            .background(Color.white.ignoresSafeArea(.all, edges: .top))
-//            Divider()
-            
             ScrollView(.vertical, showsIndicators: false, content: {
                 
                 GeometryReader{reader -> AnyView in
@@ -71,49 +59,36 @@ struct AListView: View {
                         ProgressView()
                             .offset(y: -35)
                     }
-//                    else{
-//                        Image(systemName: "arrow.down")
-//                            .font(.system(size: 16, weight: .heavy))
-//                            .foregroundColor(.gray)
-//                            .rotationEffect(.init(degrees: refresh.started ? 180 : 0))
-//                            .offset(y: -25)
-//                            .animation(.easeIn)
-//                    }
                     
                     VStack {
-                       // Button(action: GET){
-                       //     Text("버튼")
-                       // }
-//                        Text("CO2: " + String(db.CO2))
-//                        Text("Dust: " + String(db.dust))
-//                        Text("Humidity: " + String(db.humidity))
-//                        Text("ID: " + String(db.id))
-//                        Text("Temperature: " + String(db.temperature))
-//                        Text("Time: " + db.time)
-                        
                         HStack {
-
-                            Text("온도 :  " + String(db.temperature) + " °C").padding()
+                            Spacer()
+                            Text("온도 :  " + String(db.temperature) + " °C")
+                                .padding()
                             Spacer()
                         }
                         HStack {
-
-                            Text("습도 :  " + String(db.humidity) + " %").padding()
+                            Spacer()
+                            Text("습도 :  " + String(db.humidity) + " %")
+                                .padding()
                             Spacer()
                         }
                         HStack {
-
-                            Text("CO₂ :  " + String(db.CO2) + " ppm").padding()
+                            Spacer()
+                            Text("CO₂ :  " + String(db.CO2) + " ppm")
+                                .padding()
                             Spacer()
                         }
                         HStack {
-
-                            Text("PM2.5 :  " + String(db.dust) + " ㎍/m³").padding()
+                            Spacer()
+                            Text("PM2.5 :  " + String(db.dust) + " ㎍/m³")
+                                .padding()
                             Spacer()
                         }
                         HStack {
-
-                            Text("측정시간: " + db.time).padding()
+                            Spacer()
+                            Text("측정시간: " + db.time)
+                                .padding()
                             Spacer()
                         }
                         
@@ -148,7 +123,6 @@ struct AListView: View {
         }
     }
 }
-
 
 //새로고침
 struct Refresh {

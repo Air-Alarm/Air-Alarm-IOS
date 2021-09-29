@@ -9,7 +9,7 @@ import Foundation
 
 class Api {
     struct User: Codable {
-        var user: String = ""
+  //      var user: String = ""
         var pwd: String = ""
         var email: String = ""
         var SN: String = ""
@@ -24,9 +24,9 @@ class Api {
     // 객체에 데이터 저장하기
     func GET(signUp: User) -> signDB {
         var signDBB = signDB()
-        if let url = URL(string: "http://mirsv.com:4999/signup_confirm?user=" + signUp.user +
-                            "&pwd=" + signUp.pwd +
+        if let url = URL(string: "http://mirsv.com:4999/signup_confirm?user=" +
                             "&email=" + signUp.email +
+                            "&pwd=" + signUp.pwd +
                             "SN=" + signUp.SN ) {
             var request = URLRequest.init(url: url)
 
