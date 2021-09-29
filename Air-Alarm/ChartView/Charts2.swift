@@ -30,21 +30,21 @@ struct Charts2: View {
                 .padding(.horizontal,10.0)
                 Divider()
                 Spacer()
-                ScrollView {
-                    LineView(data: Data.data2, title: Data.title, legend: Data.legend0, style: Style.metoring)
-                        .padding()
-                        .frame(width: 360, height: 365)
-                    LineView(data: Data.data1, title: Data.title, legend: Data.legend1, style: Style.metoring)
-                        .padding()
-                        .frame(width: 360, height: 365)
-                    LineView(data: Data.data0, title: Data.title, legend: Data.legend2, style: Style.metoring)
-                        .padding()
-                        .frame(width: 360, height: 365)
-                    LineView(data: Data.data3, title: Data.title, legend: Data.legend3, style: Style.metoring)
-                        .padding()
-                        .frame(width: 360, height: 365)
-                    Spacer()
-                }
+//                ScrollView {
+//                    LineView(data: Data.data2, title: Data.title, legend: Data.legend0, style: Style.metoring)
+//                        .padding()
+//                        .frame(width: 360, height: 365)
+//                    LineView(data: Data.data1, title: Data.title, legend: Data.legend1, style: Style.metoring)
+//                        .padding()
+//                        .frame(width: 360, height: 365)
+//                    LineView(data: Data.data0, title: Data.title, legend: Data.legend2, style: Style.metoring)
+//                        .padding()
+//                        .frame(width: 360, height: 365)
+//                    LineView(data: Data.data3, title: Data.title, legend: Data.legend3, style: Style.metoring)
+//                        .padding()
+//                        .frame(width: 360, height: 365)
+//                    Spacer()
+//                }
                 .padding()
             }
         }
