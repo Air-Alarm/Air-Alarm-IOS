@@ -9,7 +9,12 @@ import SwiftUI
 import SwiftUICharts
 
 struct Data {
-    static let title = "Air-Alarm"
+    //static let title = "Air-Alarm"
+    static let title0 = "온도"
+    static let title1 = "습도"
+    static let title2 = "미세먼지"
+    static let title3 = "이산화탄소"
+    
     static let legend0 = "온도"
     static let legend1 = "습도"
     static let legend2 = "미세먼지"

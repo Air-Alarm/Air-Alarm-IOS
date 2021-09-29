@@ -5,71 +5,9 @@
 //  Created by 김하은 on 2021/08/06.
 //
 
-//import SwiftUI
-//import SwiftUICharts
-//
-//struct BList: View {
-//    var body: some View {
-//        NavigationView {
-//            VStack {
-////                HStack {
-////                    NavigationLink(destination: BList()) {
-////                        Text("일")
-////                            .padding(.horizontal, 45.0)
-////                            .foregroundColor(.red)
-////                    }
-////                    NavigationLink(destination: Charts1()) {
-////                        Text("주")
-////                            .padding(.horizontal, 45.0)
-////                    }
-////                    NavigationLink(destination: Charts2()) {
-////                        Text("월")
-////                            .padding(.horizontal, 50.0)
-////                    }
-////                }
-////                .padding(.horizontal,10.0)
-////                Divider()
-//
-//                TabView {
-//
-//                }
-//                Spacer()
-////                VStack {
-////                    ScrollView {
-////                        LineView(data: Data.data0, title: Data.title, legend: Data.legend0, style: Style.metoring)
-////                            .padding()
-////                            .frame(width: 360, height: 365)
-////                        LineView(data: Data.data1, title: Data.title, legend: Data.legend1, style: Style.metoring)
-////                            .padding()
-////                            .frame(width: 360, height: 365)
-////                        LineView(data: Data.data2, title: Data.title, legend: Data.legend2, style: Style.metoring)
-////                            .padding()
-////                            .frame(width: 360, height: 365)
-////                        LineView(data: Data.data3, title: Data.title, legend: Data.legend3, style: Style.metoring)
-////                            .padding()
-////                            .frame(width: 360, height: 365)
-////                        Spacer()
-////                    }
-////                    .padding()
-////                }
-//            }
-//        }
-//        .navigationBarHidden(true)
-//        .navigationBarBackButtonHidden(true)
-//    }
-//}
-//struct BList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BList()
-//    }
-//}
-
-
-// 테스트!!!!!!!!
 
 import SwiftUI
 import SwiftUICharts
-//import SDWebImageSwiftUI
 
 struct BList: View {
     
@@ -124,16 +62,16 @@ struct SecondView: View{
         ZStack{
             VStack {
                 ScrollView {
-                    LineView(data: Data.data1, title: Data.title, legend: Data.legend0, style: Style.metoring)
+                    LineView(data: Data.data1, title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data3, title: Data.title, legend: Data.legend1, style: Style.metoring)
+                    LineView(data: Data.data3, title: Data.title1, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data2, title: Data.title, legend: Data.legend2, style: Style.metoring)
+                    LineView(data: Data.data2, title: Data.title2, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data0, title: Data.title, legend: Data.legend3, style: Style.metoring)
+                    LineView(data: Data.data0, title: Data.title3, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     Spacer()
@@ -149,16 +87,16 @@ struct ThirdView: View{
         ZStack{
             VStack {
                 ScrollView {
-                    LineView(data: Data.data2, title: Data.title, legend: Data.legend0, style: Style.metoring)
+                    LineView(data: Data.data2, title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data1, title: Data.title, legend: Data.legend1, style: Style.metoring)
+                    LineView(data: Data.data1, title: Data.title1, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data0, title: Data.title, legend: Data.legend2, style: Style.metoring)
+                    LineView(data: Data.data0, title: Data.title2, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data3, title: Data.title, legend: Data.legend3, style: Style.metoring)
+                    LineView(data: Data.data3, title: Data.title3, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     Spacer()
@@ -171,18 +109,19 @@ struct ThirdView: View{
 
 struct CustomTopTabBar: View {
     @Binding var tabIndex: Int
+    
     var body: some View {
-        HStack(spacing: 70) {
+        HStack(spacing: 50) {
             Spacer()
-            TabBarButton(text: "일", isSelected: .constant(tabIndex == 0))
+            TabBarButton(text: "Day", isSelected: .constant(tabIndex == 0))
                 .onTapGesture { onButtonTapped(index: 0) }
-            TabBarButton(text: "주", isSelected: .constant(tabIndex == 1))
+            TabBarButton(text: "Week", isSelected: .constant(tabIndex == 1))
                 .onTapGesture { onButtonTapped(index: 1) }
-            TabBarButton(text: "월", isSelected: .constant(tabIndex == 2))
+            TabBarButton(text: "Month", isSelected: .constant(tabIndex == 2))
                 .onTapGesture { onButtonTapped(index: 2) }
             Spacer()
         }
-        .border(width: 1, edges: [.bottom], color: .black)
+        .border(width: 1, edges: [.bottom], color: .blue)
     }
     
     private func onButtonTapped(index: Int) {
@@ -198,7 +137,7 @@ struct TabBarButton: View {
             .fontWeight(isSelected ? .heavy : .regular)
             .font(.custom("Avenir", size: 16))
             .padding(.bottom,10)
-            .border(width: isSelected ? 2 : 1, edges: [.bottom], color: .black)
+            .border(width: isSelected ? 2 : 1, edges: [.bottom], color: .blue)
     }
 }
 
