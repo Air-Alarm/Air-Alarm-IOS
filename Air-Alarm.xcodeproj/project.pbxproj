@@ -20,6 +20,7 @@
 		2A4256442704250A00B26232 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4256432704250A00B26232 /* WeatherInfo.swift */; };
 		2A4256462704251E00B26232 /* RestSignAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4256452704251E00B26232 /* RestSignAPI.swift */; };
 		2A4256482704254900B26232 /* weatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4256472704254900B26232 /* weatherAPI.swift */; };
+		2A42564A270430A700B26232 /* ContentLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A425649270430A700B26232 /* ContentLogin.swift */; };
 		2A996A5826C812460088BAB6 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5726C812460088BAB6 /* Authenticator.swift */; };
 		2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5926C8285D0088BAB6 /* Signup.swift */; };
 		2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F426BC424B009C1D21 /* MainTabView.swift */; };
@@ -72,6 +73,7 @@
 		2A4256432704250A00B26232 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		2A4256452704251E00B26232 /* RestSignAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSignAPI.swift; sourceTree = "<group>"; };
 		2A4256472704254900B26232 /* weatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherAPI.swift; sourceTree = "<group>"; };
+		2A425649270430A700B26232 /* ContentLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLogin.swift; sourceTree = "<group>"; };
 		2A996A5726C812460088BAB6 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
 		2A996A5926C8285D0088BAB6 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		2AEAB2F426BC424B009C1D21 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		2A996A4C26C781990088BAB6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				2A425649270430A700B26232 /* ContentLogin.swift */,
 				2A996A5726C812460088BAB6 /* Authenticator.swift */,
 				2A996A5926C8285D0088BAB6 /* Signup.swift */,
 				2A26A4AF26DA68BF00670DFB /* UnderLineTextFieldView.swift */,
@@ -399,6 +402,7 @@
 				F7D1E15426FAF23F006FB401 /* Charts1.swift in Sources */,
 				F7C43CC426EB00CB00DD3229 /* ChartsStyle.swift in Sources */,
 				2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */,
+				2A42564A270430A700B26232 /* ContentLogin.swift in Sources */,
 				2A42563E270424D000B26232 /* myInfo.swift in Sources */,
 				2A42563A270424A400B26232 /* Settings.swift in Sources */,
 				2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */,

@@ -113,7 +113,7 @@ struct FirstView: View{
                         .frame(width: 360, height: 365)
                     Spacer()
                 }
-                .padding()
+                //.padding()
             }
         }
     }
@@ -138,7 +138,7 @@ struct SecondView: View{
                         .frame(width: 360, height: 365)
                     Spacer()
                 }
-                .padding()
+                //.padding()
             }
         }
     }
@@ -163,7 +163,7 @@ struct ThirdView: View{
                         .frame(width: 360, height: 365)
                     Spacer()
                 }
-                .padding()
+                //.padding()
             }
         }
     }

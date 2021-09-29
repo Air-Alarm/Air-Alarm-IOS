@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct Settings: View {
-    @Environment(\.presentationMode) var presentationMode
-      
     var body: some View {
 //        NavigationView {
             VStack{
@@ -30,11 +28,6 @@ struct Settings: View {
                     }
                 }
             }
-            .navigationBarItems(leading: Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text("asdf")
-            }))
 //       }
         .navigationBarHidden(false)
         .navigationBarBackButtonHidden(false)

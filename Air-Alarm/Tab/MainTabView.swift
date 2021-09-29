@@ -10,11 +10,11 @@ import SwiftUI
 // 하단 Tab2
 struct MainTabView: View {
     var body: some View {
+        HeaderTabView()
         TabView {
             AListView()
                 .tabItem{ Label("Tab 1", systemImage: "1.square") }
                 .navigationBarHidden(false)
-
             BList()
                 .tabItem{ Label("Tab 2", systemImage: "2.square") }
                 .navigationBarHidden(false)
@@ -22,6 +22,37 @@ struct MainTabView: View {
                 .tabItem{ Label("Tab 3", systemImage: "3.square") }
                 .navigationBarHidden(false)
         }
+    }
+}
+
+//.navigationBarHidden(false)
+//.navigationBarBackButtonHidden(true)
+//.navigationBarTitle(Text("Air Alarm"), displayMode: .inline)    // tab 이름
+//.navigationBarItems(leading: ChangeleadingItem(), trailing: ChangetrailingItem())
+//.navigationBarColor(.white)
+
+struct HeaderTabView: View {
+    var body: some View {
+        HStack {
+            Image("icon")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 40, height: 40, alignment: .center)
+                .padding(10)
+            Spacer()
+            Text("Air Alarm")
+                .foregroundColor(Color.blue)
+            Spacer()
+            Button(action: { Settings() }
+            ){
+                Image(systemName: "gearshape")
+            }
+            Button(action: { Alarm() }
+            ){
+                Image(systemName: "bell")
+            }
+            .padding(5)
+        }//.frame(height: Header.navigationBarHeight)
     }
 }
 
@@ -57,10 +88,6 @@ func ChangeleadingItem() -> AnyView {
                     )
                     .navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true)
-//                    Button(action: { Settings() }
-//                    ){
-//                        Image(systemName: "gearshape")
-//                    }
                 }
             )
         }
