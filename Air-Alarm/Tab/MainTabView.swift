@@ -13,13 +13,13 @@ struct MainTabView: View {
         HeaderTabView()
         TabView {
             AListView()
-                .tabItem{ Label("Tab 1", systemImage: "1.square") }
+                .tabItem{ Label( "", systemImage: "thermometer")  }
                 .navigationBarHidden(false)
             BList()
-                .tabItem{ Label("Tab 2", systemImage: "2.square") }
+                .tabItem{ Label( "", systemImage: "chart.bar") }
                 .navigationBarHidden(false)
             CList()
-                .tabItem{ Label("Tab 3", systemImage: "3.square") }
+                .tabItem{ Label( "", systemImage: "info.circle") }
                 .navigationBarHidden(false)
         }
     }
