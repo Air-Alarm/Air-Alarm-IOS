@@ -9,11 +9,9 @@ import SwiftUI
 
 @main
 struct Air_AlarmApp: App {
-    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-              .environmentObject(Authenticator())
+
         }
     }
 }
