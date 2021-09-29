@@ -16,6 +16,7 @@ struct ContentView: View {
     @EnvironmentObject var authenticator: Authenticator
     @State private var userName: String = ""
     @State private var password: String = ""
+    @State private var action: Bool = false
 
     var body: some View {
         
@@ -68,7 +69,9 @@ private extension ContentView {
                     .navigationBarColor(.white)
                     
             ){
-//                Button (action:{}){
+//                Button (action:{
+//                    self.action()
+//                }){
 //                    Text("로그인")
 //                }
 //             아이디 비밀번호 확인하는 버튼 + 시간 표시 돌아가는 효과
