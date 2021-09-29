@@ -19,18 +19,6 @@ struct AListView: View {
     
     var body: some View {
         VStack {
-//            HStack{ // air alarm 글씨
-//                Text("Air Alarm")
-//                    .font(.largeTitle)
-//                    .fontWeight(.heavy)
-//                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-//
-//                Spacer()
-//            }
-//            .padding()
-//            .background(Color.white.ignoresSafeArea(.all, edges: .top))
-//            Divider()
-            
             ScrollView(.vertical, showsIndicators: false, content: {
                 
                 GeometryReader{reader -> AnyView in
@@ -71,26 +59,8 @@ struct AListView: View {
                         ProgressView()
                             .offset(y: -35)
                     }
-//                    else{
-//                        Image(systemName: "arrow.down")
-//                            .font(.system(size: 16, weight: .heavy))
-//                            .foregroundColor(.gray)
-//                            .rotationEffect(.init(degrees: refresh.started ? 180 : 0))
-//                            .offset(y: -25)
-//                            .animation(.easeIn)
-//                    }
                     
                     VStack {
-                       // Button(action: GET){
-                       //     Text("버튼")
-                       // }
-//                        Text("CO2: " + String(db.CO2))
-//                        Text("Dust: " + String(db.dust))
-//                        Text("Humidity: " + String(db.humidity))
-//                        Text("ID: " + String(db.id))
-//                        Text("Temperature: " + String(db.temperature))
-//                        Text("Time: " + db.time)
-                        
                         HStack {
                             Spacer()
                             Text("온도 :  " + String(db.temperature) + " °C")

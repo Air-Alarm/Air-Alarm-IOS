@@ -24,16 +24,18 @@ struct Signup: View {
             return NavigationView {
                 VStack {
                     
-                    UnderlineTextFieldView(text: $signUp.userId, textField: textView, placeholder: "")
+                    UnderlineTextFieldView(text: $signUp.email, textField: emailView, placeholder: "")
                         .padding(.top, 50)
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
-                                        
-                    UnderlineTextFieldView(text: $signUp.password, textField: passwordView, placeholder: "")
+//                    UnderlineTextFieldView(text: $signUp.user, textField: textView, placeholder: "")
+//                        .padding(.top, 50)
+//                        .autocapitalization(.none)
+//                        .disableAutocorrection(true)
+//
+                    UnderlineTextFieldView(text: $signUp.pwd, textField: passwordView, placeholder: "")
                         .padding(.top, 10)
-                    UnderlineTextFieldView(text: $signUp.email, textField: emailView, placeholder: "")
-                        .padding(.top, 10)
-                    UnderlineTextFieldView(text: $signUp.snKey, textField: snView, placeholder: "")
+                    UnderlineTextFieldView(text: $signUp.SN, textField: snView, placeholder: "")
                         .padding(.top, 10)
                     
                     HStack{
@@ -41,7 +43,7 @@ struct Signup: View {
                         login
                     }
             }
-                // navigationBar 
+                // navigationBar
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
@@ -62,23 +64,23 @@ struct Signup: View {
 private extension Signup {
     
     // TextField 정보
-     var textView: some View {
-          TextField("아이디", text: $signUp.userId)
-            .foregroundColor(.black)
-     }
-
-     var passwordView: some View {
-          SecureField("비밀번호", text: $signUp.password)
-            .foregroundColor(.black)
-     }
     var emailView: some View {
         TextField("Email", text: $signUp.email)
             .foregroundColor(.black)
             .keyboardType(.emailAddress)
             .autocapitalization(.none)
     }
+//     var textView: some View {
+//          TextField("아이디", text: $signUp.user)
+//            .foregroundColor(.black)
+//     }
+
+     var passwordView: some View {
+          SecureField("비밀번호", text: $signUp.pwd)
+            .foregroundColor(.black)
+     }
     var snView: some View {
-        TextField("기기 S/N", text: $signUp.snKey)
+        TextField("기기 S/N", text: $signUp.SN)
             .foregroundColor(.black)
     }
     // 뒤로가기 버튼
