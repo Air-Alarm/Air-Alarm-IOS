@@ -16,24 +16,14 @@ struct sensorInfo: View {
     }
     
     var body: some View {
-        NavigationView {
             VStack {
                 
-                ProfileImage(imageName: "icon")
-                        .padding()
-                Form {
-                    Section(header: Text("Sensor Info")) {
-                        Text("SN :  " + String(sensor_db.SN))
-                    }
-                }
-    //            Text("\(json)")//웹에서 받아온 내용이 여기 저장됨
-    //                .padding()
+                Text("센서 측정 주기")
                 
             }
             .background(Color.white)
-        }
-        .navigationBarHidden(false)
-        .navigationBarBackButtonHidden(false)
+            .navigationBarHidden(false)
+            .navigationBarBackButtonHidden(false)
     }
 }
 

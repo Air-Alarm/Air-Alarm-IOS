@@ -9,7 +9,12 @@ import SwiftUI
 
 struct programmerInfo: View {
     var body: some View {
-        Text("개발자 정보")
+            VStack {
+                Text("개발자 정보")
+            }
+            .background(Color.white)
+            .navigationBarHidden(false)
+            .navigationBarBackButtonHidden(false)
     }
 }
 

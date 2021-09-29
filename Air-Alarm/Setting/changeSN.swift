@@ -16,7 +16,6 @@ struct changeSN: View {
     }
     
     var body: some View {
-        NavigationView {
             VStack {
                 
                 ProfileImage(imageName: "icon")
@@ -29,11 +28,8 @@ struct changeSN: View {
     //            Text("\(json)")//웹에서 받아온 내용이 여기 저장됨
     //                .padding()
                 
-            }
             .background(Color.white)
         }
-        .navigationBarHidden(false)
-        .navigationBarBackButtonHidden(false)
     }
 }
 

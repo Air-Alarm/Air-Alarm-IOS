@@ -16,7 +16,6 @@ struct myInfo: View {
     }
     
     var body: some View {
-        NavigationView {
             VStack {
                 
                 ProfileImage(imageName: "icon")
@@ -32,9 +31,8 @@ struct myInfo: View {
                 
             }
             .background(Color.white)
-        }
-        .navigationBarHidden(false)
-        .navigationBarBackButtonHidden(false)
+            .navigationBarHidden(false)
+            .navigationBarBackButtonHidden(false)
     }
 }
 
