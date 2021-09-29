@@ -10,12 +10,7 @@ import SwiftUI
 struct Settings: View {
 
     var body: some View {
-        TabView{
-            Settings()
-                .tabItem { Label("Setting", systemImage: "gearshape") }
-                .navigationBarHidden(/*@START_MENU_TOKEN@*/false/*@END_MENU_TOKEN@*/)
-        }
-        NavigationView {
+//        NavigationView {
             VStack{
                 List {
                     myInfofo
@@ -23,21 +18,22 @@ struct Settings: View {
                     sensorInfofo
                     weatherInfofo
                     programmerInfofo
+                    Button(action: {
+                        
+                    }){
+                            Text("로그아웃")
+                                .font(.headline)
+                                .padding()
+                                .foregroundColor(.red)
+                                .cornerRadius(40)
+                    }
                 }
-//                Button(action: ContentView
-//                ){
-//                        Text("로그아웃")
-//                            .font(.headline)
-//                            .padding()
-//                            .foregroundColor(.red)
-//                            .cornerRadius(40)
-//                }
             }
-       }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(false)
-        .navigationBarTitle(Text("Setting"), displayMode: .inline)
-        .navigationBarColor(.white)
+//       }
+//        .navigationBarHidden(false)
+//        .navigationBarBackButtonHidden(false)
+//        .navigationBarTitle(Text("Setting"), displayMode: .inline)
+//        .navigationBarColor(.white)
     }
 }
 
@@ -46,6 +42,8 @@ private extension Settings {
     var myInfofo: some View {
         NavigationLink(
             destination: myInfo()
+                .navigationBarHidden(false)
+                .navigationBarBackButtonHidden(false)
         
         ) {
             Text("내 정보")
@@ -57,8 +55,8 @@ private extension Settings {
     var changeSNN: some View {
         NavigationLink(
             destination: changeSN()
-                .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(false)
+                .navigationBarBackButtonHidden(false)
         
         ) {
             Text("S/N 변경")
@@ -70,8 +68,8 @@ private extension Settings {
     var sensorInfofo: some View {
         NavigationLink(
             destination: sensorInfo()
-                .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(false)
+                .navigationBarBackButtonHidden(false)
         
         ){
             Text("센서 측정 주기 / 단위 정보")
@@ -83,8 +81,8 @@ private extension Settings {
     var weatherInfofo: some View {
         NavigationLink(
             destination: WeatherInfo()
-                .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(false)
+                .navigationBarBackButtonHidden(false)
         
         ){
             Text("지역 날씨 API 정보")
@@ -96,8 +94,8 @@ private extension Settings {
     var programmerInfofo: some View {
         NavigationLink(
             destination: programmerInfo()
-                .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(false)
+                .navigationBarBackButtonHidden(false)
         
         ){
             Text("개발자 정보")

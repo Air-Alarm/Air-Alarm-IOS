@@ -19,6 +19,7 @@ struct sensorInfo: View {
             VStack {
                 
                 Text("센서 측정 주기")
+                Text("단위 정보")
                 
             }
             .background(Color.white)
