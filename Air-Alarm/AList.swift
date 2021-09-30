@@ -9,12 +9,12 @@ import SwiftUI
 
 struct AListView: View {
     let restAPI = RestAPI()
-    @State var db = RestAPI.Database()
+    @State var db = DustInfo.init()
     @State var refresh = Refresh(started: false, released: false)
     @State var json :  String = "아래로 당겨서 새로고침"
     
     func update() {
-        self.db = restAPI.GET()
+        self.db = restAPI.GET_Dust()
     }
     
     var body: some View {

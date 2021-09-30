@@ -16,10 +16,10 @@ struct MainTabView: View {
                 .tabItem{ Label( "", systemImage: "thermometer")  }
                 .navigationBarHidden(false)
             BList()
-                .tabItem{ Label( "", systemImage: "chart.bar") }
+                .tabItem{ Label( "", systemImage: "thermometer") }
                 .navigationBarHidden(false)
             CList()
-                .tabItem{ Label( "", systemImage: "info.circle") }
+                .tabItem{ Label( "", systemImage: "thermometer") }
                 .navigationBarHidden(false)
         }
     }
@@ -32,6 +32,8 @@ struct MainTabView: View {
 //.navigationBarColor(.white)
 
 struct HeaderTabView: View {
+    @State var showingAlarm = false
+    
     var body: some View {
         HStack {
             Image("icon")
@@ -43,18 +45,37 @@ struct HeaderTabView: View {
             Text("Air Alarm")
                 .foregroundColor(Color.blue)
             Spacer()
-            Button(action: { Settings() }
-            ){
+            Button(action: {
+                Settings()
+            }){
                 Image(systemName: "gearshape")
             }
-            Button(action: { Alarm() }
+            Button(action: {
+                self.showingAlarm.toggle()
+            }
             ){
                 Image(systemName: "bell")
+            }.sheet(isPresented: $showingAlarm) {
+                Alarm()
             }
             .padding(5)
         }//.frame(height: Header.navigationBarHeight)
     }
 }
+
+// @State var showingSignUp = false
+//Button(action: {
+//    self.showingSignUp.toggle()
+//}) {
+//    Text("회원가입")
+//        .font(.headline)
+//        .padding()
+//        .foregroundColor(.white)
+//        .background(Color.blue)
+//        .cornerRadius(40)
+//}.sheet(isPresented: $showingSignUp) {
+//    Signup()
+//}
 
 // 왼쪽 상단 Tab
 func ChangeleadingItem() -> AnyView {

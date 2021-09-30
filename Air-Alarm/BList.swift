@@ -37,16 +37,16 @@ struct FirstView: View{
         ZStack{
             VStack {
                 ScrollView {
-                    LineView(data: Data.data0, title: Data.title, legend: Data.legend0, style: Style.metoring)
+                    LineView(data: Data.data0, title: Data.title0, legend: Data.legend0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data1, title: Data.title, legend: Data.legend1, style: Style.metoring)
+                    LineView(data: Data.data1, title: Data.title1, legend: Data.legend1, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data2, title: Data.title, legend: Data.legend2, style: Style.metoring)
+                    LineView(data: Data.data2, title: Data.title2, legend: Data.legend2, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data3, title: Data.title, legend: Data.legend3, style: Style.metoring)
+                    LineView(data: Data.data3, title: Data.title3, legend: Data.legend3, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     Spacer()

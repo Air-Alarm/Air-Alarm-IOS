@@ -16,6 +16,7 @@ struct ContentLogin: View {
     @State private var showError = false
     
     @Binding var signInSuccess: Bool
+    @State var showingSignUp = false
     
     var body: some View {
         ZStack {
@@ -32,26 +33,41 @@ struct ContentLogin: View {
                     .disableAutocorrection(true)
                 SecureField("비밀번호", text: $password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                Button(action: {
-                    // Your auth logic
-                    if(self.userName == self.password) {
-                        self.signInSuccess = true
-                    }
-                    else {
-                        self.showError = true
-                    }
+                HStack{
+                    Button(action: {
+                        // Your auth logic
+                        if(self.userName == self.password) {
+                            self.signInSuccess = true
+                        }
+                        else {
+                            self.showError = true
+                        }
+                        }) {
+                            Text("로그인")
+                                .font(.headline)
+                                .foregroundColor(.blue)
+                                .padding()
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 30)
+                                        .stroke(Color.blue, lineWidth: 1)
+                                        .frame(width: 90, height: 50)
+                                )
+                        }.padding()
+
+                    Button(action: {
+                        self.showingSignUp.toggle()
                     }) {
-                        Text("로그인")
+                        Text("회원가입")
                             .font(.headline)
-                            .foregroundColor(.blue)
                             .padding()
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 30)
-                                    .stroke(Color.blue, lineWidth: 1)
-                                    .frame(width: 90, height: 50)
-                            )
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .cornerRadius(40)
+                    }.sheet(isPresented: $showingSignUp) {
+                        Signup()
                     }
+                    .padding()
+                }
                     if showError {
                         Text("Incorrect username/password")
                             .foregroundColor(Color.red)

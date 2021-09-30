@@ -15,7 +15,7 @@
 //        willPresent notification: UNNotification,
 //        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
 //        -> Void) {
-//        completionHandler([.alert, .badge, .sound])
+//        completionHandler([.banner, .badge, .sound])
 //    }
 //
 //    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

@@ -39,7 +39,7 @@ struct Signup: View {
                         .padding(.top, 10)
                     
                     HStack{
-                        back
+//                        back
                         login
                     }
             }
@@ -84,25 +84,25 @@ private extension Signup {
             .foregroundColor(.black)
     }
     // 뒤로가기 버튼
-    var back: some View {
-        VStack{
-            Spacer()
-            NavigationLink(
-                destination: ContentView()
-            ){
-                Text("뒤로가기")
-                    .font(.headline)
-                    .foregroundColor(.blue)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(Color.blue, lineWidth: 1)
-                            .frame(width: 90, height: 50)
-                    )
-            }
-            Spacer()
-        }.padding()
-    }
+//    var back: some View {
+//        VStack{
+//            Spacer()
+//            NavigationLink(
+//                destination: ContentView()
+//            ){
+//                Text("뒤로가기")
+//                    .font(.headline)
+//                    .foregroundColor(.blue)
+//                    .padding()
+//                    .overlay(
+//                        RoundedRectangle(cornerRadius: 30)
+//                            .stroke(Color.blue, lineWidth: 1)
+//                            .frame(width: 90, height: 50)
+//                    )
+//            }
+//            Spacer()
+//        }.padding()
+//    }
     // 가입하기 버튼
     var login: some View {
         VStack{
@@ -119,10 +119,13 @@ private extension Signup {
             ){
                 Text("가입하기")
                     .font(.headline)
+                    .foregroundColor(.blue)
                     .padding()
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(40)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 30)
+                            .stroke(Color.blue, lineWidth: 1)
+                            .frame(width: 90, height: 50)
+                    )
             }
             Spacer()
         }.padding()
