@@ -13,6 +13,7 @@ struct ContentView: View {
     @State var signInSuccess = false
     
     var body: some View {
+        // 로그인 조건
         return Group {
             if signInSuccess {
                 MainTabView()

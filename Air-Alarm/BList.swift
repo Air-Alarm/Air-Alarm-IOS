@@ -5,7 +5,6 @@
 //  Created by 김하은 on 2021/08/06.
 //
 
-
 import SwiftUI
 import SwiftUICharts
 
@@ -32,6 +31,7 @@ struct BList: View {
     }
 }
 
+// 첫 번째 화면
 struct FirstView: View{
     var body: some View{
         ZStack{
@@ -40,13 +40,13 @@ struct FirstView: View{
                     LineView(data: Data.data0, title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data1, title: Data.title1, style: Style.metoring)
+                    LineView(data: Data.data3, title: Data.title1, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     LineView(data: Data.data2, title: Data.title2, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data3, title: Data.title3, style: Style.metoring)
+                    LineView(data: Data.data1, title: Data.title3, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     Spacer()
@@ -57,6 +57,7 @@ struct FirstView: View{
     }
 }
 
+// 두 번째 화면
 struct SecondView: View{
     var body: some View{
         ZStack{
@@ -82,6 +83,7 @@ struct SecondView: View{
     }
 }
 
+// 세 번째 화면
 struct ThirdView: View{
     var body: some View{
         ZStack{
@@ -107,8 +109,10 @@ struct ThirdView: View{
     }
 }
 
+// 상단 탭바 설정
 struct CustomTopTabBar: View {
     @Binding var tabIndex: Int
+    
     var body: some View {
         HStack(spacing: 50) {
             Spacer()
@@ -128,6 +132,7 @@ struct CustomTopTabBar: View {
     }
 }
 
+// 버튼으로 화면 전환
 struct TabBarButton: View {
     let text: String
     @Binding var isSelected: Bool
@@ -136,10 +141,12 @@ struct TabBarButton: View {
             .fontWeight(isSelected ? .heavy : .regular)
             .font(.custom("Avenir", size: 16))
             .padding(.bottom,10)
-            .border(width: isSelected ? 2 : 1, edges: [.bottom], color: .blue)
+            .border(width: isSelected ? 3 : 1, edges: [.bottom], color: .blue)
+            .foregroundColor(isSelected ? Color.blue : Color.black)
     }
 }
 
+// 모든 뷰에 테두리 설정
 struct EdgeBorder: Shape {
 
     var width: CGFloat
@@ -181,6 +188,7 @@ struct EdgeBorder: Shape {
     }
 }
 
+// 뷰를 modifier 로 사용하기 위해 View 확장을 작성
 extension View {
     func border(width: CGFloat, edges: [Edge], color: SwiftUI.Color) -> some View {
         overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color))

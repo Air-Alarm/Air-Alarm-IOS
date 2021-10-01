@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftUICharts
 
+// 그래프 데이터
 struct Data {
     //static let title = "Air-Alarm"
     static let title0 = "온도"

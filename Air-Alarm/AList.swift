@@ -9,14 +9,15 @@ import SwiftUI
 
 struct AListView: View {
     let restAPI = RestAPI()
-    @State var db = RestAPI.Database()
+    @State var db = DustInfo()
     @State var refresh = Refresh(started: false, released: false)
     @State var json :  String = "아래로 당겨서 새로고침"
     
     func update() {
-        self.db = restAPI.GET()
+        self.db = restAPI.GET_Dust()
     }
     
+    // ScrollView와 GeometryReader를 사용해서 당겨서 새로고침 기능 구현
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: false, content: {
@@ -61,6 +62,16 @@ struct AListView: View {
                     }
                     
                     VStack {
+//                        Button(action: GET_Dust) {
+//                             Text("버튼")
+//                         }
+//                         Text("CO2: " + String(db.CO2))
+//                         Text("Dust: " + String(db.dust))
+//                         Text("Humidity: " + String(db.humidity))
+//                         Text("ID: " + String(db.id))
+//                         Text("Temperature: " + String(db.temperature))
+//                         Text("Time: " + db.time)
+                                                
                         HStack {
                             Spacer()
                             Text("온도 :  " + String(db.temperature) + " °C")
@@ -77,12 +88,78 @@ struct AListView: View {
                             Spacer()
                             Text("CO₂ :  " + String(db.CO2) + " ppm")
                                 .padding()
+                            if(db.CO2 == 0) { // 대기
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.gray)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.CO2 >= 350 && db.CO2 <= 450) { // 좋음
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.blue)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.CO2 > 450 && db.CO2 <= 1000) { // 약간 나쁨
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.yellow)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.CO2 > 1000 && db.CO2 <= 2000) { // 나쁨
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.orange)
+                                    .cornerRadius(15)
+                            }
+                            else { // 매우 나쁨
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.red)
+                                    .cornerRadius(15)
+                            }
                             Spacer()
                         }
                         HStack {
                             Spacer()
                             Text("PM2.5 :  " + String(db.dust) + " ㎍/m³")
                                 .padding()
+                            if(db.dust == 0) { // 대기
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.gray)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.dust <= 30 && db.dust > 0) { // 좋음
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.blue)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.dust >= 31 && db.dust <= 80) { // 보통
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.green)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.dust >= 81 && db.dust <= 120) { // 약간 나쁨
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.yellow)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.dust >= 121 && db.dust <= 200) { // 나쁨
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.orange)
+                                    .cornerRadius(15)
+                            }
+                            else { // 매우 나쁨
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.red)
+                                    .cornerRadius(15)
+                            }
                             Spacer()
                         }
                         HStack {
@@ -94,17 +171,52 @@ struct AListView: View {
                         
                         Text("\(json)")//웹에서 받아온 내용이 여기 저장됨
                             .padding()
-                        
                     }
                     .background(Color.white)
                 }
                 .offset(y: refresh.released ? 40 : -10)
             })
+            HStack {
+                Rectangle()
+                    .frame(width: 15, height: 15)
+                    .foregroundColor(Color.red)
+                    .cornerRadius(15)
+                Text(": 매우 나쁨")
+                Rectangle()
+                    .frame(width: 15, height: 15)
+                    .foregroundColor(Color.orange)
+                    .cornerRadius(15)
+                Text(": 나쁨")
+                Rectangle()
+                    .frame(width: 15, height: 15)
+                    .foregroundColor(Color.yellow)
+                    .cornerRadius(15)
+                Text(": 약간 나쁨")
+            }
+            HStack {
+                Rectangle()
+                    .frame(width: 15, height: 15)
+                    .foregroundColor(Color.green)
+                    .cornerRadius(15)
+                Text(": 보통")
+                Rectangle()
+                    .frame(width: 15, height: 15)
+                    .foregroundColor(Color.blue)
+                    .cornerRadius(15)
+                Text(": 좋음")
+                Rectangle()
+                    .frame(width: 15, height: 15)
+                    .foregroundColor(Color.gray)
+                    .cornerRadius(15)
+                Text(": 대기")
+            }
+            Spacer()
         }
         //.background(Color.black.opacity(0.06).ignoresSafeArea())
     }
     func updateData(){
-        
+        update()
+        print(db)
         print("update Data")
         
         
