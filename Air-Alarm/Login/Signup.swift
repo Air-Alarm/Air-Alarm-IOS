@@ -9,10 +9,11 @@ import SwiftUI
 
 
 struct Signup: View {
-        let signAPI = Api()
-        @State private var action: Int? = 0
-        @State var signUp = Api.User()
-        @State var actionn: Int? = nil
+    let signAPI = Api()
+    @State private var action: Int? = 0
+    @State var signUp = Api.User()
+    @State var actionn: Int? = nil
+    @Binding var showingSignUp: Bool
         
     func signUpup() {
         signAPI.GET(signUp: self.signUp)
@@ -108,14 +109,28 @@ private extension Signup {
         VStack{
             Spacer()
             
-            NavigationLink(destination: ContentView(), tag: 10, selection: $actionn) {
-                EmptyView()
-            }
-
-            Button ( action: {
-                signUpup()
-                self.actionn = 10
-            }
+//            NavigationLink(destination: ContentView(), tag: 10, selection: $actionn) {
+//                EmptyView()
+//            }
+//
+//            Button ( action: {
+//                signUpup()
+//                self.actionn = 10
+//            }
+//            ){
+//                Text("가입하기")
+//                    .font(.headline)
+//                    .foregroundColor(.blue)
+//                    .padding()
+//                    .overlay(
+//                        RoundedRectangle(cornerRadius: 30)
+//                            .stroke(Color.blue, lineWidth: 1)
+//                            .frame(width: 90, height: 50)
+//                    )
+//            }
+            
+            Button(
+                action: {self.showingSignUp = false}
             ){
                 Text("가입하기")
                     .font(.headline)
@@ -130,12 +145,22 @@ private extension Signup {
             Spacer()
         }.padding()
     }
-    
-    
 }
 
-struct Signup_Previews: PreviewProvider {
-    static var previews: some View {
-        Signup()
-    }
-}
+//struct ModalPopup : View {
+//    @Binding var showing:Bool
+//
+//    var body: some View {
+//        Button(action: {
+//            self.showing = false
+//        }) {
+//            Text("Dismiss").frame(height: 60)
+//        }
+//    }
+//}
+
+//struct Signup_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Signup()
+//    }
+//}

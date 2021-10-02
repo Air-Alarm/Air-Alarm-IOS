@@ -63,9 +63,8 @@ struct ContentLogin: View {
                             .foregroundColor(.white)
                             .background(Color.blue)
                             .cornerRadius(40)
-                    }.sheet(isPresented: $showingSignUp) {
-                        Signup()
-                    }
+                    }.sheet(isPresented: $showingSignUp,
+                            content: {Signup( showingSignUp: self.$showingSignUp)})
                     .padding()
                 }
                     if showError {

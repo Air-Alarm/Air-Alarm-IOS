@@ -10,8 +10,6 @@
 		2A26A4B026DA68BF00670DFB /* UnderLineTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A26A4AF26DA68BF00670DFB /* UnderLineTextFieldView.swift */; };
 		2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */; };
 		2A4256332704244800B26232 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4256322704244800B26232 /* Alarm.swift */; };
-		2A4256352704246400B26232 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4256342704246400B26232 /* LocalNotification.swift */; };
-		2A4256372704247F00B26232 /* AlarmDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4256362704247F00B26232 /* AlarmDelegate.swift */; };
 		2A42563A270424A400B26232 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A425639270424A400B26232 /* Settings.swift */; };
 		2A42563C270424BC00B26232 /* changeSN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42563B270424BC00B26232 /* changeSN.swift */; };
 		2A42563E270424D000B26232 /* myInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42563D270424D000B26232 /* myInfo.swift */; };
@@ -69,8 +67,6 @@
 		2A26A4AF26DA68BF00670DFB /* UnderLineTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextFieldView.swift; sourceTree = "<group>"; };
 		2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarColor.swift; sourceTree = "<group>"; };
 		2A4256322704244800B26232 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
-		2A4256342704246400B26232 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
-		2A4256362704247F00B26232 /* AlarmDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDelegate.swift; sourceTree = "<group>"; };
 		2A425639270424A400B26232 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2A42563B270424BC00B26232 /* changeSN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeSN.swift; sourceTree = "<group>"; };
 		2A42563D270424D000B26232 /* myInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myInfo.swift; sourceTree = "<group>"; };
@@ -151,8 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				2A4256322704244800B26232 /* Alarm.swift */,
-				2A4256342704246400B26232 /* LocalNotification.swift */,
-				2A4256362704247F00B26232 /* AlarmDelegate.swift */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -411,7 +405,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A4256372704247F00B26232 /* AlarmDelegate.swift in Sources */,
 				F95CD7A326C7E9FB00CDDFA5 /* RestAPI.swift in Sources */,
 				F7D1E15826FAF263006FB401 /* Charts3.swift in Sources */,
 				2A4256462704251E00B26232 /* RestSignAPI.swift in Sources */,
@@ -438,7 +431,6 @@
 				2A42564F2704936000B26232 /* Login.swift in Sources */,
 				2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */,
 				2A4256482704254900B26232 /* weatherAPI.swift in Sources */,
-				2A4256352704246400B26232 /* LocalNotification.swift in Sources */,
 				2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */,
 				2A26A4B026DA68BF00670DFB /* UnderLineTextFieldView.swift in Sources */,
 				F7D1E15626FAF251006FB401 /* Charts2.swift in Sources */,
