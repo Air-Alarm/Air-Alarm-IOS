@@ -35,7 +35,7 @@ struct HeaderTabView: View {
     @State var showingAlarm = false
     
     var body: some View {
-        NavigationView{
+//        NavigationView{
             HStack {
                 Image("icon")
                     .resizable()
@@ -46,20 +46,21 @@ struct HeaderTabView: View {
                 Text("Air Alarm")
                     .foregroundColor(Color.blue)
                 Spacer()
-                NavigationLink(
-                    destination: Settings()
-                        .navigationBarHidden(false)
-                        .navigationBarBackButtonHidden(false)
-                
-                ) {
-                    Image(systemName: "gearshape")
-                        .padding()
-                }
-//                Button(action: {
-//                    Settings()
-//                }){
+//                NavigationLink(
+//                    destination: Settings()
+//                        .navigationBarHidden(false)
+//                        .navigationBarBackButtonHidden(false)
+//
+//                ) {
 //                    Image(systemName: "gearshape")
+//                        .padding()
 //                }
+                Button(action: {
+                //    Settings()
+                    showingSettings()
+                }){
+                    Image(systemName: "gearshape")
+                }
                 Button(action: {
                     self.showingAlarm.toggle()
                 }
@@ -70,8 +71,12 @@ struct HeaderTabView: View {
                 }
                 .padding(5)
             }//.frame(height: Header.navigationBarHeight)
-        }
+//        }
     }
+}
+
+func showingSettings(){
+    Settings()
 }
 
 // @State var showingSignUp = false

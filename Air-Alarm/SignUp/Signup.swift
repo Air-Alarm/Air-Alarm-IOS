@@ -11,6 +11,7 @@ import SwiftUI
 struct Signup: View {
     @Binding var showingSignUp: Bool
     @State private var member = SignUpMember.init()
+    var restApi = RestAPI()
     
         var body: some View {
 
@@ -73,8 +74,9 @@ private extension Signup {
             Spacer()
             Button(
                 action: {
-                    var Sign_trigger = RestAPI().GET_Signup(member: self.member)
+                    var Sign_trigger = self.restApi.GET_Signup(member: self.member)
                     print(Sign_trigger)
+                    
                     self.showingSignUp = !Sign_trigger.success
                 }
             ){

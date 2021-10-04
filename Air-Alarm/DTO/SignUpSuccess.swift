@@ -14,11 +14,13 @@ struct SignUpSuccess: Codable {
      success: 회원가입 성공 여부
      */
     
-    init(id: String = "", success: Bool = false) {
+    init(id: String = "", success: Bool = false, SN: String = "") {
         self.id = id
         self.success = success
+        self.SN = SN
     }
     
     var id: String
     var success: Bool
+    var SN: String
 }
