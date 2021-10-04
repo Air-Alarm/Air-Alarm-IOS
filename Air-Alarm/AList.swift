@@ -61,17 +61,7 @@ struct AListView: View {
                             .offset(y: -35)
                     }
                     
-                    VStack {
-//                        Button(action: GET_Dust) {
-//                             Text("버튼")
-//                         }
-//                         Text("CO2: " + String(db.CO2))
-//                         Text("Dust: " + String(db.dust))
-//                         Text("Humidity: " + String(db.humidity))
-//                         Text("ID: " + String(db.id))
-//                         Text("Temperature: " + String(db.temperature))
-//                         Text("Time: " + db.time)
-                                                
+                    VStack {                                                
                         HStack {
                             Spacer()
                             Text("온도 :  " + String(db.temperature) + " °C")
