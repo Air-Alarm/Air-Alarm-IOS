@@ -8,6 +8,9 @@
 import Foundation
 
 class RestAPI {
+    let sync_que = DispatchQueue.global()
+    let sync_group = DispatchGroup.init()
+    
     // 실시간 센서 정보 가져오기
     func GET_Dust() -> DustInfo {
         var db = DustInfo.init()
@@ -16,20 +19,20 @@ class RestAPI {
             var request = URLRequest.init(url: url)
 
             request.httpMethod = "GET"
+            
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
 
-            DispatchQueue.global().sync {
-                URLSession.shared.dataTask(with: request) { (data, response, error) in
-                    guard let data = data else { return }
-
-                    // get
-                    let decoder = JSONDecoder()
-                    if let json = try? decoder.decode(DustInfo.self, from: data) {
-                        db = json
-                    }
-                }.resume()
-            }
+                // get
+                let decoder = JSONDecoder()
+                if let json = try? decoder.decode(DustInfo.self, from: data) {
+                    db = json
+                }
+            }.resume()
         }
         
+        // wait 0.5 sec
+        Thread.sleep(forTimeInterval: 0.5)
         return db
     }
     
@@ -45,26 +48,26 @@ class RestAPI {
 
             request.httpMethod = "GET"
 
-            DispatchQueue.global().sync {
-                URLSession.shared.dataTask(with: request) { (data, response, error) in
-                    guard let data = data else { return }
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
 
-                    // get
-                    let decoder = JSONDecoder()
-                    if let json = try? decoder.decode(SignUpSuccess.self, from: data) {
-                        db = json
-                    }
-                }.resume()
-            }
+                // get
+                let decoder = JSONDecoder()
+                if let json = try? decoder.decode(SignUpSuccess.self, from: data) {
+                    db = json
+                    
+                }
+            }.resume()
         }
         
+        // wait 0.5 sec
+        Thread.sleep(forTimeInterval: 0.5)
         return db
     }
     
     // 로그인 성공 여부 리턴
     func GET_Login(member: Login) -> LoginSuccess {
         var db = LoginSuccess.init()
-        print("user info >>", member)
         if let url = URL(string: "http://mirsv.com:4999/login_confirm?" +
                             "id=" + member.id +
                             "&pwd=" + member.pwd){
@@ -76,6 +79,7 @@ class RestAPI {
                 URLSession.shared.dataTask(with: request) { (data, response, error) in
                     guard let data = data else { return }
 
+                    
                     // get
                     let decoder = JSONDecoder()
                     if let json = try? decoder.decode(LoginSuccess.self, from: data) {
@@ -85,6 +89,8 @@ class RestAPI {
             }
         }
         
+        // wait 0.5 sec
+        Thread.sleep(forTimeInterval: 0.5)
         return db
     }
     
@@ -97,19 +103,19 @@ class RestAPI {
 
             request.httpMethod = "GET"
 
-            DispatchQueue.global().sync {
-                URLSession.shared.dataTask(with: request) { (data, response, error) in
-                    guard let data = data else { return }
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
 
-                    // get
-                    let decoder = JSONDecoder()
-                    if let json = try? decoder.decode([DustInfo].self, from: data) {
-                        db = json
-                    }
-                }.resume()
-            }
+                // get
+                let decoder = JSONDecoder()
+                if let json = try? decoder.decode([DustInfo].self, from: data) {
+                    db = json
+                }
+            }.resume()
         }
         
+        // wait 0.5 sec
+        Thread.sleep(forTimeInterval: 0.5)
         return db
     }
 }
