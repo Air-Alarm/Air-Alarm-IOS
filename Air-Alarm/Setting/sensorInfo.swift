@@ -19,7 +19,9 @@ struct sensorInfo: View {
             VStack {
                 
                 Text("센서 측정 주기")
+                Text("매 10초마다 측정")
                 Text("단위 정보")
+                Text("미세먼지(㎍/㎥), Co2(ppm), 온도('C), 습도(%)")
                 
             }
             .background(Color.white)

@@ -79,11 +79,12 @@ class RestAPI {
                     let decoder = JSONDecoder()
                     if let json = try? decoder.decode(LoginSuccess.self, from: data) {
                         db = json
+                        print("1", db)
                     }
                 }.resume()
             }
         }
-        
+        print("2", db)
         return db
     }
     

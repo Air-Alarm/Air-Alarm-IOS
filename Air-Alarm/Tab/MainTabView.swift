@@ -35,31 +35,42 @@ struct HeaderTabView: View {
     @State var showingAlarm = false
     
     var body: some View {
-        HStack {
-            Image("icon")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 40, height: 40, alignment: .center)
-                .padding(10)
-            Spacer()
-            Text("Air Alarm")
-                .foregroundColor(Color.blue)
-            Spacer()
-            Button(action: {
-                Settings()
-            }){
-                Image(systemName: "gearshape")
-            }
-            Button(action: {
-                self.showingAlarm.toggle()
-            }
-            ){
-                Image(systemName: "bell")
-            }.sheet(isPresented: $showingAlarm) {
-                Alarm()
-            }
-            .padding(5)
-        }//.frame(height: Header.navigationBarHeight)
+        NavigationView{
+            HStack {
+                Image("icon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40, alignment: .center)
+                    .padding(10)
+                Spacer()
+                Text("Air Alarm")
+                    .foregroundColor(Color.blue)
+                Spacer()
+                NavigationLink(
+                    destination: Settings()
+                        .navigationBarHidden(false)
+                        .navigationBarBackButtonHidden(false)
+                
+                ) {
+                    Image(systemName: "gearshape")
+                        .padding()
+                }
+//                Button(action: {
+//                    Settings()
+//                }){
+//                    Image(systemName: "gearshape")
+//                }
+                Button(action: {
+                    self.showingAlarm.toggle()
+                }
+                ){
+                    Image(systemName: "bell")
+                }.sheet(isPresented: $showingAlarm) {
+                    Alarm()
+                }
+                .padding(5)
+            }//.frame(height: Header.navigationBarHeight)
+        }
     }
 }
 
