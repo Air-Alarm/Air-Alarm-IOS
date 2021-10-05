@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AListView: View {
     let restAPI = RestAPI()
-    @State var db = DustInfo()
+    @State var db = DustInfo.init()
     @State var refresh = Refresh(started: false, released: false)
     @State var json :  String = "아래로 당겨서 새로고침"
     
@@ -205,8 +205,6 @@ struct AListView: View {
         //.background(Color.black.opacity(0.06).ignoresSafeArea())
     }
     func updateData(){
-        update()
-        print(db)
         print("update Data")
         
         

@@ -38,7 +38,6 @@ class RestAPI {
     // 회원가입 정보 보내고 성공 여부 리턴하기
     func GET_Signup(member: SignUpMember) -> SignUpSuccess {
         var db = SignUpSuccess.init()
-        
         if let url = URL(string: "http://mirsv.com:4999/signup_confirm?" +
                         "id=" + member.id +
                         "&pwd=" + member.pwd +
@@ -54,7 +53,6 @@ class RestAPI {
                 let decoder = JSONDecoder()
                 if let json = try? decoder.decode(SignUpSuccess.self, from: data) {
                     db = json
-                    
                 }
             }.resume()
         }
@@ -84,6 +82,7 @@ class RestAPI {
                     let decoder = JSONDecoder()
                     if let json = try? decoder.decode(LoginSuccess.self, from: data) {
                         db = json
+                        print("1", db)
                     }
                 }.resume()
             }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Settings: View {
     var body: some View {
-//        NavigationView {
+        NavigationView {
             VStack{
                 List {
                     myInfofo
@@ -28,7 +28,7 @@ struct Settings: View {
                     }
                 }
             }
-//       }
+       }
         .navigationBarHidden(false)
         .navigationBarBackButtonHidden(false)
 //        .navigationBarTitle(Text("Setting"), displayMode: .inline)

@@ -16,10 +16,10 @@ struct MainTabView: View {
                 .tabItem{ Label( "", systemImage: "thermometer")  }
                 .navigationBarHidden(false)
             BList()
-                .tabItem{ Label( "", systemImage: "chart.bar") }
+                .tabItem{ Label( "", systemImage: "thermometer") }
                 .navigationBarHidden(false)
             CList()
-                .tabItem{ Label( "", systemImage: "info.circle") }
+                .tabItem{ Label( "", systemImage: "thermometer") }
                 .navigationBarHidden(false)
         }
     }
@@ -32,29 +32,66 @@ struct MainTabView: View {
 //.navigationBarColor(.white)
 
 struct HeaderTabView: View {
+    @State var showingAlarm = false
+    
     var body: some View {
-        HStack {
-            Image("icon")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 40, height: 40, alignment: .center)
-                .padding(10)
-            Spacer()
-            Text("Air Alarm")
-                .foregroundColor(Color.blue)
-            Spacer()
-            Button(action: { Settings() }
-            ){
-                Image(systemName: "gearshape")
-            }
-            Button(action: { Alarm() }
-            ){
-                Image(systemName: "bell")
-            }
-            .padding(5)
-        }//.frame(height: Header.navigationBarHeight)
+//        NavigationView{
+            HStack {
+                Image("icon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40, alignment: .center)
+                    .padding(10)
+                Spacer()
+                Text("Air Alarm")
+                    .foregroundColor(Color.blue)
+                Spacer()
+//                NavigationLink(
+//                    destination: Settings()
+//                        .navigationBarHidden(false)
+//                        .navigationBarBackButtonHidden(false)
+//
+//                ) {
+//                    Image(systemName: "gearshape")
+//                        .padding()
+//                }
+                Button(action: {
+                //    Settings()
+                    showingSettings()
+                }){
+                    Image(systemName: "gearshape")
+                }
+                Button(action: {
+                    self.showingAlarm.toggle()
+                }
+                ){
+                    Image(systemName: "bell")
+                }.sheet(isPresented: $showingAlarm) {
+                    Alarm()
+                }
+                .padding(5)
+            }//.frame(height: Header.navigationBarHeight)
+//        }
     }
 }
+
+func showingSettings(){
+    Settings()
+}
+
+// @State var showingSignUp = false
+//Button(action: {
+//    self.showingSignUp.toggle()
+//}) {
+//    Text("회원가입")
+//        .font(.headline)
+//        .padding()
+//        .foregroundColor(.white)
+//        .background(Color.blue)
+//        .cornerRadius(40)
+//}.sheet(isPresented: $showingSignUp) {
+//    Signup()
+//}
 
 // 왼쪽 상단 Tab
 func ChangeleadingItem() -> AnyView {

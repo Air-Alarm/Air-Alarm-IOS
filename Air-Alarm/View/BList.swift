@@ -37,6 +37,7 @@ struct FirstView: View{
         ZStack{
             VStack {
                 ScrollView {
+
                     LineView(data: Data.data0, title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)

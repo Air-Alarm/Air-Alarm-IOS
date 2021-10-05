@@ -1,8 +1,8 @@
 //
-//  LocalNotification.swift
+//  LocalNotificationManager.swift
 //  Air-Alarm
 //
-//  Created by 김하은 on 2021/09/29.
+//  Created by 김하은 on 2021/10/04.
 //
 
 import Foundation
@@ -31,15 +31,15 @@ class LocalNotificationManager {
     }
     
     func schedule() -> Void {
-              UNUserNotificationCenter.current().getNotificationSettings { settings in
-                  switch settings.authorizationStatus {
-                  case .notDetermined:
-                      self.requestPermission()
-                  case .authorized, .provisional:
-                      self.scheduleNotifications()
-                  default:
-                      break
-                    
+          UNUserNotificationCenter.current().getNotificationSettings { settings in
+              switch settings.authorizationStatus {
+              case .notDetermined:
+                  self.requestPermission()
+              case .authorized, .provisional:
+                  self.scheduleNotifications()
+              default:
+                  break
+                
             }
         }
     }

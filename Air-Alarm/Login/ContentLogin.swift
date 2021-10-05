@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ContentLogin: View {
-    
-    @EnvironmentObject var authenticator: Authenticator
+    // 로그인 관련
+    @State private var member = Login.init()    // 로그인 관련 member
     @State private var userName: String = ""
     @State private var password: String = ""
-    
-    @State private var showError = false
-    
+    @State private var showError = false        // 로그인 관련 메시지
     @Binding var signInSuccess: Bool
+    // 회원가입 관련
+    @State var showingSignUp = false
+    let restApi = RestAPI()
+    
+    
     
     var body: some View {
         ZStack {
@@ -26,34 +29,60 @@ struct ContentLogin: View {
                     .resizable()
                     .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
                     .padding()
-                TextField("아이디/Email", text: $userName)
+                TextField("아이디/Email", text: $member.id)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
-                SecureField("비밀번호", text: $password)
+                SecureField("비밀번호", text: $member.pwd)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                Button(action: {
-                    // Your auth logic
-                    if(self.userName == self.password) {
-                        self.signInSuccess = true
-                    }
-                    else {
-                        self.showError = true
-                    }
+                HStack{
+                    Button(action: {
+                        var trigger = self.restApi.GET_Login(member: self.member)
+                        print("trigger info >> ", trigger)
+                        // Your auth logic
+//                        if(self.userName == self.password) {
+//                            self.signInSuccess = true
+//                        }
+//                        else {
+//                            self.showError = true
+//                        }
+                        
+                        if trigger.success {
+                            self.signInSuccess = true
+                        }else{
+                            self.showError = true
+                        }
+                        }) {
+                            Text("로그인")
+                                .font(.headline)
+                                .foregroundColor(.blue)
+                                .padding()
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 30)
+                                        .stroke(Color.blue, lineWidth: 1)
+                                        .frame(width: 90, height: 50)
+                                )
+                        }.padding()
+
+                    Button(action: {
+                        self.showingSignUp.toggle()
                     }) {
-                        Text("로그인")
+                        Text("회원가입")
                             .font(.headline)
-                            .foregroundColor(.blue)
                             .padding()
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 30)
-                                    .stroke(Color.blue, lineWidth: 1)
-                                    .frame(width: 90, height: 50)
-                            )
-                    }
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .cornerRadius(40)
+                    }.sheet(
+                        isPresented: $showingSignUp,
+                        content: {
+                            Signup(showingSignUp: self.$showingSignUp)
+                        }
+                    )
+                    .padding()
+                }
                     if showError {
-                        Text("Incorrect username/password")
+                        Text("아이디 또는 비밀번호를 잘못 입력했습니다.")
                             .foregroundColor(Color.red)
                     }
             }
