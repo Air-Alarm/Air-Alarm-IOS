@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Settings: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
             VStack{
@@ -26,13 +27,17 @@ struct Settings: View {
                                 .foregroundColor(.red)
                                 .cornerRadius(40)
                     }
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }){
+                        Text("Back")
+                        navigationBarBackButtonHidden(true)
+                    }
                 }
             }
        }
-        .navigationBarHidden(false)
-        .navigationBarBackButtonHidden(false)
-//        .navigationBarTitle(Text("Setting"), displayMode: .inline)
-//        .navigationBarColor(.white)
+        .navigationBarTitle(Text("Setting"), displayMode: .inline)
+        .navigationBarColor(.white)
     }
 }
 

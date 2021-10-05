@@ -15,11 +15,11 @@ struct Alarm: View {
     }
     
     var body: some View {
-//        NavigationView {
-//            VStack {
-//                Text("Notification Demo")
-//            }
-//        }
+        NavigationView {
+            VStack {
+                Text("Notification Demo")
+            }
+        }
 //        .navigationBarHidden(false)
 //        .navigationBarBackButtonHidden(false)
 //        .navigationBarTitle(Text("알림"), displayMode: .inline)
