@@ -15,7 +15,7 @@ class RestAPI {
     func GET_Dust() -> DustInfo {
         var db = DustInfo.init()
         
-        if let url = URL(string: "http://mirsv.com:5000/get") {
+        if let url = URL(string: "http://api.air-alarm.site:5000/get") {
             var request = URLRequest.init(url: url)
 
             request.httpMethod = "GET"
@@ -40,7 +40,7 @@ class RestAPI {
     func GET_Signup(member: SignUpMember) -> SignUpSuccess {
         var db = SignUpSuccess.init()
         
-        if let url = URL(string: "http://mirsv.com:4999/signup_confirm?" +
+        if let url = URL(string: "http://api.air-alarm.site:4999/signup_confirm?" +
                         "id=" + member.id +
                         "&pwd=" + member.pwd +
                         "&SN=" + member.SN) {
@@ -68,7 +68,7 @@ class RestAPI {
     // 로그인 성공 여부 리턴
     func GET_Login(member: Login) -> LoginSuccess {
         var db = LoginSuccess.init()
-        if let url = URL(string: "http://mirsv.com:4999/login_confirm?" +
+        if let url = URL(string: "http://api.air-alarm.site:4999/login_confirm?" +
                             "id=" + member.id +
                             "&pwd=" + member.pwd){
             var request = URLRequest.init(url: url)
@@ -98,7 +98,31 @@ class RestAPI {
     func GET_HourAll() -> [DustInfo] {
         var db = [DustInfo]()
         
-        if let url = URL(string: "http://mirsv.com:5000/hourall"){
+        if let url = URL(string: "http://api.air-alarm.site:5000/hourall"){
+            var request = URLRequest.init(url: url)
+
+            request.httpMethod = "GET"
+
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
+
+                // get
+                let decoder = JSONDecoder()
+                if let json = try? decoder.decode([DustInfo].self, from: data) {
+                    db = json
+                }
+            }.resume()
+        }
+        
+        // wait 0.5 sec
+        Thread.sleep(forTimeInterval: 0.5)
+        return db
+    }
+    // 월 기준 시간당 평균 센서 정보 가져오기
+    func GET_DayAll() -> [DustInfo] {
+        var db = [DustInfo]()
+        
+        if let url = URL(string: "http://api.air-alarm.site:5000/dayall"){
             var request = URLRequest.init(url: url)
 
             request.httpMethod = "GET"
