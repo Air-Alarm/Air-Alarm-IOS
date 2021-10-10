@@ -142,4 +142,52 @@ class RestAPI {
         Thread.sleep(forTimeInterval: 0.5)
         return db
     }
+    
+    // 도시별 기상 값
+    func GET_Weather() -> Weather {
+        var db = Weather()
+        
+        if let url = URL(string: "http://api.air-alarm.site:5000/weather"){
+            var request = URLRequest.init(url: url)
+
+            request.httpMethod = "GET"
+
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
+
+                // get
+                let decoder = JSONDecoder()
+                if let json = try? decoder.decode(Weather.self, from: data) {
+                    db = json
+                }
+            }.resume()
+        }
+        
+        // wait 0.5 sec
+        Thread.sleep(forTimeInterval: 0.5)
+        return db
+    }
+    func GET_WeatherAll() -> [Weather] {
+        var db = [Weather]()
+        
+        if let url = URL(string: "http://api.air-alarm.site:5000/weatherall"){
+            var request = URLRequest.init(url: url)
+
+            request.httpMethod = "GET"
+
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
+
+                // get
+                let decoder = JSONDecoder()
+                if let json = try? decoder.decode([Weather].self, from: data) {
+                    db = json
+                }
+            }.resume()
+        }
+        
+        // wait 0.5 sec
+        Thread.sleep(forTimeInterval: 0.5)
+        return db
+    }
 }
