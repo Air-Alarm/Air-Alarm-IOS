@@ -11,9 +11,8 @@ struct WeatherInfo: Codable {
     /*
      id: DB 키값
      time: 시간
-     CO2: 이산화탄소
      dust: 먼지
-     humidity: 습기
+     humidity: 습도
      temperature: 온도
      */
     

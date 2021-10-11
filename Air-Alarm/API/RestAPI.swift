@@ -117,6 +117,35 @@ class RestAPI {
         return db
     }
     
+    // id 입력시 SN 반환
+    func GET_SN(member: Login) -> getSNSuccess {
+        var db = getSNSuccess.init()
+        if let url = URL(string: "http://api.air-alarm.site:4999/data?" +
+                            "id=" + member.id ){
+            var request = URLRequest.init(url: url)
+
+            request.httpMethod = "GET"
+
+            DispatchQueue.global().sync {
+                URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    guard let data = data else { return }
+
+                    
+                    // get
+                    let decoder = JSONDecoder()
+                    if let json = try? decoder.decode(getSNSuccess.self, from: data) {
+                        db = json
+                        print("1", db)
+                    }
+                }.resume()
+            }
+        }
+        
+        // wait 0.5 sec
+        Thread.sleep(forTimeInterval: 0.3)
+        return db
+    }
+    
     // 하루 기준 시간당 평균 센서 정보 가져오기
     func GET_HourAll() -> [DustInfo] {
         var db = [DustInfo]()

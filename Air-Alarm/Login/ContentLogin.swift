@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentLogin: View {
-    
+
     let restApi = RestAPI()
     // 로그인 관련
     @State private var member = Login.init()    // 로그인 관련 member
@@ -16,6 +16,9 @@ struct ContentLogin: View {
     @Binding var signInSuccess: Bool
     // 회원가입 관련
     @State var showingSignUp = false
+    //SN키 반환 관련
+//    @State private var SNmember = getSN.init()
+    
     
     var body: some View {
         ZStack {
@@ -30,12 +33,15 @@ struct ContentLogin: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
+//                myInfo(userId: $member.id)
                 SecureField("비밀번호", text: $member.pwd)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 HStack{
                     Button(action: {
                         var trigger = self.restApi.GET_Login(member: self.member)
+                        var sn_trigger = self.restApi.GET_SN(member: self.member)
                         print("trigger info >> ", trigger)
+                        print("SN_trigger info >> ", sn_trigger)
                         
                         if trigger.success {
                             self.signInSuccess = true

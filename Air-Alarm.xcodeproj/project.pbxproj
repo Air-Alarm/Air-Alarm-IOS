@@ -11,6 +11,8 @@
 		2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */; };
 		2A3A9E33271484D1004DAE6C /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A9E32271484D1004DAE6C /* WeatherInfo.swift */; };
 		2A3A9E3527148A01004DAE6C /* WeatherInfoo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A9E3427148A01004DAE6C /* WeatherInfoo.swift */; };
+		2A3A9E392714AC84004DAE6C /* getSN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A9E382714AC84004DAE6C /* getSN.swift */; };
+		2A3A9E3B2714ADC6004DAE6C /* getSNSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A9E3A2714ADC6004DAE6C /* getSNSuccess.swift */; };
 		2A4256332704244800B26232 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4256322704244800B26232 /* Alarm.swift */; };
 		2A42563A270424A400B26232 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A425639270424A400B26232 /* Settings.swift */; };
 		2A42563C270424BC00B26232 /* changeSN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42563B270424BC00B26232 /* changeSN.swift */; };
@@ -26,7 +28,6 @@
 		2A425657270493EF00B26232 /* SignUpSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A425656270493EF00B26232 /* SignUpSuccess.swift */; };
 		2A7F05F9270ACCD300194F8D /* RestSignAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F05F8270ACCD300194F8D /* RestSignAPI.swift */; };
 		2A7F05FB270ACDF900194F8D /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F05FA270ACDF900194F8D /* LocalNotificationManager.swift */; };
-		2A996A5826C812460088BAB6 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5726C812460088BAB6 /* Authenticator.swift */; };
 		2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5926C8285D0088BAB6 /* Signup.swift */; };
 		2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F426BC424B009C1D21 /* MainTabView.swift */; };
 		2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F626BC42AB009C1D21 /* AList.swift */; };
@@ -69,6 +70,8 @@
 		2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarColor.swift; sourceTree = "<group>"; };
 		2A3A9E32271484D1004DAE6C /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		2A3A9E3427148A01004DAE6C /* WeatherInfoo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoo.swift; sourceTree = "<group>"; };
+		2A3A9E382714AC84004DAE6C /* getSN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSN.swift; sourceTree = "<group>"; };
+		2A3A9E3A2714ADC6004DAE6C /* getSNSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSNSuccess.swift; sourceTree = "<group>"; };
 		2A4256322704244800B26232 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		2A425639270424A400B26232 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2A42563B270424BC00B26232 /* changeSN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeSN.swift; sourceTree = "<group>"; };
@@ -84,7 +87,6 @@
 		2A425656270493EF00B26232 /* SignUpSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccess.swift; sourceTree = "<group>"; };
 		2A7F05F8270ACCD300194F8D /* RestSignAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSignAPI.swift; sourceTree = "<group>"; };
 		2A7F05FA270ACDF900194F8D /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
-		2A996A5726C812460088BAB6 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
 		2A996A5926C8285D0088BAB6 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		2AEAB2F426BC424B009C1D21 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		2AEAB2F626BC42AB009C1D21 /* AList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AList.swift; sourceTree = "<group>"; };
@@ -178,6 +180,8 @@
 				2A425654270493C800B26232 /* SignUpMember.swift */,
 				2A425656270493EF00B26232 /* SignUpSuccess.swift */,
 				2A3A9E32271484D1004DAE6C /* WeatherInfo.swift */,
+				2A3A9E382714AC84004DAE6C /* getSN.swift */,
+				2A3A9E3A2714ADC6004DAE6C /* getSNSuccess.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -213,7 +217,6 @@
 			children = (
 				F987CBAB26BC3D050061A4A2 /* ContentView.swift */,
 				2A425649270430A700B26232 /* ContentLogin.swift */,
-				2A996A5726C812460088BAB6 /* Authenticator.swift */,
 				2A26A4AF26DA68BF00670DFB /* UnderLineTextFieldView.swift */,
 			);
 			path = Login;
@@ -437,13 +440,13 @@
 				2A3A9E3527148A01004DAE6C /* WeatherInfoo.swift in Sources */,
 				F7D1E15826FAF263006FB401 /* Charts3.swift in Sources */,
 				F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */,
+				2A3A9E3B2714ADC6004DAE6C /* getSNSuccess.swift in Sources */,
 				2A42563C270424BC00B26232 /* changeSN.swift in Sources */,
 				2AEAB2FB26BC42E2009C1D21 /* CList.swift in Sources */,
 				2A425655270493C800B26232 /* SignUpMember.swift in Sources */,
 				2AEAB2F926BC42CB009C1D21 /* BList.swift in Sources */,
 				2A425642270424F900B26232 /* programmerInfo.swift in Sources */,
 				2A42564D2704934500B26232 /* DustInfo.swift in Sources */,
-				2A996A5826C812460088BAB6 /* Authenticator.swift in Sources */,
 				F7C43CC626EB00DC00DD3229 /* ChartsData.swift in Sources */,
 				F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */,
 				2A4256332704244800B26232 /* Alarm.swift in Sources */,
@@ -461,6 +464,7 @@
 				2A42564F2704936000B26232 /* Login.swift in Sources */,
 				2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */,
 				2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */,
+				2A3A9E392714AC84004DAE6C /* getSN.swift in Sources */,
 				2A26A4B026DA68BF00670DFB /* UnderLineTextFieldView.swift in Sources */,
 				F7D1E15626FAF251006FB401 /* Charts2.swift in Sources */,
 				2A425640270424E200B26232 /* sensorInfo.swift in Sources */,
