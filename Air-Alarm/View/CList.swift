@@ -10,7 +10,7 @@ import SwiftUI
 struct CList: View {
     let restAPI = RestAPI()
     @State var db = WeatherInfo.init()
-    @State var refresh = Refresh(started: false, released: false)
+    @State var refresh = Refreshh(started: false, released: false)
     @State var json :  String = "아래로 당겨서 새로고침"
     
     func update() {
@@ -137,7 +137,7 @@ struct CList: View {
 }
 
 //새로고침
-struct Refresh {
+struct Refreshh {
     var startOffset : CGFloat = 0
     var offset : CGFloat = 0
     var started : Bool

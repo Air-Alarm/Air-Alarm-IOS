@@ -104,7 +104,7 @@ private extension Settings {
     
     var weatherInfofo: some View {
         NavigationLink(
-            destination: WeatherInfo()
+            destination: WeatherInfoo()
                 .navigationBarHidden(false)
                 .navigationBarBackButtonHidden(false)
         

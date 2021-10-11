@@ -1,13 +1,13 @@
 //
-//  WeatherInfo.swift
+//  WeatherInfoo.swift
 //  Air-Alarm
 //
-//  Created by 김하은 on 2021/09/28.
+//  Created by 김하은 on 2021/10/12.
 //
 
 import SwiftUI
 
-struct WeatherInfo: View {
+struct WeatherInfoo: View {
     
     var body: some View {
             VStack {
@@ -21,6 +21,6 @@ struct WeatherInfo: View {
 }
 struct WeatherInfo_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherInfo()
+        WeatherInfoo()
     }
 }

@@ -10,13 +10,13 @@
 		2A26A4B026DA68BF00670DFB /* UnderLineTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A26A4AF26DA68BF00670DFB /* UnderLineTextFieldView.swift */; };
 		2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */; };
 		2A3A9E33271484D1004DAE6C /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A9E32271484D1004DAE6C /* WeatherInfo.swift */; };
+		2A3A9E3527148A01004DAE6C /* WeatherInfoo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3A9E3427148A01004DAE6C /* WeatherInfoo.swift */; };
 		2A4256332704244800B26232 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4256322704244800B26232 /* Alarm.swift */; };
 		2A42563A270424A400B26232 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A425639270424A400B26232 /* Settings.swift */; };
 		2A42563C270424BC00B26232 /* changeSN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42563B270424BC00B26232 /* changeSN.swift */; };
 		2A42563E270424D000B26232 /* myInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42563D270424D000B26232 /* myInfo.swift */; };
 		2A425640270424E200B26232 /* sensorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42563F270424E200B26232 /* sensorInfo.swift */; };
 		2A425642270424F900B26232 /* programmerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A425641270424F900B26232 /* programmerInfo.swift */; };
-		2A4256442704250A00B26232 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4256432704250A00B26232 /* WeatherInfo.swift */; };
 		2A42564A270430A700B26232 /* ContentLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A425649270430A700B26232 /* ContentLogin.swift */; };
 		2A42564D2704934500B26232 /* DustInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42564C2704934500B26232 /* DustInfo.swift */; };
 		2A42564F2704936000B26232 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A42564E2704936000B26232 /* Login.swift */; };
@@ -68,13 +68,13 @@
 		2A26A4AF26DA68BF00670DFB /* UnderLineTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderLineTextFieldView.swift; sourceTree = "<group>"; };
 		2A26A4B426DB5EF000670DFB /* NavigationBarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarColor.swift; sourceTree = "<group>"; };
 		2A3A9E32271484D1004DAE6C /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		2A3A9E3427148A01004DAE6C /* WeatherInfoo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoo.swift; sourceTree = "<group>"; };
 		2A4256322704244800B26232 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		2A425639270424A400B26232 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2A42563B270424BC00B26232 /* changeSN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeSN.swift; sourceTree = "<group>"; };
 		2A42563D270424D000B26232 /* myInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myInfo.swift; sourceTree = "<group>"; };
 		2A42563F270424E200B26232 /* sensorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sensorInfo.swift; sourceTree = "<group>"; };
 		2A425641270424F900B26232 /* programmerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = programmerInfo.swift; sourceTree = "<group>"; };
-		2A4256432704250A00B26232 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		2A425649270430A700B26232 /* ContentLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLogin.swift; sourceTree = "<group>"; };
 		2A42564C2704934500B26232 /* DustInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustInfo.swift; sourceTree = "<group>"; };
 		2A42564E2704936000B26232 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -162,8 +162,8 @@
 				2A42563D270424D000B26232 /* myInfo.swift */,
 				2A42563F270424E200B26232 /* sensorInfo.swift */,
 				2A425641270424F900B26232 /* programmerInfo.swift */,
-				2A4256432704250A00B26232 /* WeatherInfo.swift */,
 				2A7F05F8270ACCD300194F8D /* RestSignAPI.swift */,
+				2A3A9E3427148A01004DAE6C /* WeatherInfoo.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -434,6 +434,7 @@
 			files = (
 				2A7F05FB270ACDF900194F8D /* LocalNotificationManager.swift in Sources */,
 				F95CD7A326C7E9FB00CDDFA5 /* RestAPI.swift in Sources */,
+				2A3A9E3527148A01004DAE6C /* WeatherInfoo.swift in Sources */,
 				F7D1E15826FAF263006FB401 /* Charts3.swift in Sources */,
 				F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */,
 				2A42563C270424BC00B26232 /* changeSN.swift in Sources */,
@@ -462,7 +463,6 @@
 				2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */,
 				2A26A4B026DA68BF00670DFB /* UnderLineTextFieldView.swift in Sources */,
 				F7D1E15626FAF251006FB401 /* Charts2.swift in Sources */,
-				2A4256442704250A00B26232 /* WeatherInfo.swift in Sources */,
 				2A425640270424E200B26232 /* sensorInfo.swift in Sources */,
 				2A4256532704937C00B26232 /* Member.swift in Sources */,
 			);
