@@ -8,43 +8,42 @@
 import SwiftUI
 
 struct CList: View {
-    let restAPI = RestweatherAPI()
-    @State var wwdb = RestweatherAPI.WeatherInfo()
-    @State var weather = Weather(started: false, released: false)
+    let restAPI = RestAPI()
+    @State var db = WeatherInfo.init()
+    @State var refresh = Refresh(started: false, released: false)
     @State var json :  String = "아래로 당겨서 새로고침"
     
     func update() {
-        self.wwdb = restAPI.GET()
+        self.db = restAPI.GET_Weather()
     }
     
     var body: some View {
         VStack {
-            
             ScrollView(.vertical, showsIndicators: false, content: {
                 
                 GeometryReader{reader -> AnyView in
                     
                     DispatchQueue.main.async{
                         
-                        if weather.startOffset == 0{
-                            weather.startOffset = reader.frame(in: .global).minY
+                        if refresh.startOffset == 0{
+                            refresh.startOffset = reader.frame(in: .global).minY
                         }
-                        weather.offset = reader.frame(in: .global).minY
+                        refresh.offset = reader.frame(in: .global).minY
                         
-                        if weather.offset - weather.startOffset > 80 && !weather.started{
+                        if refresh.offset - refresh.startOffset > 80 && !refresh.started{
                             
-                            weather.started = true
+                            refresh.started = true
                         }
                         
-                        if weather.startOffset == weather.offset && weather.started && !weather.released{
+                        if refresh.startOffset == refresh.offset && refresh.started && !refresh.released{
                             
-                            withAnimation(Animation.linear){weather.released = true}
+                            withAnimation(Animation.linear){refresh.released = true}
                             updateData()
                         }
                         // 유효하지 않은지 확인
-                        if weather.startOffset == weather.offset && weather.started && weather.released && weather.invalid{
+                        if refresh.startOffset == refresh.offset && refresh.started && refresh.released && refresh.invalid{
                             
-                            weather.invalid = false
+                            refresh.invalid = false
                             updateData()
                         }
                     }
@@ -56,46 +55,51 @@ struct CList: View {
                 ZStack (alignment: Alignment(horizontal: .center, vertical:
                     .top)){
                     
-                    if weather.started && weather.released{
+                    if refresh.started && refresh.released{
                         ProgressView()
                             .offset(y: -35)
                     }
                     
                     VStack {
-                        
                         HStack {
                             Spacer()
-                            Text("Location :  " + String(wwdb.Location))
+                            Text("지역 :  " + String(db.Location))
                                 .padding()
                             Spacer()
                         }
                         HStack {
                             Spacer()
-                            Text("dust10 :  " + String(wwdb.dust10))
+                            Text("PM2.5 (10):  " + String(db.dust10) + " ㎍/m³")
                                 .padding()
                             Spacer()
                         }
                         HStack {
                             Spacer()
-                            Text("dust25 :  " + String(wwdb.dust25))
+                            Text("PM2.5 (25):  " + String(db.dust25) + " ㎍/m³")
                                 .padding()
                             Spacer()
                         }
                         HStack {
                             Spacer()
-                            Text("temperature :  " + String(wwdb.temperature))
+                            Text("습도 :  " + String(db.humidity) + " %")
                                 .padding()
                             Spacer()
                         }
                         HStack {
                             Spacer()
-                            Text("humidity :  " + String(wwdb.humidity))
+                            Text("id :  " + String(db.id))
                                 .padding()
                             Spacer()
                         }
                         HStack {
                             Spacer()
-                            Text("time :  " + String(wwdb.time))
+                            Text("온도 :  " + String(db.temperature) + " °C")
+                                .padding()
+                            Spacer()
+                        }
+                        HStack {
+                            Spacer()
+                            Text("측정시간: " + db.time)
                                 .padding()
                             Spacer()
                         }
@@ -106,9 +110,10 @@ struct CList: View {
                     }
                     .background(Color.white)
                 }
-                .offset(y: weather.released ? 40 : -10)
+                .offset(y: refresh.released ? 40 : -10)
             })
         }
+        //.background(Color.black.opacity(0.06).ignoresSafeArea())
     }
     func updateData(){
         
@@ -118,13 +123,13 @@ struct CList: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             withAnimation(Animation.linear){
                 
-                if weather.startOffset == weather.offset{
+                if refresh.startOffset == refresh.offset{
                     update()
-                    weather.released = false
-                    weather.started = false
+                    refresh.released = false
+                    refresh.started = false
                 }
                 else{
-                    weather.invalid = true
+                    refresh.invalid = true
                 }
             }
         }
@@ -132,7 +137,7 @@ struct CList: View {
 }
 
 //새로고침
-struct Weather {
+struct Refresh {
     var startOffset : CGFloat = 0
     var offset : CGFloat = 0
     var started : Bool

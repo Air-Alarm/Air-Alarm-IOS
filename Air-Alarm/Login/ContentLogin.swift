@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct ContentLogin: View {
+    
+    let restApi = RestAPI()
     // 로그인 관련
     @State private var member = Login.init()    // 로그인 관련 member
-    @State private var userName: String = ""
-    @State private var password: String = ""
     @State private var showError = false        // 로그인 관련 메시지
     @Binding var signInSuccess: Bool
     // 회원가입 관련
     @State var showingSignUp = false
-    let restApi = RestAPI()
-    
-    
     
     var body: some View {
         ZStack {
@@ -39,13 +36,6 @@ struct ContentLogin: View {
                     Button(action: {
                         var trigger = self.restApi.GET_Login(member: self.member)
                         print("trigger info >> ", trigger)
-                        // Your auth logic
-//                        if(self.userName == self.password) {
-//                            self.signInSuccess = true
-//                        }
-//                        else {
-//                            self.showError = true
-//                        }
                         
                         if trigger.success {
                             self.signInSuccess = true
@@ -91,69 +81,3 @@ struct ContentLogin: View {
         }
     }
 }
-
-//private extension ContentLogin {
-//
-//var login: some View {
-//    VStack{
-//        Button(action: {
-//            MainTabView()
-//        }, label: {
-//            Text("Button")
-//        })
-////            Spacer()
-////
-////            NavigationLink(
-////                destination: MainTabView()
-////                    .navigationBarHidden(false)
-////                    .navigationBarBackButtonHidden(true)
-////                    .navigationBarTitle(Text("Air Alarm"), displayMode: .inline)    // tab 이름
-////                    .navigationBarItems(leading: ChangeleadingItem(), trailing: ChangetrailingItem())
-////                    .navigationBarColor(.white)
-////
-////            ){
-//////                Button (action:{
-//////                    self.action()
-//////                }){
-//////                    Text("로그인")
-//////                }
-//////             아이디 비밀번호 확인하는 버튼 + 시간 표시 돌아가는 효과
-////                Button(
-////                    authenticator.isAuthenticating ? "Please wait" : "로그인"
-////                ) {
-////                    authenticator.login(username: userName, password: password)
-////                    }
-////                .disabled(isLoginDisabled)
-////                .font(.headline)
-////                .foregroundColor(.blue)
-////                .padding()
-////                .overlay(
-////                    RoundedRectangle(cornerRadius: 30)
-////                        .stroke(Color.blue, lineWidth: 1)
-////                        .frame(width: 90, height: 50)
-////                )
-////    //            ProgressView() // 시간 표시 돌아가는 것
-////    //                .progressViewStyle(CircularProgressViewStyle())
-////    //                .opacity(authenticator.isAuthenticating ? 1.0 : 0.0)
-////            }
-////            Spacer()
-//        }.padding()
-//    }
-//
-//    var SignUpView: some View {
-//        VStack{
-//            Spacer()
-//            NavigationLink(
-//                destination: Signup()
-//            ){
-//                Text("회원가입")
-//                    .font(.headline)
-//                    .padding()
-//                    .foregroundColor(.white)
-//                    .background(Color.blue)
-//                    .cornerRadius(40)
-//            }
-//            Spacer()
-//        }.padding()
-//    }
-//}

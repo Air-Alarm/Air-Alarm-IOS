@@ -26,7 +26,27 @@ struct MainTabView: View {
 }
 
 struct HeaderTabView: View {
+    // notification 관련 필드, 메소드
     @State var showingAlarm = false
+    let restAPI = RestAPI()
+    @State var db = DustInfo.init()
+    
+    func update() {
+        self.db = restAPI.GET_Dust()
+    }
+    
+    func setNotification() {             // 알림
+        let manager = LocalNotificationManager()
+        if (db.CO2 > 1000){
+            manager.addNotification(title: "이산화 탄소량이 높습니다.")
+        }
+        if (db.dust > 100){
+            manager.addNotification(title: "미세먼지 농도가 높습니다.")
+        }
+        manager.schedule()
+        self.showingAlarm.toggle()
+    }
+    // settings 관련 필드
     @State var showingSettings = false
     
     var body: some View {
@@ -46,12 +66,12 @@ struct HeaderTabView: View {
                 })
                 {
                     Image(systemName: "gearshape")
-                }.fullScreenCover(isPresented: $showingSettings,content: { Settings() })
+                }.fullScreenCover(isPresented: $showingSettings,content: { Settings( signInSuccess: false) })
 //                .sheet(isPresented: $showingSettings) {
 //                    Settings()
 //                }
                 Button(action: {
-                    self.showingAlarm.toggle()
+                    self.setNotification()
                 }
                 ){
                     Image(systemName: "bell")
