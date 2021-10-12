@@ -32,22 +32,26 @@ struct BList: View {
     }
 }
 
+// 첫 번째 화면(일 그래프)
 struct FirstView: View{
+    @State var tem = temhour()
+    @State var hum = humhour()
+    @State var dust = dusthour()
+    @State var co2 = co2hour()
     var body: some View{
         ZStack{
             VStack {
                 ScrollView {
-
-                    LineView(data: Data.data0, title: Data.title0, style: Style.metoring)
+                    LineView(data: tem, title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data3, title: Data.title1, style: Style.metoring)
+                    LineView(data: hum, title: Data.title1, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data2, title: Data.title2, style: Style.metoring)
+                    LineView(data: dust, title: Data.title2, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data1, title: Data.title3, style: Style.metoring)
+                    LineView(data: co2, title: Data.title3, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     Spacer()
@@ -58,32 +62,8 @@ struct FirstView: View{
     }
 }
 
+// 두 번째 화면(주 그래프)
 struct SecondView: View{
-    var body: some View{
-        ZStack{
-            VStack {
-                ScrollView {
-                    LineView(data: Data.data1, title: Data.title0, style: Style.metoring)
-                        .padding()
-                        .frame(width: 360, height: 365)
-                    LineView(data: Data.data3, title: Data.title1, style: Style.metoring)
-                        .padding()
-                        .frame(width: 360, height: 365)
-                    LineView(data: Data.data2, title: Data.title2, style: Style.metoring)
-                        .padding()
-                        .frame(width: 360, height: 365)
-                    LineView(data: Data.data0, title: Data.title3, style: Style.metoring)
-                        .padding()
-                        .frame(width: 360, height: 365)
-                    Spacer()
-                }
-                //.padding()
-            }
-        }
-    }
-}
-
-struct ThirdView: View{
     var body: some View{
         ZStack{
             VStack {
@@ -108,6 +88,37 @@ struct ThirdView: View{
     }
 }
 
+// 세 번째 화면(월 그래프)
+struct ThirdView: View{
+    @State var tem = temday()
+    @State var hum = humday()
+    @State var dust = dustday()
+    @State var co2 = co2day()
+    var body: some View{
+        ZStack{
+            VStack {
+                ScrollView {
+                    LineView(data: tem, title: Data.title0, style: Style.metoring)
+                        .padding()
+                        .frame(width: 360, height: 365)
+                    LineView(data: Data.data3, title: Data.title1, style: Style.metoring)
+                        .padding()
+                        .frame(width: 360, height: 365)
+                    LineView(data: Data.data2, title: Data.title2, style: Style.metoring)
+                        .padding()
+                        .frame(width: 360, height: 365)
+                    LineView(data: Data.data0, title: Data.title3, style: Style.metoring)
+                        .padding()
+                        .frame(width: 360, height: 365)
+                    Spacer()
+                }
+                //.padding()
+            }
+        }
+    }
+}
+
+// 상단 탭바 설정
 struct CustomTopTabBar: View {
     @Binding var tabIndex: Int
     
@@ -130,6 +141,7 @@ struct CustomTopTabBar: View {
     }
 }
 
+// 버튼으로 화면 전환
 struct TabBarButton: View {
     let text: String
     @Binding var isSelected: Bool
@@ -139,9 +151,11 @@ struct TabBarButton: View {
             .font(.custom("Avenir", size: 16))
             .padding(.bottom,10)
             .border(width: isSelected ? 2 : 1, edges: [.bottom], color: .blue)
+            .foregroundColor(isSelected ? Color.blue : Color.black)
     }
 }
 
+// 모든 뷰에 테두리 설정
 struct EdgeBorder: Shape {
 
     var width: CGFloat
