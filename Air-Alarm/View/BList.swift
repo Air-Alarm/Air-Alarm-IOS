@@ -68,16 +68,16 @@ struct SecondView: View{
         ZStack{
             VStack {
                 ScrollView {
-                    LineView(data: Data.data1, title: Data.title0, style: Style.metoring)
+                    LineView(data: Data.data2, title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data3, title: Data.title1, style: Style.metoring)
+                    LineView(data: Data.data1, title: Data.title1, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data2, title: Data.title2, style: Style.metoring)
+                    LineView(data: Data.data0, title: Data.title2, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data0, title: Data.title3, style: Style.metoring)
+                    LineView(data: Data.data3, title: Data.title3, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     Spacer()
@@ -90,20 +90,24 @@ struct SecondView: View{
 
 // 세 번째 화면(월 그래프)
 struct ThirdView: View{
+    @State var tem = temday()
+    @State var hum = humday()
+    @State var dust = dustday()
+    @State var co2 = co2day()
     var body: some View{
         ZStack{
             VStack {
                 ScrollView {
-                    LineView(data: Data.data2, title: Data.title0, style: Style.metoring)
+                    LineView(data: tem, title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data1, title: Data.title1, style: Style.metoring)
+                    LineView(data: Data.data3, title: Data.title1, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data0, title: Data.title2, style: Style.metoring)
+                    LineView(data: Data.data2, title: Data.title2, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data3, title: Data.title3, style: Style.metoring)
+                    LineView(data: Data.data0, title: Data.title3, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     Spacer()

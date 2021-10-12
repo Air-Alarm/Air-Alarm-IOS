@@ -36,22 +36,7 @@ struct Data {
     
     
 }
-func data() -> [Double] {
-//        ForEach(keys.indices) { index in
-//            dt.append(values[index])
-   // }
-    
-    var dt:[Double] = []
-    var dict: [String: Double] = ["CO2": 44, "CO3": 99, "CP": 11]
-    var keys = dict.map {$0.key}
-    var values = dict.map {$0.value}
-    
-    for index in keys.indices {
-        dt.append(values[index])
-    }
-    return dt
-}
-
+ 
 var db = [DustInfo]()
 let restAPI = RestAPI()
 // 온도 일 그래프
@@ -81,7 +66,7 @@ func dusthour() -> [Double]{
     }
     return dust
 }
-// 미세먼지 일 그래프
+// 이산화탄소 일 그래프
 func co2hour() -> [Double]{
     var co2:[Double] = []
     db = restAPI.GET_HourAll()
@@ -92,12 +77,43 @@ func co2hour() -> [Double]{
 }
 
 // 주 그래프
-// 월 그래프
-//func temday() -> [Double]{
-//    var tem:[Double] = []
-//    db = restAPI.GET_DayAll()
-//    for index in db {
-//        tem.append(index.temperature)
-//    }
-//    return tem
-//}
+
+// 온도 월 그래프
+func temday() -> [Double]{
+    var tem:[Double] = []
+    db = restAPI.GET_DayAll()
+    for index in db {
+        tem.append(index.temperature)
+    }
+    return tem
+}
+
+// 습도 월 그래프
+func humday() -> [Double]{
+    var hum:[Double] = []
+    db = restAPI.GET_DayAll()
+    for index in db {
+        hum.append(index.humidity)
+    }
+    return hum
+}
+
+// 미세먼지 월 그래프
+func dustday() -> [Double]{
+    var dust:[Double] = []
+    db = restAPI.GET_DayAll()
+    for index in db {
+        dust.append(index.dust)
+    }
+    return dust
+}
+
+// 이산화탄소 월 그래프
+func co2day() -> [Double]{
+    var co2:[Double] = []
+    db = restAPI.GET_DayAll()
+    for index in db {
+        co2.append(index.CO2)
+    }
+    return co2
+}
