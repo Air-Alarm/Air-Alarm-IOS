@@ -39,9 +39,7 @@ struct ContentLogin: View {
                 HStack{
                     Button(action: {
                         var trigger = self.restApi.GET_Login(member: self.member)
-                        var sn_trigger = self.restApi.GET_SN(member: self.member)
                         print("trigger info >> ", trigger)
-                        print("SN_trigger info >> ", sn_trigger)
                         
                         if trigger.success {
                             self.signInSuccess = true

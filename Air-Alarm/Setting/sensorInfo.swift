@@ -8,13 +8,7 @@
 import SwiftUI
 
 struct sensorInfo: View {
-    let restAPI = RestSignAPI()
-    @State var sensor_db = RestSignAPI.SignInfo()
-    
-    func update() {
-        self.sensor_db = restAPI.GET()
-    }
-    
+
     var body: some View {
         NavigationView{
             ScrollView{
@@ -57,7 +51,6 @@ struct sensorInfo: View {
         .navigationBarHidden(false)
         .navigationBarBackButtonHidden(false)
         .navigationBarTitle("센서 측정 주기 / 단위 정보")
-        .navigationBarColor(.systemBlue)
     }
 }
 

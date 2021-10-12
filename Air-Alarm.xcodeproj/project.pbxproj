@@ -26,7 +26,6 @@
 		2A4256532704937C00B26232 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4256522704937C00B26232 /* Member.swift */; };
 		2A425655270493C800B26232 /* SignUpMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A425654270493C800B26232 /* SignUpMember.swift */; };
 		2A425657270493EF00B26232 /* SignUpSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A425656270493EF00B26232 /* SignUpSuccess.swift */; };
-		2A7F05F9270ACCD300194F8D /* RestSignAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F05F8270ACCD300194F8D /* RestSignAPI.swift */; };
 		2A7F05FB270ACDF900194F8D /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F05FA270ACDF900194F8D /* LocalNotificationManager.swift */; };
 		2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5926C8285D0088BAB6 /* Signup.swift */; };
 		2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F426BC424B009C1D21 /* MainTabView.swift */; };
@@ -85,7 +84,6 @@
 		2A4256522704937C00B26232 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		2A425654270493C800B26232 /* SignUpMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMember.swift; sourceTree = "<group>"; };
 		2A425656270493EF00B26232 /* SignUpSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccess.swift; sourceTree = "<group>"; };
-		2A7F05F8270ACCD300194F8D /* RestSignAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSignAPI.swift; sourceTree = "<group>"; };
 		2A7F05FA270ACDF900194F8D /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		2A996A5926C8285D0088BAB6 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		2AEAB2F426BC424B009C1D21 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				2A42563D270424D000B26232 /* myInfo.swift */,
 				2A42563F270424E200B26232 /* sensorInfo.swift */,
 				2A425641270424F900B26232 /* programmerInfo.swift */,
-				2A7F05F8270ACCD300194F8D /* RestSignAPI.swift */,
 				2A3A9E3427148A01004DAE6C /* WeatherInfoo.swift */,
 			);
 			path = Setting;
@@ -458,7 +455,6 @@
 				2A42564A270430A700B26232 /* ContentLogin.swift in Sources */,
 				2A42563E270424D000B26232 /* myInfo.swift in Sources */,
 				2A4256512704936F00B26232 /* LoginSuccess.swift in Sources */,
-				2A7F05F9270ACCD300194F8D /* RestSignAPI.swift in Sources */,
 				2A42563A270424A400B26232 /* Settings.swift in Sources */,
 				2A3A9E33271484D1004DAE6C /* WeatherInfo.swift in Sources */,
 				2A42564F2704936000B26232 /* Login.swift in Sources */,
@@ -627,7 +623,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Air-Alarm/Preview Content\"";
-				DEVELOPMENT_TEAM = ZEZ6ZRP5LG;
+				DEVELOPMENT_TEAM = JVBAL8CV7V;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Air-Alarm/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -639,7 +635,7 @@
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mirsv.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hahahhhaha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
