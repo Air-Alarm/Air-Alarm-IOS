@@ -2,8 +2,7 @@
 //  WeatherInfo.swift
 //  Air-Alarm
 //
-//  Created by Jinhee on 2021/10/12.
-//
+//  Created by 김하은 on 2021/10/11.
 
 import Foundation
 

@@ -8,26 +8,28 @@
 import SwiftUI
 
 struct Alarm: View {
-    func setNotification() {
-        let manager = LocalNotificationManager()
-        manager.addNotification(title: "This is a test reminder")
-        manager.schedule()
-    }
-    
+//    func setNotification() {
+//        let manager = LocalNotificationManager()
+//        manager.addNotification(title: "Air Alarm Notification Test")
+//        manager.schedule()
+//    }
+
     var body: some View {
-//        NavigationView {
-//            VStack {
-//                Text("Notification Demo")
-//            }
-//        }
-//        .navigationBarHidden(false)
-//        .navigationBarBackButtonHidden(false)
-//        .navigationBarTitle(Text("알림"), displayMode: .inline)
-//        .navigationBarColor(.white)
-        VStack{
-            Button(action: { self.setNotification() }
-            ) {
-                    Text("Set Notification!")
+        NavigationView {
+            VStack {
+                ProfileImage(imageName: "icon")
+//                Button(action: { self.setNotification() }
+//                ) {
+//                        Text("알림설정")
+//                }
+                Form{
+                    Section(header: Text("이번 주")) {
+                        Text("이산화 탄소량이 높습니다.")
+                    }
+                    Section(header: Text("이전 알림")) {
+                        Text("이산화 탄소량이 높습니다.")
+                    }
+                }
             }
         }
     }

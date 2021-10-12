@@ -1,8 +1,8 @@
 //
-//  WeatherInfo.swift
+//  WeatherInfoo.swift
 //  Air-Alarm
 //
-//  Created by 김하은 on 2021/09/28.
+//  Created by 김하은 on 2021/10/12.
 //
 
 import SwiftUI

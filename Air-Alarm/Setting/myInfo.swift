@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct myInfo: View {
-    let restAPI = RestSignAPI()
-    @State var dbb = RestSignAPI.SignInfo()
-    
-    func update() {
-        self.dbb = restAPI.GET()
-    }
+    let restAPI = RestAPI()
+    @State var member = Login.init()
+    @State var db = LoginSuccess.init()
+//    @Binding var userId: String
     
     var body: some View {
             VStack {
@@ -21,14 +19,12 @@ struct myInfo: View {
                 ProfileImage(imageName: "icon")
                         .padding()
                 Form {
+                    var trigger_user = restAPI.GET_Login(member: self.member)
                     Section(header: Text("User Info")) {
-                        Text("Email :  " + String(dbb.email))
-                        Text("SN :  " + String(dbb.SN))
+//                        Text("Email :  " + String(userId))
+                        Text("SN :  " + String(trigger_user.success))
                     }
                 }
-    //            Text("\(json)")//웹에서 받아온 내용이 여기 저장됨
-    //                .padding()
-                
             }
             .background(Color.white)
             .navigationBarHidden(false)
@@ -47,8 +43,8 @@ struct ProfileImage: View {
     }
 }
 
-struct myInfo_Previews: PreviewProvider {
-    static var previews: some View {
-        myInfo()
-    }
-}
+//struct myInfo_Previews: PreviewProvider {
+//    static var previews: some View {
+//        myInfo(userId: $member.id)
+//    }
+//}
