@@ -11,15 +11,16 @@ struct Settings: View {
     @Environment(\.presentationMode) var presentationMode
 //    let restApi = RestAPI()
 //    @State private var member = Login.init()
-    @State var restApi = RestAPI()
-    @State var signInSuccess = true
-    @State var showView: Bool = false
     
-    func logout(showView: Bool = true) {
-            ContentView()
-                .navigationBarBackButtonHidden(true)
-                .navigationBarHidden(true)
-    }
+//    @State var restApi = RestAPI()
+//    @State var signInSuccess = true
+//    @State var showView: Bool = false
+//
+//    func logout(showView: Bool = true) {
+//            ContentView()
+//                .navigationBarBackButtonHidden(true)
+//                .navigationBarHidden(true)
+//    }
     
     var body: some View {
         NavigationView {
@@ -30,12 +31,12 @@ struct Settings: View {
                     sensorInfofo
                     weatherInfofo
                     programmerInfofo
-//                    logout
-                    Button(action: {
-                        logout(showView: true)
-                    }){
-                        Text("로그아웃")
-                    }
+                    logout
+//                    Button(action: {
+//                        logout(showView: true)
+//                    }){
+//                        Text("로그아웃")
+//                    }
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }){
@@ -51,19 +52,19 @@ struct Settings: View {
 private extension Settings {
 //    @Environment(\.presentationMode) var presentationMode
 //   presentationMode.wrappedValue.dismiss()
-//    var logout: some View {
-//        NavigationLink(
-//            destination: ContentView()
-//                .navigationBarBackButtonHidden(true)
-//                .navigationBarHidden(true)
-//        ){
-//                Text("로그아웃")
-//                    .font(.headline)
-//                    .padding()
-//                    .foregroundColor(.red)
-//                    .cornerRadius(40)
-//        }
-//    }
+    var logout: some View {
+        NavigationLink(
+            destination: ContentView()
+                .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
+        ){
+                Text("로그아웃")
+                    .font(.headline)
+                    .padding()
+                    .foregroundColor(.red)
+                    .cornerRadius(40)
+        }
+    }
     var myInfofo: some View {
         NavigationLink(
             destination: myInfo()

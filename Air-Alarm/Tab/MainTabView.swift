@@ -66,7 +66,8 @@ struct HeaderTabView: View {
                 })
                 {
                     Image(systemName: "gearshape")
-                }.fullScreenCover(isPresented: $showingSettings,content: { Settings( signInSuccess: false, showView: false) })
+                }.fullScreenCover(isPresented: $showingSettings,content: { Settings() })
+                //signInSuccess: false, showView: false
 //                .sheet(isPresented: $showingSettings) {
 //                    Settings()
 //                }
