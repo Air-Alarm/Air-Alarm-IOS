@@ -39,6 +39,12 @@
 		F7D1E15626FAF251006FB401 /* Charts2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D1E15526FAF251006FB401 /* Charts2.swift */; };
 		F7D1E15826FAF263006FB401 /* Charts3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D1E15726FAF263006FB401 /* Charts3.swift */; };
 		F95CD7A326C7E9FB00CDDFA5 /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95CD7A226C7E9FB00CDDFA5 /* RestAPI.swift */; };
+		F95D76BE26F3460800C0F9AB /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D76BD26F3460800C0F9AB /* Member.swift */; };
+		F95D76C026F3461400C0F9AB /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D76BF26F3461400C0F9AB /* Login.swift */; };
+		F967272B26FA09A100D7B2BC /* SignUpMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967272A26FA09A100D7B2BC /* SignUpMember.swift */; };
+		F967272F26FA0C9F00D7B2BC /* SignUpSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967272E26FA0C9F00D7B2BC /* SignUpSuccess.swift */; };
+		F967273126FA0CAC00D7B2BC /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967273026FA0CAC00D7B2BC /* LoginSuccess.swift */; };
+		F978AFBB2712C709008A2DA6 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F978AFBA2712C709008A2DA6 /* Weather.swift */; };
 		F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */; };
 		F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBAB26BC3D050061A4A2 /* ContentView.swift */; };
 		F987CBAE26BC3D050061A4A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F987CBAD26BC3D050061A4A2 /* Assets.xcassets */; };
@@ -96,6 +102,12 @@
 		F7D1E15526FAF251006FB401 /* Charts2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts2.swift; sourceTree = "<group>"; };
 		F7D1E15726FAF263006FB401 /* Charts3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts3.swift; sourceTree = "<group>"; };
 		F95CD7A226C7E9FB00CDDFA5 /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
+		F95D76BD26F3460800C0F9AB /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		F95D76BF26F3461400C0F9AB /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		F967272A26FA09A100D7B2BC /* SignUpMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMember.swift; sourceTree = "<group>"; };
+		F967272E26FA0C9F00D7B2BC /* SignUpSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccess.swift; sourceTree = "<group>"; };
+		F967273026FA0CAC00D7B2BC /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
+		F978AFBA2712C709008A2DA6 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		F987CBA626BC3D050061A4A2 /* Air-Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air-Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air_AlarmApp.swift; sourceTree = "<group>"; };
 		F987CBAB26BC3D050061A4A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,12 +183,13 @@
 		2A42564B2704933000B26232 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				2A42564C2704934500B26232 /* DustInfo.swift */,
-				2A42564E2704936000B26232 /* Login.swift */,
-				2A4256502704936F00B26232 /* LoginSuccess.swift */,
-				2A4256522704937C00B26232 /* Member.swift */,
-				2A425654270493C800B26232 /* SignUpMember.swift */,
-				2A425656270493EF00B26232 /* SignUpSuccess.swift */,
+				F95D76BD26F3460800C0F9AB /* Member.swift */,
+				F95D76BF26F3461400C0F9AB /* Login.swift */,
+				F967272A26FA09A100D7B2BC /* SignUpMember.swift */,
+				F967272E26FA0C9F00D7B2BC /* SignUpSuccess.swift */,
+				F967273026FA0CAC00D7B2BC /* LoginSuccess.swift */,
+				F9D0E20526FAE9C50048DB2F /* DustInfo.swift */,
+				F978AFBA2712C709008A2DA6 /* Weather.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -458,7 +471,7 @@
 				2A42563A270424A400B26232 /* Settings.swift in Sources */,
 				2A42564F2704936000B26232 /* Login.swift in Sources */,
 				2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */,
-				2A4256482704254900B26232 /* weatherAPI.swift in Sources */,
+				F978AFBB2712C709008A2DA6 /* Weather.swift in Sources */,
 				2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */,
 				2A26A4B026DA68BF00670DFB /* UnderLineTextFieldView.swift in Sources */,
 				F7D1E15626FAF251006FB401 /* Charts2.swift in Sources */,

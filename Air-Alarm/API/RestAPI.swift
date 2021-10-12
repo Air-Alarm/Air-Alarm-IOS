@@ -118,4 +118,29 @@ class RestAPI {
         Thread.sleep(forTimeInterval: 0.5)
         return db
     }
+    
+    // 월
+    func GET_DayAll() -> [DustInfo] {
+        var db = [DustInfo]()
+        
+        if let url = URL(string: "http://mirsv.com:5000/dayall"){
+            var request = URLRequest.init(url: url)
+
+            request.httpMethod = "GET"
+
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
+
+                // get
+                let decoder = JSONDecoder()
+                if let json = try? decoder.decode([DustInfo].self, from: data) {
+                    db = json
+                }
+            }.resume()
+        }
+        
+        // wait 0.5 sec
+        Thread.sleep(forTimeInterval: 0.5)
+        return db
+    }
 }
