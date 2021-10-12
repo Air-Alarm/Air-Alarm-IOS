@@ -8,7 +8,6 @@
 import SwiftUI
 import SwiftUICharts
 
-// 그래프 데이터
 struct Data {
     //static let title = "Air-Alarm"
     static let title0 = "온도"
@@ -29,22 +28,6 @@ struct Data {
     static let data2 = [34.0, 56.0, 72.0, 38.0, 43.0, 100.0, 50.0]
     static let data3 = [21.0, 11.0, 56.0, 29.0, 60.0, 81.0, 33.0]
     
-//    var dt:[Int] = []
-//
-//    var dict: [String: Int] = ["CO2": 44, "CO3": 99, "CP": 11]
-//    var keys = dict.map {$0.key}
-//    var values = dict.map {$0.value}
-    
-    
-    
-    
-//    ForEach(keys.indices) { index in
-//        VStack {
-//            //Text(keys[index])
-//            Text("\(values[index])")
-//        }
-//    }
-    
     static let line0 = (data0, GradientColors.blue)
 //    static let line1 = (data1, GradientColors.purple)
 //    static let line2 = (data2, GradientColors.orngPink)
@@ -53,22 +36,6 @@ struct Data {
     
     
 }
-
-
-
-//func api() -> [DustInfo] {
-//    var dt:[DustInfo] = db
-//    var dict: [String: Double] = ["CO2": 44, "CC": 99, "ss": 66]
-//    var keys = dict.map {$0.key}
-//    var values = dict.map {$0.value}
-//
-//    for index in keys.indices {
-//        dt.append(values[index])
-//    }
-//    return dt
-//}
-
-
 func data() -> [Double] {
 //        ForEach(keys.indices) { index in
 //            dt.append(values[index])

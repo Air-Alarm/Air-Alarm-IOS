@@ -5,6 +5,7 @@
 //  Created by 김하은 on 2021/08/06.
 //
 
+
 import SwiftUI
 import SwiftUICharts
 
@@ -37,12 +38,10 @@ struct FirstView: View{
     @State var hum = humhour()
     @State var dust = dusthour()
     @State var co2 = co2hour()
-    
     var body: some View{
         ZStack{
             VStack {
                 ScrollView {
-
                     LineView(data: tem, title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
@@ -69,7 +68,7 @@ struct SecondView: View{
         ZStack{
             VStack {
                 ScrollView {
-                    LineView(data: Data.data2, title: Data.title0, style: Style.metoring)
+                    LineView(data: Data.data1, title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     LineView(data: Data.data3, title: Data.title1, style: Style.metoring)
@@ -91,7 +90,6 @@ struct SecondView: View{
 
 // 세 번째 화면(월 그래프)
 struct ThirdView: View{
-    //@State var tem = temday()
     var body: some View{
         ZStack{
             VStack {
@@ -148,7 +146,7 @@ struct TabBarButton: View {
             .fontWeight(isSelected ? .heavy : .regular)
             .font(.custom("Avenir", size: 16))
             .padding(.bottom,10)
-            .border(width: isSelected ? 3 : 1, edges: [.bottom], color: .blue)
+            .border(width: isSelected ? 2 : 1, edges: [.bottom], color: .blue)
             .foregroundColor(isSelected ? Color.blue : Color.black)
     }
 }
@@ -195,7 +193,6 @@ struct EdgeBorder: Shape {
     }
 }
 
-// 뷰를 modifier 로 사용하기 위해 View 확장을 작성
 extension View {
     func border(width: CGFloat, edges: [Edge], color: SwiftUI.Color) -> some View {
         overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color))

@@ -54,14 +54,7 @@ struct Settings: View {
  //                       navigationBarBackButtonHidden(true)
                     }
                 }
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Back")
-                        .navigationBarBackButtonHidden(true)
-                }
             }
-            
        }
         .navigationBarTitle(Text("Setting"), displayMode: .inline)
         .navigationBarColor(.white)

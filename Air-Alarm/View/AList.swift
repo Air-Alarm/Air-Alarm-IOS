@@ -17,7 +17,6 @@ struct AListView: View {
         self.db = restAPI.GET_Dust()
     }
     
-    // ScrollView와 GeometryReader를 사용해서 당겨서 새로고침 기능 구현
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: false, content: {
@@ -208,9 +207,11 @@ struct AListView: View {
         }
         //.background(Color.black.opacity(0.06).ignoresSafeArea())
     }
-    func updateData() {
+    func updateData(){
+        
         print("update Data")
-
+        
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             withAnimation(Animation.linear){
                 

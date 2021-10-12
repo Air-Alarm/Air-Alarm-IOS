@@ -2,7 +2,7 @@
 //  DustInfo.swift
 //  Air-Alarm
 //
-//  Created by Jinhee on 2021/10/12.
+//  Created by 김하은 on 2021/09/29.
 //
 
 import Foundation

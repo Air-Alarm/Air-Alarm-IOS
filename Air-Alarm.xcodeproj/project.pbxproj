@@ -33,8 +33,6 @@
 		2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F626BC42AB009C1D21 /* AList.swift */; };
 		2AEAB2F926BC42CB009C1D21 /* BList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F826BC42CB009C1D21 /* BList.swift */; };
 		2AEAB2FB26BC42E2009C1D21 /* CList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2FA26BC42E2009C1D21 /* CList.swift */; };
-		F782D14E27150EB900967231 /* DustInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782D14D27150EB900967231 /* DustInfo.swift */; };
-		F782D1502715106500967231 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782D14F2715106500967231 /* WeatherInfo.swift */; };
 		F7C43CC426EB00CB00DD3229 /* ChartsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C43CC326EB00CB00DD3229 /* ChartsStyle.swift */; };
 		F7C43CC626EB00DC00DD3229 /* ChartsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C43CC526EB00DC00DD3229 /* ChartsData.swift */; };
 		F7C43CC926EB012800DD3229 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = F7C43CC826EB012800DD3229 /* SwiftUICharts */; };
@@ -94,19 +92,12 @@
 		2AEAB2F626BC42AB009C1D21 /* AList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AList.swift; sourceTree = "<group>"; };
 		2AEAB2F826BC42CB009C1D21 /* BList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BList.swift; sourceTree = "<group>"; };
 		2AEAB2FA26BC42E2009C1D21 /* CList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CList.swift; sourceTree = "<group>"; };
-		F782D14D27150EB900967231 /* DustInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DustInfo.swift; sourceTree = "<group>"; };
-		F782D14F2715106500967231 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		F7C43CC326EB00CB00DD3229 /* ChartsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsStyle.swift; sourceTree = "<group>"; };
 		F7C43CC526EB00DC00DD3229 /* ChartsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsData.swift; sourceTree = "<group>"; };
 		F7D1E15326FAF23F006FB401 /* Charts1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts1.swift; sourceTree = "<group>"; };
 		F7D1E15526FAF251006FB401 /* Charts2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts2.swift; sourceTree = "<group>"; };
 		F7D1E15726FAF263006FB401 /* Charts3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts3.swift; sourceTree = "<group>"; };
 		F95CD7A226C7E9FB00CDDFA5 /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
-		F95D76BD26F3460800C0F9AB /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
-		F95D76BF26F3461400C0F9AB /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		F967272A26FA09A100D7B2BC /* SignUpMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMember.swift; sourceTree = "<group>"; };
-		F967272E26FA0C9F00D7B2BC /* SignUpSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccess.swift; sourceTree = "<group>"; };
-		F967273026FA0CAC00D7B2BC /* LoginSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccess.swift; sourceTree = "<group>"; };
 		F987CBA626BC3D050061A4A2 /* Air-Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air-Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air_AlarmApp.swift; sourceTree = "<group>"; };
 		F987CBAB26BC3D050061A4A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -231,19 +222,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		F782D14C27150DB900967231 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				2A425654270493C800B26232 /* SignUpMember.swift */,
-				2A42564C2704934500B26232 /* DustInfo.swift */,
-				2A425656270493EF00B26232 /* SignUpSuccess.swift */,
-				2A4256502704936F00B26232 /* LoginSuccess.swift */,
-				2A42564E2704936000B26232 /* Login.swift */,
-				2A4256522704937C00B26232 /* Member.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		F7C43CC226EB00A700DD3229 /* ChartView */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,7 +241,6 @@
 				F987CBBA26BC3D050061A4A2 /* Air-AlarmTests */,
 				F987CBC526BC3D050061A4A2 /* Air-AlarmUITests */,
 				F987CBA726BC3D050061A4A2 /* Products */,
-				F782D14C27150DB900967231 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -473,7 +450,6 @@
 				F7C43CC626EB00DC00DD3229 /* ChartsData.swift in Sources */,
 				F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */,
 				2A4256332704244800B26232 /* Alarm.swift in Sources */,
-				F782D1502715106500967231 /* WeatherInfo.swift in Sources */,
 				2A425657270493EF00B26232 /* SignUpSuccess.swift in Sources */,
 				2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */,
 				F7D1E15426FAF23F006FB401 /* Charts1.swift in Sources */,
