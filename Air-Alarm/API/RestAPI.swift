@@ -2,7 +2,7 @@
 //  RestAPI.swift
 //  Air-Alarm
 //
-//  Created by gibeom on 2021/08/14.
+//  Created by air-alarm on 2021/08/14.
 //
 import Foundation
 

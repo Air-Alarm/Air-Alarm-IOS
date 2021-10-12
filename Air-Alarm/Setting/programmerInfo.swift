@@ -14,8 +14,6 @@ struct programmerInfo: View {
                         .padding()
                 Form {
                     Section(header: Text("개발자 정보")) {
-                        Text("김기범                                                     iOS")
-                            .bold()
                         Text("김하은                                                     iOS")
                             .bold()
                         Text("박진희                                                     iOS")
