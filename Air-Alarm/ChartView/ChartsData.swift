@@ -76,7 +76,42 @@ func co2hour() -> [Double]{
     return co2
 }
 
-// 주 그래프
+// 온도 주 그래프
+func temweek() -> [Double]{
+    var tem:[Double] = []
+    db = restAPI.GET_Week()
+    for index in db {
+        tem.append(index.temperature)
+    }
+    return tem
+}
+// 습도 주 그래프
+func humweek() -> [Double]{
+    var hum:[Double] = []
+    db = restAPI.GET_Week()
+    for index in db {
+        hum.append(index.humidity)
+    }
+    return hum
+}
+// 미세먼지 주 그래프
+func dustweek() -> [Double]{
+    var dust:[Double] = []
+    db = restAPI.GET_Week()
+    for index in db {
+        dust.append(index.dust)
+    }
+    return dust
+}
+// 이산화탄소 주 그래프
+func co2week() -> [Double]{
+    var co2:[Double] = []
+    db = restAPI.GET_Week()
+    for index in db {
+        co2.append(index.CO2)
+    }
+    return co2
+}
 
 // 온도 월 그래프
 func temday() -> [Double]{
@@ -117,3 +152,4 @@ func co2day() -> [Double]{
     }
     return co2
 }
+
