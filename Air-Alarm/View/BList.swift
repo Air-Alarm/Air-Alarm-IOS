@@ -64,20 +64,24 @@ struct FirstView: View{
 
 // 두 번째 화면(주 그래프)
 struct SecondView: View{
+    @State var tem = temweek()
+    @State var hum = humweek()
+    @State var dust = dustweek()
+    @State var co2 = co2week()
     var body: some View{
         ZStack{
             VStack {
                 ScrollView {
-                    LineView(data: Data.data2, title: Data.title0, style: Style.metoring)
+                    LineView(data: tem, title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data1, title: Data.title1, style: Style.metoring)
+                    LineView(data: hum, title: Data.title1, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data0, title: Data.title2, style: Style.metoring)
+                    LineView(data: dust, title: Data.title2, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data3, title: Data.title3, style: Style.metoring)
+                    LineView(data: co2, title: Data.title3, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     Spacer()
@@ -150,7 +154,7 @@ struct TabBarButton: View {
             .fontWeight(isSelected ? .heavy : .regular)
             .font(.custom("Avenir", size: 16))
             .padding(.bottom,10)
-            .border(width: isSelected ? 2 : 1, edges: [.bottom], color: .blue)
+            .border(width: isSelected ? 3 : 1, edges: [.bottom], color: .blue)
             .foregroundColor(isSelected ? Color.blue : Color.black)
     }
 }
