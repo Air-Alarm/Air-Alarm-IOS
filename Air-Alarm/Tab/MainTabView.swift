@@ -33,6 +33,7 @@ struct MainTabView: View {
 
 struct HeaderTabView: View {
     @State var showingAlarm = false
+    @State var showingSettings = false
     
     var body: some View {
 //        NavigationView{
@@ -57,7 +58,8 @@ struct HeaderTabView: View {
 //                }
                 Button(action: {
                 //    Settings()
-                    showingSettings()
+                //    showingSettings()
+                    self.showingSettings.toggle()
                 }){
                     Image(systemName: "gearshape")
                 }

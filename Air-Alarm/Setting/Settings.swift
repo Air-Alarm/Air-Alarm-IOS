@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Settings: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             VStack{
@@ -27,7 +29,14 @@ struct Settings: View {
                                 .cornerRadius(40)
                     }
                 }
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Back")
+                        .navigationBarBackButtonHidden(true)
+                }
             }
+            
        }
         .navigationBarHidden(false)
         .navigationBarBackButtonHidden(false)

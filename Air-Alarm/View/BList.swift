@@ -31,23 +31,28 @@ struct BList: View {
     }
 }
 
-// 첫 번째 화면
+// 첫 번째 화면(일 그래프)
 struct FirstView: View{
+    @State var tem = temhour()
+    @State var hum = humhour()
+    @State var dust = dusthour()
+    @State var co2 = co2hour()
+    
     var body: some View{
         ZStack{
             VStack {
                 ScrollView {
 
-                    LineView(data: Data.data0, title: Data.title0, style: Style.metoring)
+                    LineView(data: tem, title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data3, title: Data.title1, style: Style.metoring)
+                    LineView(data: hum, title: Data.title1, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data2, title: Data.title2, style: Style.metoring)
+                    LineView(data: dust, title: Data.title2, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data1, title: Data.title3, style: Style.metoring)
+                    LineView(data: co2, title: Data.title3, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     Spacer()
@@ -58,13 +63,13 @@ struct FirstView: View{
     }
 }
 
-// 두 번째 화면
+// 두 번째 화면(주 그래프)
 struct SecondView: View{
     var body: some View{
         ZStack{
             VStack {
                 ScrollView {
-                    LineView(data: Data.data1, title: Data.title0, style: Style.metoring)
+                    LineView(data: Data.data2, title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     LineView(data: Data.data3, title: Data.title1, style: Style.metoring)
@@ -84,8 +89,9 @@ struct SecondView: View{
     }
 }
 
-// 세 번째 화면
+// 세 번째 화면(월 그래프)
 struct ThirdView: View{
+    //@State var tem = temday()
     var body: some View{
         ZStack{
             VStack {

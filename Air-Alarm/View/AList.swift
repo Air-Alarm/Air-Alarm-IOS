@@ -61,16 +61,16 @@ struct AListView: View {
                             .offset(y: -35)
                     }
                     
-                    VStack {                                                
+                    VStack {
                         HStack {
                             Spacer()
-                            Text("온도 :  " + String(db.temperature) + " °C")
+                            Text("온도 :  " + " " + String(db.temperature) + " °C")
                                 .padding()
                             Spacer()
                         }
                         HStack {
                             Spacer()
-                            Text("습도 :  " + String(db.humidity) + " %")
+                            Text("습도 :  " + " " + String(db.humidity) + " %")
                                 .padding()
                             Spacer()
                         }
@@ -152,12 +152,16 @@ struct AListView: View {
                             }
                             Spacer()
                         }
-                        HStack {
                             Spacer()
-                            Text("측정시간: " + db.time)
-                                .padding()
-                            Spacer()
-                        }
+                            VStack {
+                                Spacer()
+                                Text("측정시간")
+                                    .foregroundColor(Color.gray)
+                                    .font(.system(size: 16))
+                                Text(db.time)
+                                    .foregroundColor(Color.gray)
+                                    .font(.system(size: 16))
+                            }
                         
                         Text("\(json)")//웹에서 받아온 내용이 여기 저장됨
                             .padding()
@@ -204,10 +208,9 @@ struct AListView: View {
         }
         //.background(Color.black.opacity(0.06).ignoresSafeArea())
     }
-    func updateData(){
+    func updateData() {
         print("update Data")
-        
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             withAnimation(Animation.linear){
                 
