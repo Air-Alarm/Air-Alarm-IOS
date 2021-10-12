@@ -2,7 +2,7 @@
 //  Air_AlarmApp.swift
 //  Air-Alarm
 //
-//  Created by gibeom on 2021/08/06.
+//  Created by air-alarm on 2021/08/06.
 //
 
 import SwiftUI
@@ -13,7 +13,7 @@ struct Air_AlarmApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-              .environmentObject(Authenticator())
+//              .environmentObject(Authenticator())
         }
     }
 }

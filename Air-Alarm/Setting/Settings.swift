@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct Settings: View {
+    @Environment(\.presentationMode) var presentationMode
+    let restApi = RestAPI()
+    @State private var member = Login.init()
+    @State var signInSuccess: Bool
+    
     var body: some View {
-//        NavigationView {
+        NavigationView {
             VStack{
                 List {
                     myInfofo
@@ -17,8 +22,24 @@ struct Settings: View {
                     sensorInfofo
                     weatherInfofo
                     programmerInfofo
+//                    NavigationLink(
+//                        destination: ContentView(),
+//                        label: {
+//                            Text("로그아웃")
+//                                .font(.headline)
+//                                .padding()
+//                                .foregroundColor(.red)
+//                                .cornerRadius(40)
+//                        })
                     Button(action: {
                         
+                        var trigger = self.restApi.GET_Login(member: self.member)
+                        print("trigger info >> ", trigger)
+                        
+                        if !trigger.success {
+                            self.signInSuccess = false
+                            print("trigger info >> ", trigger)
+                        }
                     }){
                             Text("로그아웃")
                                 .font(.headline)
@@ -26,13 +47,17 @@ struct Settings: View {
                                 .foregroundColor(.red)
                                 .cornerRadius(40)
                     }
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }){
+                        Text("Back")
+ //                       navigationBarBackButtonHidden(true)
+                    }
                 }
             }
-//       }
-        .navigationBarHidden(false)
-        .navigationBarBackButtonHidden(false)
-//        .navigationBarTitle(Text("Setting"), displayMode: .inline)
-//        .navigationBarColor(.white)
+       }
+        .navigationBarTitle(Text("Setting"), displayMode: .inline)
+        .navigationBarColor(.white)
     }
 }
 
@@ -79,7 +104,7 @@ private extension Settings {
     
     var weatherInfofo: some View {
         NavigationLink(
-            destination: WeatherInfo()
+            destination: WeatherInfoo()
                 .navigationBarHidden(false)
                 .navigationBarBackButtonHidden(false)
         
@@ -104,8 +129,8 @@ private extension Settings {
     }
 }
 
-struct Settings_Previews: PreviewProvider {
-    static var previews: some View {
-        Settings()
-    }
-}
+//struct Settings_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Settings()
+//    }
+//}

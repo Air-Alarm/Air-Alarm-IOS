@@ -10,7 +10,20 @@ import SwiftUI
 struct programmerInfo: View {
     var body: some View {
             VStack {
-                Text("개발자 정보")
+                ProfileImage(imageName: "icon")
+                        .padding()
+                Form {
+                    Section(header: Text("개발자 정보")) {
+                        Text("김하은                                                     iOS")
+                            .bold()
+                        Text("박진희                                                     iOS")
+                            .bold()
+                        Text("고병우                                       Embedded")
+                            .bold()
+                        Text("손창하                                          BackEnd")
+                            .bold()
+                    }.padding(10)
+                }
             }
             .background(Color.white)
             .navigationBarHidden(false)

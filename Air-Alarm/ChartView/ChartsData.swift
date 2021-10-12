@@ -36,3 +36,120 @@ struct Data {
     
     
 }
+ 
+var db = [DustInfo]()
+let restAPI = RestAPI()
+// 온도 일 그래프
+func temhour() -> [Double]{
+    var tem:[Double] = []
+    db = restAPI.GET_HourAll()
+    for index in db {
+        tem.append(index.temperature)
+    }
+    return tem
+}
+// 습도 일 그래프
+func humhour() -> [Double]{
+    var hum:[Double] = []
+    db = restAPI.GET_HourAll()
+    for index in db {
+        hum.append(index.humidity)
+    }
+    return hum
+}
+// 미세먼지 일 그래프
+func dusthour() -> [Double]{
+    var dust:[Double] = []
+    db = restAPI.GET_HourAll()
+    for index in db {
+        dust.append(index.dust)
+    }
+    return dust
+}
+// 이산화탄소 일 그래프
+func co2hour() -> [Double]{
+    var co2:[Double] = []
+    db = restAPI.GET_HourAll()
+    for index in db {
+        co2.append(index.CO2)
+    }
+    return co2
+}
+
+// 온도 주 그래프
+func temweek() -> [Double]{
+    var tem:[Double] = []
+    db = restAPI.GET_Week()
+    for index in db {
+        tem.append(index.temperature)
+    }
+    return tem
+}
+// 습도 주 그래프
+func humweek() -> [Double]{
+    var hum:[Double] = []
+    db = restAPI.GET_Week()
+    for index in db {
+        hum.append(index.humidity)
+    }
+    return hum
+}
+// 미세먼지 주 그래프
+func dustweek() -> [Double]{
+    var dust:[Double] = []
+    db = restAPI.GET_Week()
+    for index in db {
+        dust.append(index.dust)
+    }
+    return dust
+}
+// 이산화탄소 주 그래프
+func co2week() -> [Double]{
+    var co2:[Double] = []
+    db = restAPI.GET_Week()
+    for index in db {
+        co2.append(index.CO2)
+    }
+    return co2
+}
+
+// 온도 월 그래프
+func temday() -> [Double]{
+    var tem:[Double] = []
+    db = restAPI.GET_DayAll()
+    for index in db {
+        tem.append(index.temperature)
+    }
+    return tem
+}
+
+// 습도 월 그래프
+func humday() -> [Double]{
+    var hum:[Double] = []
+    db = restAPI.GET_DayAll()
+    for index in db {
+        hum.append(index.humidity)
+    }
+    return hum
+}
+
+// 미세먼지 월 그래프
+func dustday() -> [Double]{
+    var dust:[Double] = []
+    db = restAPI.GET_DayAll()
+    for index in db {
+        dust.append(index.dust)
+    }
+    return dust
+}
+
+// 이산화탄소 월 그래프
+func co2day() -> [Double]{
+    var co2:[Double] = []
+    db = restAPI.GET_DayAll()
+    for index in db {
+        co2.append(index.CO2)
+    }
+    return co2
+}
+

@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var authenticator: Authenticator
+    @State var restApi = RestAPI()
     @State var signInSuccess = false
+    
     
     var body: some View {
         // 로그인 조건
@@ -25,25 +26,8 @@ struct ContentView: View {
     }
 }
 
-//  private var isLoginDisabled: Bool {
-//    authenticator.isAuthenticating || userName.isEmpty || password.isEmpty
-//  }
-//}
-
-  
-//struct AppHome: View {
-//
-//    var body: some View {
-//        VStack {
-//            Text("Hello freaky world!")
-//            Text("You are signed in.")
-//        }
-//    }
-//}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(Authenticator())
     }
 }
