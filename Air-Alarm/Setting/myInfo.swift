@@ -11,7 +11,7 @@ struct myInfo: View {
     let restAPI = RestAPI()
     @State var member = Login.init()
     @State var db = LoginSuccess.init()
-//    @Binding var userId: String
+    @State var signInSuccess = true
     
     var body: some View {
             VStack {
@@ -19,10 +19,12 @@ struct myInfo: View {
                 ProfileImage(imageName: "icon")
                         .padding()
                 Form {
-                    var trigger_user = restAPI.GET_Login(member: self.member)
+//                    var trigger_user = restAPI.GET_Login(member: self.member)
+                    let contentLogin = ContentLogin(signInSuccess: $signInSuccess)
                     Section(header: Text("User Info")) {
 //                        Text("Email :  " + String(userId))
-                        Text("SN :  " + String(trigger_user.success))
+                        Text("Email : \(contentLogin.id)")
+                        Text("SN :  \(contentLogin.snkey)")
                     }
                 }
             }

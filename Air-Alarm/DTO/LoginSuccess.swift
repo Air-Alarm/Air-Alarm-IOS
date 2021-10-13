@@ -13,11 +13,13 @@ struct LoginSuccess: Codable { // 로그인 성공 여부 판단
      success: 로그인 성공 여부
      */
     
-    init(id: String = "", success: Bool = false) {
+    init(id: String = "", success: Bool = false, SN: String = "") {
         self.id = id
         self.success = success
+        self.SN = SN
     }
     
     var id: String
     var success: Bool
+    var SN: String
 }

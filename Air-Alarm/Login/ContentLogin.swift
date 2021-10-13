@@ -18,7 +18,13 @@ struct ContentLogin: View {
     @State var showingSignUp = false
     //SN키 반환 관련
 //    @State private var SNmember = getSN.init()
+    @State var id: String = ""
+    @State var snkey: String = ""
     
+    func add() {
+        self.id = member.id
+        self.snkey = restApi.GET_Login(member: Login.init()).SN
+    }
     
     var body: some View {
         ZStack {
@@ -40,7 +46,10 @@ struct ContentLogin: View {
                     Button(action: {
                         var trigger = self.restApi.GET_Login(member: self.member)
                         print("trigger info >> ", trigger)
-                        
+                        snkey.append(trigger.SN)
+                        add()
+                        print(add())
+                        print("SN info >> ", trigger.SN)
                         if trigger.success {
                             self.signInSuccess = true
                         }else{

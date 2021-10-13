@@ -9,8 +9,8 @@ import SwiftUI
 
 struct changeSN: View {
     let restAPI = RestAPI()
-    @State var db = getSNSuccess.init()
-    @State private var SNmember = getSN.init()
+//    @State var db = getSNSuccess.init()
+//    @State private var SNmember = getSN.init()
     
     
     var body: some View {
@@ -20,7 +20,7 @@ struct changeSN: View {
                         .padding()
                 Form {
                     Section(header: Text("User Info")) {
-                        Text("SN :  " + String(db.SN))
+ //                       Text("SN :  " + String(db.SN))
                     }
                 }
     //            Text("\(json)")//웹에서 받아온 내용이 여기 저장됨

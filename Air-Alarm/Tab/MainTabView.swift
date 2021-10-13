@@ -50,7 +50,7 @@ struct HeaderTabView: View {
             manager.addNotification(title: "미세먼지 농도가 높습니다.")
             print("notification Dust success")
         }
-//        manager.schedule()
+        manager.schedule()
         manager.scheduleNotifications()
         self.showingAlarm.toggle()
     }
