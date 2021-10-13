@@ -7,51 +7,48 @@
 
 import SwiftUI
 
-
 struct Signup: View {
     @Binding var showingSignUp: Bool
     @State private var member = SignUpMember.init()
     var restApi = RestAPI()
+    @Environment(\.presentationMode) var presentationMode
     
-        var body: some View {
-
-            return
-                NavigationView {    // bartitle을 위해
-                VStack {
-                    UnderlineTextFieldView(text: $member.id, textField: emailView, placeholder: "")
-                        .padding(.top, 50)
-                        .autocapitalization(.none)
-                        .disableAutocorrection(true)
-                    UnderlineTextFieldView(text: $member.pwd, textField: passwordView, placeholder: "")
-                        .padding(.top, 10)
-                    UnderlineTextFieldView(text: $member.SN, textField: snView, placeholder: "")
-                        .padding(.top, 10)
-                    
-                    HStack{
-//                        back
-                        login
+    var body: some View {
+        NavigationView {    // bartitle을 위해
+            VStack {
+                UnderlineTextFieldView(text: $member.id, textField: emailView, placeholder: "")
+                    .padding(.top, 50)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                UnderlineTextFieldView(text: $member.pwd, textField: passwordView, placeholder: "")
+                    .padding(.top, 10)
+                UnderlineTextFieldView(text: $member.SN, textField: snView, placeholder: "")
+                    .padding(.top, 10)
+                
+                HStack{
+                    back
+                    login
+                }
+            }
+            // navigationBar
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Text("회원가입")
+                            .foregroundColor(.blue)
+                            .bold()
                     }
+                }
             }
-                // navigationBar
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                         HStack {
-                             Text("회원가입")
-                                .foregroundColor(.blue)
-                                .bold()
-                         }
-                     }
-                 }
-                .navigationBarColor(.white)
-            }
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
+            .navigationBarColor(.white)
+        }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 private extension Signup {
-    
     // TextField 정보
     var emailView: some View {
         TextField("Email", text: $member.id)
@@ -82,6 +79,23 @@ private extension Signup {
             ){
                 Text("가입하기")
                     .font(.headline)
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(40)
+            }
+            Spacer()
+        }.padding()
+    }
+    // 뒤로가기 버튼
+    var back: some View {
+        VStack{
+            Spacer()
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }){
+                Text("뒤로가기")
+                    .font(.headline)
                     .foregroundColor(.blue)
                     .padding()
                     .overlay(
@@ -91,64 +105,6 @@ private extension Signup {
                     )
             }
             Spacer()
-//            NavigationLink(destination: ContentView(), tag: 10, selection: $actionn) {
-//                EmptyView()
-//            }
-//
-//            Button ( action: {
-//                signUpup()
-//                self.actionn = 10
-//            }
-//            ){
-//                Text("가입하기")
-//                    .font(.headline)
-//                    .foregroundColor(.blue)
-//                    .padding()
-//                    .overlay(
-//                        RoundedRectangle(cornerRadius: 30)
-//                            .stroke(Color.blue, lineWidth: 1)
-//                            .frame(width: 90, height: 50)
-//                    )
-//            }
         }.padding()
     }
-    
-    // 뒤로가기 버튼
-//    var back: some View {
-//        VStack{
-//            Spacer()
-//            NavigationLink(
-//                destination: ContentView()
-//            ){
-//                Text("뒤로가기")
-//                    .font(.headline)
-//                    .foregroundColor(.blue)
-//                    .padding()
-//                    .overlay(
-//                        RoundedRectangle(cornerRadius: 30)
-//                            .stroke(Color.blue, lineWidth: 1)
-//                            .frame(width: 90, height: 50)
-//                    )
-//            }
-//            Spacer()
-//        }.padding()
-//    }
 }
-
-//struct ModalPopup : View {
-//    @Binding var showing:Bool
-//
-//    var body: some View {
-//        Button(action: {
-//            self.showing = false
-//        }) {
-//            Text("Dismiss").frame(height: 60)
-//        }
-//    }
-//}
-
-//struct Signup_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Signup()
-//    }
-//}
