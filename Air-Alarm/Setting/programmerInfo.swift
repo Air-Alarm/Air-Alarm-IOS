@@ -14,14 +14,34 @@ struct programmerInfo: View {
                         .padding()
                 Form {
                     Section(header: Text("개발자 정보")) {
-                        Text("김하은                                                     iOS")
-                            .bold()
-                        Text("박진희                                                     iOS")
-                            .bold()
-                        Text("고병우                                       Embedded")
-                            .bold()
-                        Text("손창하                                          BackEnd")
-                            .bold()
+                        HStack {
+                            Text("김하은")
+                                .bold()
+                            Spacer()
+                            Text("iOS")
+                                .bold()
+                             }
+                        HStack {
+                            Text("박진희")
+                                .bold()
+                            Spacer()
+                            Text("iOS")
+                                .bold()
+                        }
+                        HStack {
+                            Text("고병우")
+                                .bold()
+                            Spacer()
+                            Text("Embedded")
+                                .bold()
+                        }
+                        HStack {
+                            Text("손창하")
+                                .bold()
+                            Spacer()
+                            Text("Backend")
+                                .bold()
+                        }
                     }.padding(10)
                 }
             }
