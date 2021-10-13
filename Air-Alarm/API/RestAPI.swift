@@ -29,7 +29,6 @@ class RestAPI {
                 }
             }.resume()
         }
-        
         // wait 0.5 sec
         Thread.sleep(forTimeInterval: 0.5)
         return db

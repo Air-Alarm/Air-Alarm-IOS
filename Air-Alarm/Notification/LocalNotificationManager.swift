@@ -51,8 +51,8 @@ class LocalNotificationManager {
             let content = UNMutableNotificationContent()
             content.title = notification.title
             
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // 알림이 오는 시간 설정
-            let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
+            let alarmtrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // 알림이 오는 시간 설정
+            let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: alarmtrigger)
             
             UNUserNotificationCenter.current().add(request) { error in
                 guard error == nil else { return }

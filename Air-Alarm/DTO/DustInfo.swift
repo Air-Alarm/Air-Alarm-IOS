@@ -17,8 +17,7 @@ struct DustInfo: Codable {
      temperature: 온도
      */
     
-    init(id: Int = 0, time: String = "", CO2: Double = 0.0, dust: Double = 0.0, humidity: Double = 0.0, temperature: Double = 0.0) {
-        self.id = id
+    init(time: String = "", CO2: Double = 0.0, dust: Double = 0.0, humidity: Double = 0.0, temperature: Double = 0.0) {
         self.time = time
         self.CO2 = CO2
         self.dust = dust
@@ -26,7 +25,6 @@ struct DustInfo: Codable {
         self.temperature = temperature
     }
     
-    var id: Int
     var time: String
     var CO2: Double
     var dust: Double
