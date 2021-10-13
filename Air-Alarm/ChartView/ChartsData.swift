@@ -36,31 +36,186 @@ struct Data {
     
     
 }
- 
+
+// 일 그래프
+class GetData{
+    private var data: [DustInfo]
+    init(){
+        data = restAPI.GET_HourAll()
+    }
+    public func temhour() -> [Double]{
+        var tem:[Double] = []
+    //    db = restAPI.GET_HourAll()
+        for index in data {
+            tem.append(index.temperature)
+        }
+        return tem
+    }
+    
+    public func humhour() -> [Double]{
+        var hum:[Double] = []
+    //    db = restAPI.GET_HourAll()
+        for index in data {
+            hum.append(index.humidity)
+        }
+        return hum
+    }
+    
+    public func dusthour() -> [Double]{
+        var dust:[Double] = []
+    //    db = restAPI.GET_HourAll()
+        for index in data {
+            dust.append(index.dust)
+        }
+        return dust
+    }
+    
+    public func co2hour() -> [Double]{
+        var co2:[Double] = []
+    //    db = restAPI.GET_HourAll()
+        for index in data {
+            co2.append(index.CO2)
+        }
+        return co2
+    }
+}
+
+// 주 그래프
+class WeekData{
+    private var data: [DustInfo]
+    init(){
+        data = restAPI.GET_Week()
+    }
+    public func temweek() -> [Double]{
+        var tem:[Double] = []
+    //    db = restAPI.GET_HourAll()
+        for index in data {
+            tem.append(index.temperature)
+        }
+        return tem
+    }
+    
+    public func humweek() -> [Double]{
+        var hum:[Double] = []
+    //    db = restAPI.GET_HourAll()
+        for index in data {
+            hum.append(index.humidity)
+        }
+        return hum
+    }
+    
+    public func dustweek() -> [Double]{
+        var dust:[Double] = []
+    //    db = restAPI.GET_HourAll()
+        for index in data {
+            dust.append(index.dust)
+        }
+        return dust
+    }
+    
+    public func co2week() -> [Double]{
+        var co2:[Double] = []
+    //    db = restAPI.GET_HourAll()
+        for index in data {
+            co2.append(index.CO2)
+        }
+        return co2
+    }
+}
+
+// 월 그래프
+class DayData{
+    private var data: [DustInfo]
+    init(){
+        data = restAPI.GET_DayAll()
+    }
+    public func temday() -> [Double]{
+        var tem:[Double] = []
+    //    db = restAPI.GET_HourAll()
+        for index in data {
+            tem.append(index.temperature)
+        }
+        return tem
+    }
+    
+    public func humday() -> [Double]{
+        var hum:[Double] = []
+    //    db = restAPI.GET_HourAll()
+        for index in data {
+            hum.append(index.humidity)
+        }
+        return hum
+    }
+    
+    public func dustday() -> [Double]{
+        var dust:[Double] = []
+    //    db = restAPI.GET_HourAll()
+        for index in data {
+            dust.append(index.dust)
+        }
+        return dust
+    }
+    
+    public func co2day() -> [Double]{
+        var co2:[Double] = []
+    //    db = restAPI.GET_HourAll()
+        for index in data {
+            co2.append(index.CO2)
+        }
+        return co2
+    }
+}
+
 var db = [DustInfo]()
 let restAPI = RestAPI()
 // 온도 일 그래프
-func temhour() -> [Double]{
-    var tem:[Double] = []
-    db = restAPI.GET_HourAll()
-    for index in db {
-        tem.append(index.temperature)
+struct hour: Codable {
+    init(tem: [Double] = [0.0], hum: [Double] = [0.0], dust: [Double] = [0.0], co2: [Double] = [0.0]){
+        
+        self.data = restAPI.GET_HourAll()
+        self.tem = tem
+        self.hum = hum
+        self.dust = dust
+        self.co2 = co2
     }
-    return tem
+    var tem:[Double]
+    var hum:[Double]
+    var dust:[Double]
+    var co2:[Double]
+
+    var data: [DustInfo]
 }
+//func temhour(member: hour) -> [hour] {
+//    var hourr = hour.init()
+//    db = restAPI.GET_HourAll()
+//    for index in db {
+//        hourr.tem.append(index.temperature)
+//        hourr.hum.append(index.humidity)
+//        hourr.dust.append(index.dust)
+//        hourr.co2.append(index.CO2)
+//    }
+//    return [hourr]
+//}
+
 // 습도 일 그래프
-func humhour() -> [Double]{
+func humhour() -> Void{
+    var tem:[Double] = []
+    var dust:[Double] = []
+    var co2:[Double] = []
     var hum:[Double] = []
     db = restAPI.GET_HourAll()
     for index in db {
+        tem.append(index.temperature)
         hum.append(index.humidity)
+        dust.append(index.dust)
+        co2.append(index.CO2)
     }
-    return hum
 }
+
 // 미세먼지 일 그래프
 func dusthour() -> [Double]{
     var dust:[Double] = []
-    db = restAPI.GET_HourAll()
+//    db = restAPI.GET_HourAll()
     for index in db {
         dust.append(index.dust)
     }
@@ -77,79 +232,79 @@ func co2hour() -> [Double]{
 }
 
 // 온도 주 그래프
-func temweek() -> [Double]{
-    var tem:[Double] = []
-    db = restAPI.GET_Week()
-    for index in db {
-        tem.append(index.temperature)
-    }
-    return tem
-}
-// 습도 주 그래프
-func humweek() -> [Double]{
-    var hum:[Double] = []
-    db = restAPI.GET_Week()
-    for index in db {
-        hum.append(index.humidity)
-    }
-    return hum
-}
-// 미세먼지 주 그래프
-func dustweek() -> [Double]{
-    var dust:[Double] = []
-    db = restAPI.GET_Week()
-    for index in db {
-        dust.append(index.dust)
-    }
-    return dust
-}
-// 이산화탄소 주 그래프
-func co2week() -> [Double]{
-    var co2:[Double] = []
-    db = restAPI.GET_Week()
-    for index in db {
-        co2.append(index.CO2)
-    }
-    return co2
-}
-
-// 온도 월 그래프
-func temday() -> [Double]{
-    var tem:[Double] = []
-    db = restAPI.GET_DayAll()
-    for index in db {
-        tem.append(index.temperature)
-    }
-    return tem
-}
-
-// 습도 월 그래프
-func humday() -> [Double]{
-    var hum:[Double] = []
-    db = restAPI.GET_DayAll()
-    for index in db {
-        hum.append(index.humidity)
-    }
-    return hum
-}
-
-// 미세먼지 월 그래프
-func dustday() -> [Double]{
-    var dust:[Double] = []
-    db = restAPI.GET_DayAll()
-    for index in db {
-        dust.append(index.dust)
-    }
-    return dust
-}
-
-// 이산화탄소 월 그래프
-func co2day() -> [Double]{
-    var co2:[Double] = []
-    db = restAPI.GET_DayAll()
-    for index in db {
-        co2.append(index.CO2)
-    }
-    return co2
-}
-
+//func temweek() -> [Double]{
+//    var tem:[Double] = []
+//    db = restAPI.GET_Week()
+//    for index in db {
+//        tem.append(index.temperature)
+//    }
+//    return tem
+//}
+//// 습도 주 그래프
+//func humweek() -> [Double]{
+//    var hum:[Double] = []
+//    db = restAPI.GET_Week()
+//    for index in db {
+//        hum.append(index.humidity)
+//    }
+//    return hum
+//}
+//// 미세먼지 주 그래프
+//func dustweek() -> [Double]{
+//    var dust:[Double] = []
+//    db = restAPI.GET_Week()
+//    for index in db {
+//        dust.append(index.dust)
+//    }
+//    return dust
+//}
+//// 이산화탄소 주 그래프
+//func co2week() -> [Double]{
+//    var co2:[Double] = []
+//    db = restAPI.GET_Week()
+//    for index in db {
+//        co2.append(index.CO2)
+//    }
+//    return co2
+//}
+//
+//// 온도 월 그래프
+//func temday() -> [Double]{
+//    var tem:[Double] = []
+//    db = restAPI.GET_DayAll()
+//    for index in db {
+//        tem.append(index.temperature)
+//    }
+//    return tem
+//}
+//
+//// 습도 월 그래프
+//func humday() -> [Double]{
+//    var hum:[Double] = []
+//    db = restAPI.GET_DayAll()
+//    for index in db {
+//        hum.append(index.humidity)
+//    }
+//    return hum
+//}
+//
+//// 미세먼지 월 그래프
+//func dustday() -> [Double]{
+//    var dust:[Double] = []
+//    db = restAPI.GET_DayAll()
+//    for index in db {
+//        dust.append(index.dust)
+//    }
+//    return dust
+//}
+//
+//// 이산화탄소 월 그래프
+//func co2day() -> [Double]{
+//    var co2:[Double] = []
+//    db = restAPI.GET_DayAll()
+//    for index in db {
+//        co2.append(index.CO2)
+//    }
+//    return co2
+//}
+//

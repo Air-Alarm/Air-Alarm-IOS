@@ -34,24 +34,21 @@ struct BList: View {
 
 // 첫 번째 화면(일 그래프)
 struct FirstView: View{
-    @State var tem = temhour()
-    @State var hum = humhour()
-    @State var dust = dusthour()
-    @State var co2 = co2hour()
+    var getData = GetData()
     var body: some View{
         ZStack{
             VStack {
                 ScrollView {
-                    LineView(data: tem, title: Data.title0, style: Style.metoring)
+                    LineView(data: getData.temhour(), title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: hum, title: Data.title1, style: Style.metoring)
+                    LineView(data: getData.humhour(), title: Data.title1, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: dust, title: Data.title2, style: Style.metoring)
+                    LineView(data: getData.dusthour(), title: Data.title2, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: co2, title: Data.title3, style: Style.metoring)
+                    LineView(data: getData.co2hour(), title: Data.title3, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     Spacer()
@@ -64,24 +61,21 @@ struct FirstView: View{
 
 // 두 번째 화면(주 그래프)
 struct SecondView: View{
-    @State var tem = temweek()
-    @State var hum = humweek()
-    @State var dust = dustweek()
-    @State var co2 = co2week()
+    var getData = WeekData()
     var body: some View{
         ZStack{
             VStack {
                 ScrollView {
-                    LineView(data: tem, title: Data.title0, style: Style.metoring)
+                    LineView(data: getData.temweek(), title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: hum, title: Data.title1, style: Style.metoring)
+                    LineView(data: getData.humweek(), title: Data.title1, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: dust, title: Data.title2, style: Style.metoring)
+                    LineView(data: getData.dustweek(), title: Data.title2, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: co2, title: Data.title3, style: Style.metoring)
+                    LineView(data: getData.co2week(), title: Data.title3, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     Spacer()
@@ -94,24 +88,21 @@ struct SecondView: View{
 
 // 세 번째 화면(월 그래프)
 struct ThirdView: View{
-    @State var tem = temday()
-    @State var hum = humday()
-    @State var dust = dustday()
-    @State var co2 = co2day()
+    var getData = DayData()
     var body: some View{
         ZStack{
             VStack {
                 ScrollView {
-                    LineView(data: tem, title: Data.title0, style: Style.metoring)
+                    LineView(data: getData.temday(), title: Data.title0, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data3, title: Data.title1, style: Style.metoring)
+                    LineView(data: getData.humday(), title: Data.title1, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data2, title: Data.title2, style: Style.metoring)
+                    LineView(data: getData.dustday(), title: Data.title2, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
-                    LineView(data: Data.data0, title: Data.title3, style: Style.metoring)
+                    LineView(data: getData.co2day(), title: Data.title3, style: Style.metoring)
                         .padding()
                         .frame(width: 360, height: 365)
                     Spacer()
