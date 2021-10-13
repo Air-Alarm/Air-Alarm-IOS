@@ -87,12 +87,6 @@ struct CList: View {
                         }
                         HStack {
                             Spacer()
-                            Text("id :  " + String(db.id))
-                                .padding()
-                            Spacer()
-                        }
-                        HStack {
-                            Spacer()
                             Text("온도 :  " + String(db.temperature) + " °C")
                                 .padding()
                             Spacer()
