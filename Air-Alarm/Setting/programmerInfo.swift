@@ -14,13 +14,15 @@ struct programmerInfo: View {
                         .padding()
                 Form {
                     Section(header: Text("개발자 정보")) {
-                        HStack {
-                            Text("김하은")
-                                .bold()
-                            Spacer()
-                            Text("iOS")
-                                .bold()
-                             }
+                        Link(destination: URL(string: "https://www.naver.com")!){
+                            HStack {
+                                Text("김하은")
+                                    .bold()
+                                Spacer()
+                                Text("iOS")
+                                    .bold()
+                                 }
+                        }
                         HStack {
                             Text("박진희")
                                 .bold()
