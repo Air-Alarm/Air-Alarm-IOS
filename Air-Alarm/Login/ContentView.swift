@@ -18,6 +18,8 @@ struct ContentView: View {
         return Group {
             if signInSuccess {
                 MainTabView()
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarHidden(true)
             }
             else {
                 ContentLogin(signInSuccess: $signInSuccess)

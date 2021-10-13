@@ -66,7 +66,8 @@ struct HeaderTabView: View {
                 })
                 {
                     Image(systemName: "gearshape")
-                }.fullScreenCover(isPresented: $showingSettings,content: { Settings( signInSuccess: false) })
+                }.fullScreenCover(isPresented: $showingSettings,content: { Settings() })
+                //signInSuccess: false, showView: false
 //                .sheet(isPresented: $showingSettings) {
 //                    Settings()
 //                }
@@ -80,7 +81,7 @@ struct HeaderTabView: View {
                 }
                 .padding(10)
             }//.frame(height: Header.navigationBarHeight)
- //       }
+//       }
     }
 }
 
