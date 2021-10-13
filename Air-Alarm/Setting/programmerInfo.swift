@@ -14,35 +14,45 @@ struct programmerInfo: View {
                         .padding()
                 Form {
                     Section(header: Text("개발자 정보")) {
-                        Link(destination: URL(string: "https://www.naver.com")!){
+                        Link(destination: URL(string: "https://github.com/hanni66")!) {
                             HStack {
                                 Text("김하은")
                                     .bold()
                                 Spacer()
                                 Text("iOS")
                                     .bold()
-                                 }
+                            }
+                            .foregroundColor(.black)
                         }
-                        HStack {
-                            Text("박진희")
-                                .bold()
-                            Spacer()
-                            Text("iOS")
-                                .bold()
+                        Link(destination: URL(string: "https://github.com/parkjinhee53")!) {
+                            HStack {
+                                Text("박진희")
+                                    .bold()
+                                Spacer()
+                                Text("iOS")
+                                    .bold()
+                            }
+                            .foregroundColor(.black)
                         }
-                        HStack {
-                            Text("고병우")
-                                .bold()
-                            Spacer()
-                            Text("Embedded")
-                                .bold()
+                        Link(destination: URL(string: "https://github.com/kohbwoo")!) {
+                            HStack {
+                                Text("고병우")
+                                    .bold()
+                                Spacer()
+                                Text("Embedded")
+                                    .bold()
+                            }
+                            .foregroundColor(.black)
                         }
-                        HStack {
-                            Text("손창하")
-                                .bold()
-                            Spacer()
-                            Text("Backend")
-                                .bold()
+                        Link(destination: URL(string: "https://github.com/SonChangHa")!) {
+                            HStack {
+                                Text("손창하")
+                                    .bold()
+                                Spacer()
+                                Text("Backend")
+                                    .bold()
+                            }
+                            .foregroundColor(.black)
                         }
                     }.padding(10)
                 }
