@@ -46,7 +46,7 @@ struct Settings: View {
             }
        }
         .navigationBarTitle(Text("Setting"), displayMode: .inline)
-        .navigationBarColor(.white)
+//        .navigationBarColor(.white)
     }
 }
 private extension Settings {
@@ -96,6 +96,7 @@ private extension Settings {
             destination: sensorInfo()
                 .navigationBarHidden(false)
                 .navigationBarBackButtonHidden(false)
+                .navigationBarTitle("센서 측정 주기 / 단위 정보")
         
         ){
             Text("센서 측정 주기 / 단위 정보")
