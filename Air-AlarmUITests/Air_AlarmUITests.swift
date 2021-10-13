@@ -2,7 +2,7 @@
 //  Air_AlarmUITests.swift
 //  Air-AlarmUITests
 //
-//  Created by gibeom on 2021/08/06.
+//  Created by air-alarm on 2021/08/06.
 //
 
 import XCTest

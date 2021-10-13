@@ -8,13 +8,7 @@
 import SwiftUI
 
 struct sensorInfo: View {
-    let restAPI = RestSignAPI()
-    @State var sensor_db = RestSignAPI.SignInfo()
-    
-    func update() {
-        self.sensor_db = restAPI.GET()
-    }
-    
+
     var body: some View {
         ScrollView{
             Spacer()

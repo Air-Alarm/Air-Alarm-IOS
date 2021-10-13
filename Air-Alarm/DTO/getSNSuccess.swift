@@ -13,7 +13,7 @@ struct getSNSuccess: Codable { // 로그인 성공 여부 판단
      success: get sn 성공 여부
      */
     
-    init(id: String = "", SN: String = "") {
+    init( id: String = "", SN: String = "") {
         self.id = id
         self.SN = SN
     }

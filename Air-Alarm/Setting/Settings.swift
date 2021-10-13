@@ -9,9 +9,18 @@ import SwiftUI
 
 struct Settings: View {
     @Environment(\.presentationMode) var presentationMode
-    let restApi = RestAPI()
-    @State private var member = Login.init()
-    @State var signInSuccess: Bool
+//    let restApi = RestAPI()
+//    @State private var member = Login.init()
+    
+//    @State var restApi = RestAPI()
+//    @State var signInSuccess = true
+//    @State var showView: Bool = false
+//
+//    func logout(showView: Bool = true) {
+//            ContentView()
+//                .navigationBarBackButtonHidden(true)
+//                .navigationBarHidden(true)
+//    }
     
     var body: some View {
         NavigationView {
@@ -22,36 +31,16 @@ struct Settings: View {
                     sensorInfofo
                     weatherInfofo
                     programmerInfofo
-//                    NavigationLink(
-//                        destination: ContentView(),
-//                        label: {
-//                            Text("로그아웃")
-//                                .font(.headline)
-//                                .padding()
-//                                .foregroundColor(.red)
-//                                .cornerRadius(40)
-//                        })
-                    Button(action: {
-                        
-                        var trigger = self.restApi.GET_Login(member: self.member)
-                        print("trigger info >> ", trigger)
-                        
-                        if !trigger.success {
-                            self.signInSuccess = false
-                            print("trigger info >> ", trigger)
-                        }
-                    }){
-                            Text("로그아웃")
-                                .font(.headline)
-                                .padding()
-                                .foregroundColor(.red)
-                                .cornerRadius(40)
-                    }
+                    logout
+//                    Button(action: {
+//                        logout(showView: true)
+//                    }){
+//                        Text("로그아웃")
+//                    }
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }){
                         Text("Back")
- //                       navigationBarBackButtonHidden(true)
                     }
                 }
             }
@@ -60,9 +49,22 @@ struct Settings: View {
 //        .navigationBarColor(.white)
     }
 }
-
 private extension Settings {
-
+//    @Environment(\.presentationMode) var presentationMode
+//   presentationMode.wrappedValue.dismiss()
+    var logout: some View {
+        NavigationLink(
+            destination: ContentView()
+                .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
+        ){
+                Text("로그아웃")
+                    .font(.headline)
+                    .padding()
+                    .foregroundColor(.red)
+                    .cornerRadius(40)
+        }
+    }
     var myInfofo: some View {
         NavigationLink(
             destination: myInfo()
@@ -135,3 +137,21 @@ private extension Settings {
 //        Settings()
 //    }
 //}
+
+
+//                    Button(action: {
+//
+//                        var trigger = self.restApi.GET_Login(member: self.member)
+//                        print("trigger info >> ", trigger)
+//
+//                        if !trigger.success {
+//                            self.signInSuccess = false
+//                            print("trigger info >> ", trigger)
+//                        }
+//                    }){
+//                            Text("로그아웃")
+//                                .font(.headline)
+//                                .padding()
+//                                .foregroundColor(.red)
+//                                .cornerRadius(40)
+//                    }
