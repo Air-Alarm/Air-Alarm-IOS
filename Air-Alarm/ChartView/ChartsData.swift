@@ -18,8 +18,6 @@ struct Data {
     static let legend1 = "습도"
     static let legend2 = "미세먼지"
     static let legend3 = "이산화탄소"
-    
-    //static let line0 = (data0, GradientColors.blue)
 }
 
 // 일 그래프
@@ -31,7 +29,6 @@ class GetData{
     }
     public func temhour() -> [Double]{
         var tem:[Double] = []
-    //    db = restAPI.GET_HourAll()
         for index in data {
             tem.append(index.temperature)
         }
@@ -40,7 +37,6 @@ class GetData{
     
     public func humhour() -> [Double]{
         var hum:[Double] = []
-    //    db = restAPI.GET_HourAll()
         for index in data {
             hum.append(index.humidity)
         }
@@ -49,7 +45,6 @@ class GetData{
     
     public func dusthour() -> [Double]{
         var dust:[Double] = []
-    //    db = restAPI.GET_HourAll()
         for index in data {
             dust.append(index.dust)
         }
@@ -58,7 +53,6 @@ class GetData{
     
     public func co2hour() -> [Double]{
         var co2:[Double] = []
-    //    db = restAPI.GET_HourAll()
         for index in data {
             co2.append(index.CO2)
         }
@@ -75,7 +69,6 @@ class WeekData{
     }
     public func temweek() -> [Double]{
         var tem:[Double] = []
-    //    db = restAPI.GET_HourAll()
         for index in data {
             tem.append(index.temperature)
         }
@@ -84,7 +77,6 @@ class WeekData{
     
     public func humweek() -> [Double]{
         var hum:[Double] = []
-    //    db = restAPI.GET_HourAll()
         for index in data {
             hum.append(index.humidity)
         }
@@ -93,7 +85,6 @@ class WeekData{
     
     public func dustweek() -> [Double]{
         var dust:[Double] = []
-    //    db = restAPI.GET_HourAll()
         for index in data {
             dust.append(index.dust)
         }
@@ -102,7 +93,6 @@ class WeekData{
     
     public func co2week() -> [Double]{
         var co2:[Double] = []
-    //    db = restAPI.GET_HourAll()
         for index in data {
             co2.append(index.CO2)
         }
@@ -119,7 +109,6 @@ class DayData{
     }
     public func temday() -> [Double]{
         var tem:[Double] = []
-    //    db = restAPI.GET_HourAll()
         for index in data {
             tem.append(index.temperature)
         }
@@ -128,7 +117,6 @@ class DayData{
     
     public func humday() -> [Double]{
         var hum:[Double] = []
-    //    db = restAPI.GET_HourAll()
         for index in data {
             hum.append(index.humidity)
         }
@@ -137,7 +125,6 @@ class DayData{
     
     public func dustday() -> [Double]{
         var dust:[Double] = []
-    //    db = restAPI.GET_HourAll()
         for index in data {
             dust.append(index.dust)
         }
@@ -146,7 +133,6 @@ class DayData{
     
     public func co2day() -> [Double]{
         var co2:[Double] = []
-    //    db = restAPI.GET_HourAll()
         for index in data {
             co2.append(index.CO2)
         }

@@ -205,7 +205,6 @@ struct AListView: View {
             }
             Spacer()
         }
-        //.background(Color.black.opacity(0.06).ignoresSafeArea())
     }
     func updateData(){
         
