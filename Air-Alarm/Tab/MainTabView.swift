@@ -30,13 +30,12 @@ struct HeaderTabView: View {
     @State var showingAlarm = false
     
     func setNotification() { // 알림
-        print("notification start")
         let manager = LocalNotificationManager()
         manager.requestPermission()
-        manager.addNotification(title: "미세먼지 농도가 높습니다.")
-        manager.scheduleNotifications()
-        
+        manager.addNotification(title: "이산화 탄소량이 높습니다.")     // 출력할 content
+        manager.scheduleNotifications()        // 시간 트리거를 준 메소드
         self.showingAlarm.toggle()
+        print("notification start")
     }
     
     // settings 관련 필드

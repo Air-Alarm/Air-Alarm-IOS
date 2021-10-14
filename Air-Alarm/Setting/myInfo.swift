@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct myInfo: View {
     @ObservedObject var getUser = getUserInfo()
     @State private var successText = false
@@ -15,25 +14,22 @@ struct myInfo: View {
     let restApi = RestAPI()
     @State private var member = getSN.init()
     
-    func object(forKey: String) -> Any?
-    
     var body: some View {
         VStack {
             ProfileImage(imageName: "icon")
                 .padding()
             Form {
-                Section(header: Text("User Info")) {
+                Section(header: Text("내 정보")) {
                     TextField("아이디를 입력해주세요.(Email) ", text: $member.id)
+                    
                     Button(action:{
                         var trigger = self.restApi.GET_SN(member: self.member)
                         self.getUser.userSN += trigger.SN
                         print("user info >> ", getUser.userSN)
-                        print(getUser.userid)
                     }){
                         HStack{
                             Spacer()
                             Text("SN 확인")
-                            
                             Spacer()
                         }
                     }
