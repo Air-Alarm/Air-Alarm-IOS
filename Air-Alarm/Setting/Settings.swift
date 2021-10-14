@@ -9,6 +9,9 @@ import SwiftUI
 
 struct Settings: View {
     @Environment(\.presentationMode) var presentationMode
+    let restApi = RestAPI()
+    // 로그인 관련
+    @State private var member = Login.init()    // 로그인 관련 member
     
     var body: some View {
         VStack{
@@ -28,6 +31,12 @@ struct Settings: View {
                         Text("뒤로가기")
                     }
                     .accentColor(.blue)
+//                    Button(action: {
+//                        var trigger = self.restApi.GET_Login(member: self.member)
+//                            print("id: ", trigger.id)
+//                    }){
+//                        Text("id")
+//                    }
                 }
             }.navigationBarTitle(Text("Setting"), displayMode: .inline)
         }
@@ -52,7 +61,6 @@ private extension Settings {
             destination: myInfo()
                 .navigationBarHidden(false)
                 .navigationBarBackButtonHidden(false)
-            
         ) {
             Text("내 정보")
                 .font(.headline)
@@ -65,7 +73,7 @@ private extension Settings {
             destination: changeSN()
                 .navigationBarHidden(false)
                 .navigationBarBackButtonHidden(false)
-            
+
         ) {
             Text("S/N 변경")
                 .font(.headline)

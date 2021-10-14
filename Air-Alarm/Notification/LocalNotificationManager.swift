@@ -23,7 +23,6 @@ class LocalNotificationManager {
             .current()
             .requestAuthorization(options: [.alert, .badge, .alert]) { granted, error in
                 if granted == true && error == nil {
-                    // We have permission!
                 }
         }
     }
@@ -32,27 +31,28 @@ class LocalNotificationManager {
         notifications.append(Notification(id: UUID().uuidString, title: title))
     }
     
-    func schedule() -> Void {
-          UNUserNotificationCenter.current().getNotificationSettings { settings in
-              switch settings.authorizationStatus {
-              case .notDetermined:
-                  self.requestPermission()
-              case .authorized, .provisional:
-                  self.scheduleNotifications()
-              default:
-                  break
-                
-            }
-        }
-    }
+//    func schedule() -> Void {
+//          UNUserNotificationCenter.current().getNotificationSettings { settings in
+//              switch settings.authorizationStatus {
+//              case .notDetermined:
+//                  self.requestPermission()
+//              case .authorized, .provisional:
+//                  self.scheduleNotifications()
+//              default:
+//                  break
+//
+//            }
+//        }
+//    }
     
     func scheduleNotifications() -> Void {        // 알림 설정
         for notification in notifications {
             let content = UNMutableNotificationContent()
             content.title = notification.title
             
-            let alarmtrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // 알림이 오는 시간 설정
-            let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: alarmtrigger)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false) // 알림이 오는 시간 설정
+            
+            let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request) { error in
                 guard error == nil else { return }

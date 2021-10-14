@@ -28,30 +28,14 @@ struct MainTabView: View {
 struct HeaderTabView: View {
     // notification 관련 필드, 메소드
     @State var showingAlarm = false
-    let restAPI = RestAPI()
-    @State var db = DustInfo.init()
-    
-    func update() {
-        self.db = restAPI.GET_Dust()
-    }
     
     func setNotification() { // 알림
         print("notification start")
         let manager = LocalNotificationManager()
-        update()
-        print(db.CO2)
-        if (db.CO2 > 900){
-            manager.requestPermission()
-            manager.addNotification(title: "이산화 탄소량이 높습니다.")
-            print("notification CO2 success")
-        }
-        if (db.dust > 100){
-            manager.requestPermission()
-            manager.addNotification(title: "미세먼지 농도가 높습니다.")
-            print("notification Dust success")
-        }
-        manager.schedule()
+        manager.requestPermission()
+        manager.addNotification(title: "미세먼지 농도가 높습니다.")
         manager.scheduleNotifications()
+        
         self.showingAlarm.toggle()
     }
     
