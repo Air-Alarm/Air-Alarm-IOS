@@ -24,8 +24,8 @@ struct ContentLogin: View {
     @State var showingSignUp = false
     //SN키 반환 관련
     @ObservedObject var getUser = getUserInfo()
-    @AppStorage("id") var userIID: String = ""
-    @State var useriddd = UserDefaults.standard.string(forKey: "id")
+//    @AppStorage("id") var userIID: String = ""
+//    @State var useriddd = UserDefaults.standard.string(forKey: "id")
     
     var body: some View {
         ZStack {
@@ -49,8 +49,8 @@ struct ContentLogin: View {
                         print("trigger info >> ", trigger)
                         getUser.userid += trigger.id
                         print("user info >> ", getUser.userid)
-                        
-                        UserDefaults.standard.setValue($member.id, forKey: "id")
+//
+//                        UserDefaults.standard.setValue($member.id, forKey: "id")
                         
                         if trigger.success {
                             self.signInSuccess = true

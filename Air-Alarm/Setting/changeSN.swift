@@ -21,9 +21,12 @@ struct changeSN: View {
                         .padding()
                 Form {
                     Section(header: Text("SN 변경")) {
+                        
                         TextField("기존 SN을 입력해주세요.(SN)", text: $member.preSN)
                         TextField("변경할 SN을 입력해주세요.(SN)", text: $member.nowSN)
                         
+                    }
+                    Section(){
                         Button(action:{
                             // SN_trigger에 GET_changeSN의 리턴 값을 저장해줌. (success, nowSN)
                             var SN_trigger = self.restApi.GET_changeSN(member: self.member)
@@ -37,9 +40,13 @@ struct changeSN: View {
                             }
                         }
                         ){
-                            Text("변경하기")
-                                .foregroundColor(.blue)
-                                .bold()
+                            HStack{
+                                Spacer()
+                                Text("변경하기")
+                                    .foregroundColor(.blue)
+                                    .bold()
+                                Spacer()
+                            }
                         }
                         
                         // sn키 바꾸는 것이 성공했다는 api를 받아오면 실행할 구문
