@@ -55,6 +55,11 @@ struct programmerInfo: View {
                             .foregroundColor(.black)
                         }
                     }.padding(10)
+                    HStack {
+                        Spacer()
+                        Text("이름 클릭 시 Github 주소로 연결")
+                        Spacer()
+                    }
                 }
             }
             .background(Color.white)

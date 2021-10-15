@@ -16,10 +16,10 @@ struct MainTabView: View {
                 .tabItem{ Label( "", systemImage: "thermometer")  }
                 .navigationBarHidden(false)
             BList()
-                .tabItem{ Label( "", systemImage: "thermometer") }
+                .tabItem{ Label( "", systemImage: "chart.xyaxis.line") }
                 .navigationBarHidden(false)
             CList()
-                .tabItem{ Label( "", systemImage: "thermometer") }
+                .tabItem{ Label( "", systemImage: "wind") }
                 .navigationBarHidden(false)
         }
     }
@@ -28,31 +28,14 @@ struct MainTabView: View {
 struct HeaderTabView: View {
     // notification 관련 필드, 메소드
     @State var showingAlarm = false
-    let restAPI = RestAPI()
-    @State var db = DustInfo.init()
-    
-    func update() {
-        self.db = restAPI.GET_Dust()
-    }
     
     func setNotification() { // 알림
-        print("notification start")
         let manager = LocalNotificationManager()
-        update()
-        print(db.CO2)
-        if (db.CO2 > 900){
-            manager.requestPermission()
-            manager.addNotification(title: "이산화 탄소량이 높습니다.")
-            print("notification CO2 success")
-        }
-        if (db.dust > 100){
-            manager.requestPermission()
-            manager.addNotification(title: "미세먼지 농도가 높습니다.")
-            print("notification Dust success")
-        }
-        manager.schedule()
-        manager.scheduleNotifications()
+        manager.requestPermission()
+        manager.addNotification(title: "이산화 탄소량이 높습니다.")     // 출력할 content
+        manager.scheduleNotifications()        // 시간 트리거를 준 메소드
         self.showingAlarm.toggle()
+        print("notification start")
     }
     
     // settings 관련 필드

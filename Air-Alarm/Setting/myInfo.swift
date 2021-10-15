@@ -8,29 +8,46 @@
 import SwiftUI
 
 struct myInfo: View {
-    let restAPI = RestAPI()
-    @State var member = Login.init()
-    @State var db = LoginSuccess.init()
-    @State var signInSuccess = true
+    @ObservedObject var getUser = getUserInfo()
+    @State private var successText:Bool = false
+    
+    let restApi = RestAPI()
+    @State private var member = getSN.init()
+    
     
     var body: some View {
-            VStack {
-                
-                ProfileImage(imageName: "icon")
-                        .padding()
-                Form {
-//                    var trigger_user = restAPI.GET_Login(member: self.member)
-                    let contentLogin = ContentLogin(signInSuccess: $signInSuccess)
-                    Section(header: Text("User Info")) {
-//                        Text("Email :  " + String(userId))
-                        Text("Email : \(contentLogin.id)")
-                        Text("SN :  \(contentLogin.snkey)")
+        VStack {
+            ProfileImage(imageName: "icon")
+                .padding()
+            Form {
+                Section(header: Text("2단계 인증")) {
+                    TextField("아이디를 입력해주세요.(Email) ", text: $member.id)
+                }
+                Section(){
+                    Button(action:{
+                        var trigger = self.restApi.GET_SN(member: self.member)
+                        self.getUser.userSN += trigger.SN
+                        print("user info >> ", getUser.userSN)
+                        
+                        self.successText = true
+                    }){
+                        HStack{
+                            Spacer()
+                            Text("SN 확인")
+                            Spacer()
+                        }
+                    }
+                }
+                if successText {
+                    Section(header: Text("SN 정보")) {
+                        Text("SN : \(self.getUser.userSN)")
                     }
                 }
             }
             .background(Color.white)
             .navigationBarHidden(false)
             .navigationBarBackButtonHidden(false)
+        }
     }
 }
 
@@ -45,8 +62,21 @@ struct ProfileImage: View {
     }
 }
 
-//struct myInfo_Previews: PreviewProvider {
-//    static var previews: some View {
-//        myInfo(userId: $member.id)
-//    }
-//}
+//                Section(header: Text("SN 변경")) {
+//                    TextField("변경할 SN을 입력해주세요.(SN)", text: $member.SN)
+//                    Button(action:{
+//                        var SN_trigger = self.restApi.GET_changeSN(member: self.member)
+//                        print(SN_trigger.success)
+//                        if !SN_trigger.success {
+//                            self.successText = true
+//                        }
+//                    }
+//                    ){
+//                        Text("Change SN")
+//                            .foregroundColor(.blue)
+//                            .bold()
+//                    }
+//                    if successText {
+//                        Text("변경되었습니다.")
+//                    }
+//                }

@@ -91,11 +91,14 @@ struct CList: View {
                                 .padding()
                             Spacer()
                         }
-                        HStack {
+                        VStack {
                             Spacer()
-                            Text("측정시간: " + db.time)
-                                .padding()
-                            Spacer()
+                            Text("측정시간")
+                                .foregroundColor(Color.gray)
+                                .font(.system(size: 16))
+                            Text(db.time)
+                                .foregroundColor(Color.gray)
+                                .font(.system(size: 16))
                         }
                         
                         Text("\(json)")//웹에서 받아온 내용이 여기 저장됨
@@ -107,7 +110,6 @@ struct CList: View {
                 .offset(y: refresh.released ? 40 : -10)
             })
         }
-        //.background(Color.black.opacity(0.06).ignoresSafeArea())
     }
     func updateData(){
         

@@ -24,6 +24,10 @@
 		2A4256532704937C00B26232 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4256522704937C00B26232 /* Member.swift */; };
 		2A425655270493C800B26232 /* SignUpMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A425654270493C800B26232 /* SignUpMember.swift */; };
 		2A425657270493EF00B26232 /* SignUpSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A425656270493EF00B26232 /* SignUpSuccess.swift */; };
+		2A5CE66927183C8700D458C7 /* getSNSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CE66827183C8700D458C7 /* getSNSuccess.swift */; };
+		2A5CE66B27183CBA00D458C7 /* getSN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CE66A27183CBA00D458C7 /* getSN.swift */; };
+		2A5CE66F27184AE700D458C7 /* changeSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CE66E27184AE700D458C7 /* changeSuccess.swift */; };
+		2A5CE673271852E100D458C7 /* changeSNkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CE672271852E100D458C7 /* changeSNkey.swift */; };
 		2A7F05FB270ACDF900194F8D /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F05FA270ACDF900194F8D /* LocalNotificationManager.swift */; };
 		2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A996A5926C8285D0088BAB6 /* Signup.swift */; };
 		2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAB2F426BC424B009C1D21 /* MainTabView.swift */; };
@@ -33,9 +37,6 @@
 		F7C43CC426EB00CB00DD3229 /* ChartsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C43CC326EB00CB00DD3229 /* ChartsStyle.swift */; };
 		F7C43CC626EB00DC00DD3229 /* ChartsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C43CC526EB00DC00DD3229 /* ChartsData.swift */; };
 		F7C43CC926EB012800DD3229 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = F7C43CC826EB012800DD3229 /* SwiftUICharts */; };
-		F7D1E15426FAF23F006FB401 /* Charts1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D1E15326FAF23F006FB401 /* Charts1.swift */; };
-		F7D1E15626FAF251006FB401 /* Charts2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D1E15526FAF251006FB401 /* Charts2.swift */; };
-		F7D1E15826FAF263006FB401 /* Charts3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D1E15726FAF263006FB401 /* Charts3.swift */; };
 		F95CD7A326C7E9FB00CDDFA5 /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95CD7A226C7E9FB00CDDFA5 /* RestAPI.swift */; };
 		F987CBAA26BC3D050061A4A2 /* Air_AlarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */; };
 		F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F987CBAB26BC3D050061A4A2 /* ContentView.swift */; };
@@ -80,6 +81,10 @@
 		2A4256522704937C00B26232 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		2A425654270493C800B26232 /* SignUpMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMember.swift; sourceTree = "<group>"; };
 		2A425656270493EF00B26232 /* SignUpSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccess.swift; sourceTree = "<group>"; };
+		2A5CE66827183C8700D458C7 /* getSNSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSNSuccess.swift; sourceTree = "<group>"; };
+		2A5CE66A27183CBA00D458C7 /* getSN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getSN.swift; sourceTree = "<group>"; };
+		2A5CE66E27184AE700D458C7 /* changeSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeSuccess.swift; sourceTree = "<group>"; };
+		2A5CE672271852E100D458C7 /* changeSNkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeSNkey.swift; sourceTree = "<group>"; };
 		2A7F05FA270ACDF900194F8D /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		2A996A5926C8285D0088BAB6 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		2AEAB2F426BC424B009C1D21 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -88,9 +93,6 @@
 		2AEAB2FA26BC42E2009C1D21 /* CList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CList.swift; sourceTree = "<group>"; };
 		F7C43CC326EB00CB00DD3229 /* ChartsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsStyle.swift; sourceTree = "<group>"; };
 		F7C43CC526EB00DC00DD3229 /* ChartsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsData.swift; sourceTree = "<group>"; };
-		F7D1E15326FAF23F006FB401 /* Charts1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts1.swift; sourceTree = "<group>"; };
-		F7D1E15526FAF251006FB401 /* Charts2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts2.swift; sourceTree = "<group>"; };
-		F7D1E15726FAF263006FB401 /* Charts3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts3.swift; sourceTree = "<group>"; };
 		F95CD7A226C7E9FB00CDDFA5 /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 		F987CBA626BC3D050061A4A2 /* Air-Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Air-Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F987CBA926BC3D050061A4A2 /* Air_AlarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Air_AlarmApp.swift; sourceTree = "<group>"; };
@@ -154,8 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				2A425639270424A400B26232 /* Settings.swift */,
-				2A42563B270424BC00B26232 /* changeSN.swift */,
 				2A42563D270424D000B26232 /* myInfo.swift */,
+				2A42563B270424BC00B26232 /* changeSN.swift */,
 				2A42563F270424E200B26232 /* sensorInfo.swift */,
 				2A425641270424F900B26232 /* programmerInfo.swift */,
 				2A3A9E3427148A01004DAE6C /* WeatherInfoo.swift */,
@@ -173,6 +175,10 @@
 				2A425654270493C800B26232 /* SignUpMember.swift */,
 				2A425656270493EF00B26232 /* SignUpSuccess.swift */,
 				2A3A9E32271484D1004DAE6C /* WeatherInfo.swift */,
+				2A5CE66A27183CBA00D458C7 /* getSN.swift */,
+				2A5CE66827183C8700D458C7 /* getSNSuccess.swift */,
+				2A5CE672271852E100D458C7 /* changeSNkey.swift */,
+				2A5CE66E27184AE700D458C7 /* changeSuccess.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -218,9 +224,6 @@
 			children = (
 				F7C43CC326EB00CB00DD3229 /* ChartsStyle.swift */,
 				F7C43CC526EB00DC00DD3229 /* ChartsData.swift */,
-				F7D1E15326FAF23F006FB401 /* Charts1.swift */,
-				F7D1E15726FAF263006FB401 /* Charts3.swift */,
-				F7D1E15526FAF251006FB401 /* Charts2.swift */,
 			);
 			path = ChartView;
 			sourceTree = "<group>";
@@ -429,7 +432,6 @@
 				2A7F05FB270ACDF900194F8D /* LocalNotificationManager.swift in Sources */,
 				F95CD7A326C7E9FB00CDDFA5 /* RestAPI.swift in Sources */,
 				2A3A9E3527148A01004DAE6C /* WeatherInfoo.swift in Sources */,
-				F7D1E15826FAF263006FB401 /* Charts3.swift in Sources */,
 				F987CBAC26BC3D050061A4A2 /* ContentView.swift in Sources */,
 				2A42563C270424BC00B26232 /* changeSN.swift in Sources */,
 				2AEAB2FB26BC42E2009C1D21 /* CList.swift in Sources */,
@@ -442,21 +444,23 @@
 				2A4256332704244800B26232 /* Alarm.swift in Sources */,
 				2A425657270493EF00B26232 /* SignUpSuccess.swift in Sources */,
 				2A26A4B526DB5EF000670DFB /* NavigationBarColor.swift in Sources */,
-				F7D1E15426FAF23F006FB401 /* Charts1.swift in Sources */,
 				F7C43CC426EB00CB00DD3229 /* ChartsStyle.swift in Sources */,
+				2A5CE66927183C8700D458C7 /* getSNSuccess.swift in Sources */,
 				2A996A5A26C8285D0088BAB6 /* Signup.swift in Sources */,
 				2A42564A270430A700B26232 /* ContentLogin.swift in Sources */,
 				2A42563E270424D000B26232 /* myInfo.swift in Sources */,
+				2A5CE66B27183CBA00D458C7 /* getSN.swift in Sources */,
 				2A4256512704936F00B26232 /* LoginSuccess.swift in Sources */,
 				2A42563A270424A400B26232 /* Settings.swift in Sources */,
 				2A3A9E33271484D1004DAE6C /* WeatherInfo.swift in Sources */,
 				2A42564F2704936000B26232 /* Login.swift in Sources */,
 				2AEAB2F526BC424B009C1D21 /* MainTabView.swift in Sources */,
+				2A5CE673271852E100D458C7 /* changeSNkey.swift in Sources */,
 				2AEAB2F726BC42AB009C1D21 /* AList.swift in Sources */,
 				2A26A4B026DA68BF00670DFB /* UnderLineTextFieldView.swift in Sources */,
-				F7D1E15626FAF251006FB401 /* Charts2.swift in Sources */,
 				2A425640270424E200B26232 /* sensorInfo.swift in Sources */,
 				2A4256532704937C00B26232 /* Member.swift in Sources */,
+				2A5CE66F27184AE700D458C7 /* changeSuccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,7 +648,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Air-Alarm/Preview Content\"";
-				DEVELOPMENT_TEAM = T9JBD726X3;
+				DEVELOPMENT_TEAM = JVBAL8CV7V;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Air-Alarm/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -656,7 +660,7 @@
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.park;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hahahhhaha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
