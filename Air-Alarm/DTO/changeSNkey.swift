@@ -9,11 +9,13 @@ import Foundation
 
 struct changeSNkey: Codable {
     
-    init(preSN: String = "", nowSN: String = "") {
+    init(id: String = "", preSN: String = "", nowSN: String = "") {
+        self.id = id
         self.preSN = preSN
         self.nowSN = nowSN
     }
     
+    var id: String
     var preSN: String
     var nowSN: String
 }
