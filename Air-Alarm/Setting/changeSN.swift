@@ -21,7 +21,7 @@ struct changeSN: View {
                         .padding()
                 Form {
                     Section(header: Text("SN 변경")) {
-                        
+                        TextField("아이디를 입력해주세요. (Email)", text: $member.id)
                         TextField("기존 SN을 입력해주세요.(SN)", text: $member.preSN)
                         TextField("변경할 SN을 입력해주세요.(SN)", text: $member.nowSN)
                         
@@ -32,8 +32,8 @@ struct changeSN: View {
                             var SN_trigger = self.restApi.GET_changeSN(member: self.member)
                             print(SN_trigger.success)
                             
-                            changeSN += SN_trigger.nowSN // 변수에 nowSN저장
-                            print(changeSN)
+//                            changeSN += SN_trigger.nowSN // 변수에 nowSN저장
+//                            print(changeSN)
                             
                             if !SN_trigger.success {
                                 self.successText = true
@@ -58,7 +58,7 @@ struct changeSN: View {
                             }
                             HStack{         // 가운데 정렬 하기 위해 H스택 만들어줌
                                 Spacer()
-                                Text("변경된 SN : " + changeSN)
+                                Text("변경된 SN : " + self.member.nowSN)
                                 Spacer()
                             }
                         }

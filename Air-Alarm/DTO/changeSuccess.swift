@@ -9,12 +9,14 @@ import Foundation
 
 struct changeSuccess: Codable {
     
-    init(preSN: String = "", nowSN: String = "", success: Bool = false) {
+    init(id: String = "", preSN: String = "", nowSN: String = "", success: Bool = false) {
+        self.id = id
         self.preSN = preSN
         self.success = success
         self.nowSN = nowSN
     }
     
+    var id: String
     var preSN: String
     var success: Bool
     var nowSN: String

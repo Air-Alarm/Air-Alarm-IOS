@@ -149,8 +149,9 @@ class RestAPI {
     func GET_changeSN(member: changeSNkey) -> changeSuccess {
         var db = changeSuccess.init()
         if let url = URL(string: "http://api.air-alarm.site:4999/change?" +
-                            "id=" + member.preSN +
-                            "&sn=" + member.nowSN){
+                            "id=" + member.id +
+                            "&presn=" + member.preSN +
+                            "&nowsn=" + member.nowSN ){
             var request = URLRequest.init(url: url)
 
             request.httpMethod = "GET"
