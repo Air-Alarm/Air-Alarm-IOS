@@ -110,7 +110,6 @@ struct CList: View {
                 .offset(y: refresh.released ? 40 : -10)
             })
         }
-        //.background(Color.black.opacity(0.06).ignoresSafeArea())
     }
     func updateData(){
         

@@ -100,6 +100,7 @@ private extension Settings {
             destination: WeatherInfoo()
                 .navigationBarHidden(false)
                 .navigationBarBackButtonHidden(false)
+                .navigationBarTitle("지역 날씨 API 정보")
             
         ){
             Text("지역 날씨 API 정보")

@@ -16,10 +16,10 @@ struct MainTabView: View {
                 .tabItem{ Label( "", systemImage: "thermometer")  }
                 .navigationBarHidden(false)
             BList()
-                .tabItem{ Label( "", systemImage: "thermometer") }
+                .tabItem{ Label( "", systemImage: "chart.xyaxis.line") }
                 .navigationBarHidden(false)
             CList()
-                .tabItem{ Label( "", systemImage: "thermometer") }
+                .tabItem{ Label( "", systemImage: "wind") }
                 .navigationBarHidden(false)
         }
     }
