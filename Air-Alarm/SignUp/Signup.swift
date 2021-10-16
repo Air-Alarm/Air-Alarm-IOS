@@ -41,7 +41,6 @@ struct Signup: View {
                     }
                 }
             }
-            .navigationBarColor(.white)
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)

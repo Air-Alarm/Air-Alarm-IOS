@@ -111,7 +111,7 @@ struct AListView: View {
                         }
                         HStack {
                             Spacer()
-                            Text("PM2.5 :  " + String(db.dust) + " ㎍/m³")
+                            Text("PM10 :  " + String(db.dust) + " ㎍/m³")
                                 .padding()
                             if(db.dust == 0) { // 대기
                                 Rectangle()
@@ -209,7 +209,6 @@ struct AListView: View {
     func updateData(){
         
         print("update Data")
-        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             withAnimation(Animation.linear){

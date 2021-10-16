@@ -28,6 +28,15 @@ struct MainTabView: View {
 struct HeaderTabView: View {
     // notification 관련 필드, 메소드
     @State var showingAlarm = false
+    let restAPI = RestAPI()
+    @State var db = DustInfo.init()
+    @State var dbb = WeatherInfo.init()
+    
+    func updatedb() {
+        self.db = restAPI.GET_Dust()
+        self.dbb = restAPI.GET_Weather()
+        
+    }
     
     func setNotification() { // 알림
         let manager = LocalNotificationManager()
@@ -59,7 +68,17 @@ struct HeaderTabView: View {
                 Image(systemName: "gearshape")
             }.fullScreenCover(isPresented: $showingSettings,content: { Settings() })
             Button(action: {
+                updatedb()
                 self.setNotification()
+                if (Int(db.dust) > dbb.dust10 + 50) {
+                    self.setNotification()
+                }
+                else if (db.dust > 100){
+                    self.setNotification()
+                }
+                else if (db.CO2 > 1000) {
+                    self.setNotification()
+                }
             }
             ){
                 Image(systemName: "bell")
