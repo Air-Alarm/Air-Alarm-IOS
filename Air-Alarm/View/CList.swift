@@ -181,41 +181,6 @@ struct CList: View {
                 }
                 .offset(y: refresh.released ? 40 : -10)
             })
-//            HStack {
-//                Rectangle()
-//                    .frame(width: 15, height: 15)
-//                    .foregroundColor(Color.red)
-//                    .cornerRadius(15)
-//                Text(": 매우 나쁨")
-//                Rectangle()
-//                    .frame(width: 15, height: 15)
-//                    .foregroundColor(Color.orange)
-//                    .cornerRadius(15)
-//                Text(": 나쁨")
-//                Rectangle()
-//                    .frame(width: 15, height: 15)
-//                    .foregroundColor(Color.yellow)
-//                    .cornerRadius(15)
-//                Text(": 약간 나쁨")
-//            }
-//            HStack {
-//                Rectangle()
-//                    .frame(width: 15, height: 15)
-//                    .foregroundColor(Color.green)
-//                    .cornerRadius(15)
-//                Text(": 보통")
-//                Rectangle()
-//                    .frame(width: 15, height: 15)
-//                    .foregroundColor(Color.blue)
-//                    .cornerRadius(15)
-//                Text(": 좋음")
-//                Rectangle()
-//                    .frame(width: 15, height: 15)
-//                    .foregroundColor(Color.gray)
-//                    .cornerRadius(15)
-//                Text(": 대기")
-//            }
-//            Spacer()
         }
     }
     func updateData(){

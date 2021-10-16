@@ -31,17 +31,12 @@ struct Settings: View {
                         Text("뒤로가기")
                     }
                     .accentColor(.blue)
-//                    Button(action: {
-//                        var trigger = self.restApi.GET_Login(member: self.member)
-//                            print("id: ", trigger.id)
-//                    }){
-//                        Text("id")
-//                    }
                 }
-            }.navigationBarTitle(Text("Setting"), displayMode: .inline)
+            }
         }
     }
 }
+
 private extension Settings {
     var logout: some View {
         NavigationLink(

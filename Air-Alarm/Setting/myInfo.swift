@@ -61,22 +61,3 @@ struct ProfileImage: View {
             .clipShape(Circle())
     }
 }
-
-//                Section(header: Text("SN 변경")) {
-//                    TextField("변경할 SN을 입력해주세요.(SN)", text: $member.SN)
-//                    Button(action:{
-//                        var SN_trigger = self.restApi.GET_changeSN(member: self.member)
-//                        print(SN_trigger.success)
-//                        if !SN_trigger.success {
-//                            self.successText = true
-//                        }
-//                    }
-//                    ){
-//                        Text("Change SN")
-//                            .foregroundColor(.blue)
-//                            .bold()
-//                    }
-//                    if successText {
-//                        Text("변경되었습니다.")
-//                    }
-//                }

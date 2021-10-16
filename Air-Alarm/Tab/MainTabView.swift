@@ -69,6 +69,7 @@ struct HeaderTabView: View {
             }.fullScreenCover(isPresented: $showingSettings,content: { Settings() })
             Button(action: {
                 updatedb()
+                self.setNotification()
                 if (Int(db.dust) > dbb.dust10 + 50) {
                     self.setNotification()
                 }
