@@ -71,12 +71,84 @@ struct CList: View {
                             Spacer()
                             Text("PM2.5 (10):  " + String(db.dust10) + " ㎍/m³")
                                 .padding()
+                            if(db.dust10 == 0) { // 대기
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.gray)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.dust10 <= 30 && db.dust10 > 0) { // 좋음
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.blue)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.dust10 >= 31 && db.dust10 <= 80) { // 보통
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.green)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.dust10 >= 81 && db.dust10 <= 120) { // 약간 나쁨
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.yellow)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.dust10 >= 121 && db.dust10 <= 200) { // 나쁨
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.orange)
+                                    .cornerRadius(15)
+                            }
+                            else { // 매우 나쁨
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.red)
+                                    .cornerRadius(15)
+                            }
                             Spacer()
                         }
                         HStack {
                             Spacer()
                             Text("PM2.5 (25):  " + String(db.dust25) + " ㎍/m³")
                                 .padding()
+                            if(db.dust25 == 0) { // 대기
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.gray)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.dust25 <= 30 && db.dust25 > 0) { // 좋음
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.blue)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.dust25 >= 31 && db.dust25 <= 80) { // 보통
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.green)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.dust25 >= 81 && db.dust25 <= 120) { // 약간 나쁨
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.yellow)
+                                    .cornerRadius(15)
+                            }
+                            else if(db.dust25 >= 121 && db.dust25 <= 200) { // 나쁨
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.orange)
+                                    .cornerRadius(15)
+                            }
+                            else { // 매우 나쁨
+                                Rectangle()
+                                    .frame(width: 15, height: 15)
+                                    .foregroundColor(Color.red)
+                                    .cornerRadius(15)
+                            }
                             Spacer()
                         }
                         HStack {
@@ -109,12 +181,46 @@ struct CList: View {
                 }
                 .offset(y: refresh.released ? 40 : -10)
             })
+//            HStack {
+//                Rectangle()
+//                    .frame(width: 15, height: 15)
+//                    .foregroundColor(Color.red)
+//                    .cornerRadius(15)
+//                Text(": 매우 나쁨")
+//                Rectangle()
+//                    .frame(width: 15, height: 15)
+//                    .foregroundColor(Color.orange)
+//                    .cornerRadius(15)
+//                Text(": 나쁨")
+//                Rectangle()
+//                    .frame(width: 15, height: 15)
+//                    .foregroundColor(Color.yellow)
+//                    .cornerRadius(15)
+//                Text(": 약간 나쁨")
+//            }
+//            HStack {
+//                Rectangle()
+//                    .frame(width: 15, height: 15)
+//                    .foregroundColor(Color.green)
+//                    .cornerRadius(15)
+//                Text(": 보통")
+//                Rectangle()
+//                    .frame(width: 15, height: 15)
+//                    .foregroundColor(Color.blue)
+//                    .cornerRadius(15)
+//                Text(": 좋음")
+//                Rectangle()
+//                    .frame(width: 15, height: 15)
+//                    .foregroundColor(Color.gray)
+//                    .cornerRadius(15)
+//                Text(": 대기")
+//            }
+//            Spacer()
         }
     }
     func updateData(){
         
         print("update Data")
-        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             withAnimation(Animation.linear){

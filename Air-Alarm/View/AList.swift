@@ -210,7 +210,6 @@ struct AListView: View {
         
         print("update Data")
         
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             withAnimation(Animation.linear){
                 
