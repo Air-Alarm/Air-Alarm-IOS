@@ -25,15 +25,22 @@ struct Settings: View {
                         programmerInfofo
                         logout
                     }
+                    Spacer()
+                    
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }){
                         Text("뒤로가기")
-                    }
-                    .accentColor(.blue)
+                            .foregroundColor(.blue)
+                    }.padding()
                 }
             }
         }
+    }
+}
+struct Settings_Previews: PreviewProvider {
+    static var previews: some View {
+        Settings()
     }
 }
 
