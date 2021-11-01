@@ -38,14 +38,14 @@ struct HeaderTabView: View {
         
     }
     
-    func setNotification() { // 알림
-        let manager = LocalNotificationManager()
-        manager.requestPermission()
-        manager.addNotification(title: "이산화 탄소량이 높습니다.")     // 출력할 content
-        manager.scheduleNotifications()        // 시간 트리거를 준 메소드
-        self.showingAlarm.toggle()
-        print("notification start")
-    }
+//    func setNotification() { // 알림
+//        let manager = LocalNotificationManager()
+//        manager.requestPermission()
+//        manager.addNotification(title: "이산화 탄소량이 높습니다.")     // 출력할 content
+//        manager.scheduleNotifications()        // 시간 트리거를 준 메소드
+//        self.showingAlarm.toggle()
+//        print("notification start")
+//    }
     
     // settings 관련 필드
     @State var showingSettings = false
@@ -62,29 +62,29 @@ struct HeaderTabView: View {
                 .foregroundColor(Color.blue)
             Spacer()
             Button(action: {
-                self.showingSettings.toggle()
-            })
-            {
-                Image(systemName: "gearshape")
-            }.fullScreenCover(isPresented: $showingSettings,content: { Settings() })
-            Button(action: {
                 updatedb()
-                self.setNotification()
-                if (Int(db.dust) > dbb.dust10 + 50) {
-                    self.setNotification()
-                }
-                else if (db.dust > 100){
-                    self.setNotification()
-                }
-                else if (db.CO2 > 1000) {
-                    self.setNotification()
-                }
+//                self.setNotification()
+//                if (Int(db.dust) > dbb.dust10 + 50) {
+//                    self.setNotification()
+//                }
+//                else if (db.dust > 100){
+//                    self.setNotification()
+//                }
+//                else if (db.CO2 > 1000) {
+//                    self.setNotification()
+//                }
             }
             ){
                 Image(systemName: "bell")
             }.sheet(isPresented: $showingAlarm) {
                 Alarm()
             }
+            Button(action: {
+                self.showingSettings.toggle()
+            })
+            {
+                Image(systemName: "gearshape")
+            }.fullScreenCover(isPresented: $showingSettings,content: { Settings() })
             .padding(10)
         }
     }
